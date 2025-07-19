@@ -1,19 +1,24 @@
 /* Background Color */
 body {
-  background-color: #fffaf0; /* Goldish white */
+  background: linear-gradient[to bottom, #fffdf3, fff2d1];
   font-family: Arial, sans-serif;
+  color: #2c1f1f;
   text-align: center;
   margin: 0;
   padding: 0;
-  color: #2c1f1f;
+  position: relative;
 }
+
 
 /* Main Logo Styling */
 .main-logo {
-  width: 180px;
-  margin: 30px auto;
+  width: 200px;
+  margin: 40px auto 10px;
   display: block;
-  filter: drop-shadow(0 0 10px pink);
+  filter: drop-shadow(0 0 15px#ff69b4);
+  animation: shimmer 3s infinite;
+  transition: transform 0.3s ease;
+  z-index: 2;
 }
 
 /* Welcome Section */
