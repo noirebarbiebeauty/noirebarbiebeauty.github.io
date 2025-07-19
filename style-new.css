@@ -1,13 +1,25 @@
 body {
   background-color: #000;
   background-image: url('Logo png.PNG');
-  background-size: 600px;
+  background-size: 500px;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  color: #f7c1e3;
-  opacity: 0.99;
-}  .main-logo {
+  background-blend-mode; lighten;
+  opacity:1;
+  body: :before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url['Logo png.PNG'] no-repeat center center;
+    background-size: 500px;
+    opacity: 0.05;
+    z-index: 1;
+    background-attachment: fixed;
+  }}  .main-logo {
   display: block;
   margin: 40px auto 10px;
   width: 300px;
@@ -15,9 +27,6 @@ body {
   animation: shimmer 3s infinite;
   transition: transform 0.3s ease;
 }
-
-.main-logo:hover {
-  transform: scale(1.05);
 }
 
 /* Optional shimmer animation */
