@@ -1,21 +1,36 @@
 body {
   background-color: #000;
-  color: #f7c1e3;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  margin: 0;
-  background-image: url('Logo png. PNG');
+  background-image: url('Logo png.PNG');
+  background-size: 600px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 400px;
-  opacity: 1;
   background-attachment: fixed;
-}  background-color: #000;
   color: #f7c1e3;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  margin: 0;
+  opacity: 0.99;
+}  .main-logo {
+  display: block;
+  margin: 40px auto 10px;
+  width: 300px;
+  filter: drop-shadow(0 0 15px #ff69b4); /* Barbie glow */
+  animation: shimmer 3s infinite;
+  transition: transform 0.3s ease;
 }
+
+.main-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Optional shimmer animation */
+@keyframes shimmer {
+  0% {
+    filter: drop-shadow(0 0 15px #ff69b4);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px #ffb6c1);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px #ff69b4);
+  }
 header {
   background-color: #f7c1e3;
   color: #000;
