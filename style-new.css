@@ -1,22 +1,22 @@
-/* ===== Background and Body Styling ===== */
+/* ===== Body Styling ===== */
 body {
-  background-color: #fff8e1; /* Soft white-gold background */
+  background-color: #fff8e1;
   background-image: url('Logo png.PNG');
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-blend-mode: lighten;
-  position: relative;
-  z-index: 1;
   font-family: Arial, sans-serif;
   color: #2c1f1f;
   text-align: center;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Faded Logo as Watermark ===== */
+/* ===== Watermark ===== */
 body::before {
   content: "";
   position: fixed;
@@ -31,16 +31,16 @@ body::before {
   pointer-events: none;
 }
 
-/* ===== Glowing Top Logo ===== */
+/* ===== Logo Styling ===== */
 .main-logo {
   display: block;
   margin: 40px auto 10px;
   width: 300px;
-  filter: drop-shadow(0 0 15px #ff69b4); /* Barbie glow */
+  filter: drop-shadow(0 0 15px #ff69b4);
   animation: shimmer 3s infinite;
   transition: transform 0.3s ease;
-  position: relative;
   z-index: 2;
+  position: relative;
 }
 
 /* ===== Glow Animation ===== */
@@ -56,7 +56,7 @@ body::before {
   }
 }
 
-/* ===== Header Section ===== */
+/* ===== Header ===== */
 header {
   background-color: #f7c1e3;
   color: #000;
@@ -69,7 +69,7 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* ===== Main Content Sections ===== */
+/* ===== Content Sections ===== */
 .intro, .services, .booking {
   margin: 2rem;
   position: relative;
@@ -86,7 +86,7 @@ li {
   margin: 0.5rem 0;
 }
 
-/* ===== Buttons ===== */
+/* ===== Default Buttons ===== */
 .btn {
   background-color: gold;
   color: black;
@@ -115,29 +115,8 @@ footer {
   position: relative;
   z-index: 2;
 }
-<section class="wigs">
-  <h2>Featured Wigs</h2>
-  <div class="wig-gallery">
-    <div class="wig-card">
-      <img src="images/yaki30.jpg" alt="Yaki Straight 30”" />
-      <h4>Yaki Straight 30”</h4>
-      <p>Best Seller! Full frontal, silky finish</p>
-      <span class="price">R900</span>
-      <a href="https://instagram.com/noirebarbiebeauty" class="btn" target="_blank">Order Now</a>
-    </div>
 
-    <div class="wig-card">
-      <img src="images/blonde30.jpg" alt="Blonde Straight 30”" />
-      <h4>Blonde Straight 30”</h4>
-      <p>Full frontal, versatile — wear it straight or bouncy</p>
-      <span class="price">R900</span>
-      <a href="https://instagram.com/noirebarbiebeauty" class="btn" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Add more wig cards as needed -->
-  </div>
-</section>
-/* Featured Wigs Section */
+/* ===== Wig Section ===== */
 .featured-wigs {
   background-color: #fffaf5;
   padding: 3rem 1rem;
@@ -153,7 +132,7 @@ footer {
   font-weight: bold;
 }
 
-/* Wig Cards */
+/* ===== Wig Cards ===== */
 .wig-card {
   background: #ffffff;
   border: 2px solid gold;
@@ -170,7 +149,7 @@ footer {
   box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
 }
 
-/* Wig Images */
+/* ===== Wig Images ===== */
 .wig-image {
   width: 100%;
   border-radius: 12px;
@@ -178,15 +157,15 @@ footer {
   box-shadow: 0 0 15px pink;
 }
 
-/* Wig Details */
-.wig-details h3 {
+/* ===== Wig Text Details ===== */
+.wig-card h4 {
   margin: 0.5rem 0;
   color: #d81b60;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.wig-details p {
+.wig-card p {
   font-size: 1rem;
   color: #444;
   margin-bottom: 0.8rem;
@@ -196,23 +175,4 @@ footer {
   font-size: 1.3rem;
   font-weight: bold;
   color: gold;
-}
-
-/* Order Button */
-.btn {
-  display: inline-block;
-  background-color: hotpink;
-  color: white;
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  text-decoration: none;
-  margin-top: 0.6rem;
-  font-weight: bold;
-  box-shadow: 0 0 15px #ff69b4;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #ff1493;
-  transform: scale(1.05);
 }
