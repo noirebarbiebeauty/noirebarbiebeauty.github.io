@@ -1,93 +1,84 @@
-/* ===== Background and Body Styling ===== */
+/* Background Color */
 body {
-  background-color: #fffaf0; /* Soft goldish-white */
+  background-color: #fffaf0; /* Goldish white */
   font-family: Arial, sans-serif;
-  color: #2c1f1f;
   text-align: center;
   margin: 0;
   padding: 0;
+  color: #2c1f1f;
 }
 
-/* ===== Glowing Logo ===== */
+/* Main Logo Styling */
 .main-logo {
+  width: 180px;
+  margin: 30px auto;
   display: block;
-  margin: 30px auto 10px;
-  width: 200px; /* Shrunk from 300px */
-  filter: drop-shadow(0 0 15px #ff69b4);
-  animation: shimmer 3s infinite;
+  filter: drop-shadow(0 0 10px pink);
 }
 
-/* ===== Welcome Message ===== */
+/* Welcome Section */
 .welcome {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #d81b60;
-  margin: 2rem 0;
+  padding: 2rem;
+  background: transparent;
 }
 
-/* ===== Services in Pink Cloud ===== */
-.services {
-  background: #ffe4f1;
-  border-radius: 30px;
+.welcome h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Services Cloud-Like Box */
+.services-box {
+  background-color: #ffc0cb;
+  border-radius: 40px;
   padding: 2rem;
   margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 0 20px #ffb6c1;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.3);
 }
 
-/* ===== Barbie Approved Units Gallery ===== */
-.barbie-gallery {
-  background-color: #fffaf5;
-  padding: 3rem 1rem;
-  text-align: center;
-  border-top: 4px solid gold;
-  border-bottom: 4px solid hotpink;
-}
-
-.barbie-gallery h2 {
+.services-box h2 {
+  color: #000;
   font-size: 2rem;
-  color: #e91e63;
-  margin-bottom: 2rem;
-  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Wig Card Gallery */
+.barbie-gallery {
+  padding: 2rem;
+  background-color: #fffaf5;
+  border-top: 4px solid gold;
 }
 
 .wig-card {
-  background: #ffffff;
+  background: #fff;
   border: 2px solid gold;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1rem;
   margin: 2rem auto;
-  max-width: 500px;
-  box-shadow: 0 0 25px rgba(255, 105, 180, 0.15);
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
 }
 
 .wig-card img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 15px pink;
+  border-radius: 10px;
+  box-shadow: 0 0 10px pink;
+}
+
+.wig-card h4 {
+  color: #d81b60;
+  font-size: 1.3rem;
 }
 
 .price {
-  font-size: 1.3rem;
   font-weight: bold;
   color: gold;
-}
-
-.btn {
-  display: inline-block;
-  background-color: hotpink;
-  color: white;
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  text-decoration: none;
-  margin-top: 0.6rem;
-  font-weight: bold;
-  box-shadow: 0 0 15px #ff69b4;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #ff1493;
-  transform: scale(1.05);
 }
