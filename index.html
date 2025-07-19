@@ -7,15 +7,48 @@
   <link rel="stylesheet" href="style-new.css" />
 </head>
 <body>
-  <div style="text align: center; margin-top: 30px;>
-    <img src="logo.png" alt="Noire Barbie Beauty Logo"
-    style="
+  <style>
+  .logo-wrapper {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeInBounce 2s ease-out;
+  }
+
+  .logo-wrapper img {
     width: 200px;
-    filter: drop-shadow[0 0 10px hot pink];
-    border-radius: 8px;
-    ">
-  </div>
-  <header>
+    border-radius: 12px;
+    border: 3px solid gold;
+    box-shadow: 0 0 20px hotpink, 0 0 30px gold;
+    animation: glowPulse 3s infinite alternate;
+  }
+
+  @keyframes fadeInBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glowPulse {
+    0% {
+      box-shadow: 0 0 10px hotpink, 0 0 15px gold;
+    }
+    100% {
+      box-shadow: 0 0 25px hotpink, 0 0 40px gold;
+    }
+  }
+</style>
+
+<div class="logo-wrapper">
+  <img src="logo.png" alt="Noire Barbie Beauty Logo">
+</div>  <header>
     <h1>Noire Barbie Beauty</h1>
     <p>Luxury Wigs • Wig Installs • Glam Makeup</p>
   </header>
