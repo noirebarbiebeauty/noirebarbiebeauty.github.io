@@ -1,55 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <img src="Logo png.PNG" alt=Noire Barbie Beauty Logo" width="220">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Noire Barbie Beauty</title>
-  <link rel="stylesheet" href="style-new.css" />
-</head>
-<body>
+
   <style>
-  .logo-wrapper {
-    text-align: center;
-    margin-top: 30px;
-    animation: fadeInBounce 2s ease-out;
-  }
+    /* Page background and text */
+    body {
+      background: linear-gradient(to bottom, #fffbea, #fdf6e3);
+      color: #4b2e2e;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+    }
 
-  .logo-wrapper img {
-    width: 200px;
-    border-radius: 12px;
-    border: 3px solid gold;
-    box-shadow: 0 0 20px hotpink, 0 0 30px gold;
-    animation: glowPulse 3s infinite alternate;
-  }
+    /* Logo styling */
+    .logo-wrapper {
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeInBounce 2s ease-out;
+    }
 
-  @keyframes fadeInBounce {
-    0% {
-      opacity: 0;
-      transform: translateY(-40px);
+    .logo-wrapper img {
+      width: 200px;
+      border-radius: 12px;
+      border: 3px solid gold;
+      box-shadow: 0 0 20px gold, 0 0 30px #ffb6c1;
+      animation: glowPulse 3s infinite alternate;
     }
-    60% {
-      opacity: 1;
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes glowPulse {
-    0% {
-      box-shadow: 0 0 10px hotpink, 0 0 15px gold;
+    /* Header */
+    header {
+      background-color: #f5e6c9;
+      color: #3d2b1f;
+      padding: 2rem;
     }
-    100% {
-      box-shadow: 0 0 25px hotpink, 0 0 40px gold;
-    }
-  }
-</style>
 
-<div class="logo-wrapper">
-  <img src="Logo png.PNG" alt="Noire Barbie Beauty Logo"> class=main-logo">
-</div>  <header>
+    .intro, .services, .booking {
+      margin: 2rem;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      background: gold;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px pink;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background-color: #ffcc70;
+    }
+
+    footer {
+      background-color: #f3e2c7;
+      color: #8a6d3b;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeInBounce {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 10px gold, 0 0 15px #ffc0cb;
+      }
+      100% {
+        box-shadow: 0 0 25px gold, 0 0 40px #ffc0cb;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo-wrapper">
+    <img src="Logo png.PNG" alt="Noire Barbie Beauty Logo" class="main-logo">
+  </div>
+
+  <header>
     <h1>Noire Barbie Beauty</h1>
     <p>Luxury Wigs • Wig Installs • Glam Makeup</p>
   </header>
@@ -76,5 +130,6 @@
   <footer>
     <p>&copy; 2025 Noire Barbie Beauty. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
