@@ -4,7 +4,7 @@ body {
   font-family: 'Arial', sans-serif;
   text-align: center;
   margin: 0;
-  background-image: url('logo.png');
+  background-image: url('Logo png. PNG');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 400px;
@@ -59,4 +59,4 @@ footer {
     pointer-events: none;
     z-index: 0;
   }
-}
+
