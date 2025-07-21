@@ -163,29 +163,6 @@ footer {
   line-height: 1.6;
 }
 
-.services-table table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.services-table th, .services-table td {
-  border: 1px solid #ffc0cb;
-  padding: 1rem;
-  text-align: center;
-}
-
-.services-table th {
-  background-color: #ffe4ec;
-  color: #000;
-}
-
-.services-table td {
-  background-color: #fffafc;
-}
-
-
-
 
 
 
