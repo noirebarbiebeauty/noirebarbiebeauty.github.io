@@ -97,3 +97,20 @@ body {
   font-weight: bold;
   color: gold;
 }
+
+.btn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: hotpink;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px
+  text-decoration: none;
+}  
+
+
+
+
+  
+
+  
