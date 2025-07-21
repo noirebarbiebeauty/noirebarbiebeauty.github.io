@@ -1,116 +1,64 @@
-/* Background Color */
-body {
-  background: linear-gradient[to bottom, #fffdf3, fff2d1];
-  font-family: Arial, sans-serif;
-  color: #2c1f1f;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
 
+  <!-- LOGO -->
+  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
 
-/* Main Logo Styling */
-.main-logo {
-  width: 200px;
-  margin: 40px auto 10px;
-  display: block;
-  filter: drop-shadow(0 0 15px#ff69b4);
-  animation: shimmer 3s infinite;
-  transition: transform 0.3s ease;
-  z-index: 2;
-}
+  <!-- WELCOME SECTION -->
+  <section class="welcome">
+    <h1>Welcome to Noire Barbie Beauty</h1>
+    <p>Where beauty meets the Barbie standard ✨</p>
+  </section>
 
-/* Welcome Section */
-.welcome {
-  font-size:2.5rem;
-  font-weight: 800;
-  margin-top: 1rem;
-}
+  <!-- SERVICES SECTION -->
+  <section class="services-cloud">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Wig Sales: Human Hair & Premium Blends</li>
+      <li>Wig Installations & Revamps</li>
+      <li>Soft & Full Glam Makeup</li>
+    </ul>
+  </section>
 
-.welcome h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #e91e63;
-}
+  <!-- WIG GALLERY -->
+  <section class="barbie-gallery">
+    <h2>Shop Our Barbie Approved Units</h2>
 
-.welcome p {
-  font-size: 1.2rem;
-  color: #444;
-}
+    <!-- Wig 1 -->
+    <div class="wig-card">
+      <img src="images/yakistraight30.png" alt="Yaki Straight 30 Inch">
+      <h4>Yaki Straight 30"</h4>
+      <p class="price">R900</p>
+      <p>Perfectly natural texture with a sleek finish. Can be curled too!</p>
+      <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
+    </div>
 
-/* Services Cloud-Like Box */
-.services-cloud {
-  background-color: #ffc0cb;
-  border-radius: 40px;
-  padding: 2rem;
-  margin: 3rem auto;
-  width: 90%;
-  max-width: 700px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
-}
+    <!-- Wig 2 -->
+    <div class="wig-card">
+      <img src="images/bobff10.png" alt="Bob Frontal 10 Inch">
+      <h4>Bob Frontal 10"</h4>
+      <p class="price">R1000</p>
+      <p>Bold, clean, and always in season. Slay short looks!</p>
+      <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
+    </div>
 
-.services-cloud h2 {
-  color: #000;
-  font-size: 2rem;
-  font-weight: bold
-}
-.services-cloud ul{
-  list-style: none;
-  padding: 0;
-  font-size: 1.1rem;
-  line-heigt: 2;
-}
-/* Wig Card Gallery */
-.barbie-gallery {
-  padding: 2rem;
-  background-color: #fffaf5;
-  border-top: 4px solid hotpink;
-  text-align: center;
-  .barbie-gallery h2 {
-    font-size: 2rem;
-    color: #e91e63;
-    font-weight: bold;
-}
-.wig-card {
-  background: #fff;
-  border: 2px solid gold;
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 2rem auto;
-  max-width: 400px;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
-}
+    <!-- Wig 3 -->
+    <div class="wig-card">
+      <img src="images/blacktopginger30.png" alt="Black Top Ginger 30 Inch">
+      <h4>Black Top Ginger 30"</h4>
+      <p class="price">R900</p>
+      <p>A fiery blend of ginger with dark roots. Hot girl energy 🔥</p>
+      <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
+    </div>
 
-.wig-card img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px pink;
-}
+  </section>
 
-.wig-card h4 {
-  color: #d81b60;
-  font-size: 1.3rem;
-}
-
-.price {
-  font-weight: bold;
-  color: gold;
-}
-
-.btn {
-  margin-top: 10px;
-  display: inline-block;
-  background-color: hotpink;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 10px
-  text-decoration: none;
-}  
-
-
-
-
-  
-
-  
+</body>
+</html>
