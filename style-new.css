@@ -141,3 +141,52 @@ footer {
   text-align: center;
   margin-top: 4rem;
 }
+/* --- About Section Styling --- */
+.about-section, .services-table {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fffdf3;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.1);
+}
+
+.about-section h2, .services-table h2 {
+  color: #e91e63;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.services-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.services-table th, .services-table td {
+  border: 1px solid #ffc0cb;
+  padding: 1rem;
+  text-align: center;
+}
+
+.services-table th {
+  background-color: #ffe4ec;
+  color: #000;
+}
+
+.services-table td {
+  background-color: #fffafc;
+}
+
+
+
+
+
+
+
