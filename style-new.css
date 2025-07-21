@@ -1,14 +1,42 @@
 /* ===== Background and Body Styling ===== */
 body {
-  background: linear-gradient(to bottom, #fffdf3, #fff2d1); /* soft goldish white */
+  background-color: #121212; /* Matte black base */
+  background-image:
+    radial-gradient(circle at 25% 25%, #ff69b4 15%, transparent 40%),
+    radial-gradient(circle at 75% 75%, #ff1493 15%, transparent 40%);
+  background-blend-mode: screen;
   font-family: Arial, sans-serif;
-  color: #2c1f1f;
+  color: #f8bbd0;
   text-align: center;
   margin: 0;
   padding: 0;
   position: relative;
+  overflow-x: hidden;
 }
 
+/* Sparkle overlay */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 2px, transparent 3px),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6) 2px, transparent 3px),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.7) 2px, transparent 3px);
+  background-size: 100px 100px;
+  animation: sparkle 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: 0 0, 50px 50px, 100px 100px;
+  }
+  100% {
+    background-position: 100px 100px, 0 0, 50px 50px;
+  }
+}
 /* ===== Logo Styling ===== */
 .logo-wrapper {
   margin-top: 30px;
