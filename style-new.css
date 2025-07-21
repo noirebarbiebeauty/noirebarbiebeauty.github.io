@@ -81,27 +81,16 @@ body {
 }
 
 /* ===== Barbie Approved Gallery ===== */
-
 .barbie-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
   background-color: #fffaf5;
   border-top: 4px solid hotpink;
   text-align: center;
-}
-
-.barbie-gallery h2 {
-  font-size: 2rem;
-  color: #e91e63;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
-
-.wig-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .wig-card {
@@ -114,31 +103,24 @@ body {
 }
 
 .wig-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .wig-card img {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 0 10px pink;
+  transition: transform 0.3s ease;
 }
 
 .wig-card h4 {
   color: #d81b60;
   font-size: 1.3rem;
-  margin: 0.8rem 0 0.3rem;
-}
-
-.wig-card p {
-  font-size: 1rem;
-  color: #444;
 }
 
 .price {
-  display: block;
   font-weight: bold;
   color: gold;
-  margin-top: 0.5rem;
 }
 
 .btn {
@@ -149,11 +131,7 @@ body {
   padding: 8px 12px;
   border-radius: 10px;
   text-decoration: none;
-}.btn:hover {
-  background-color: #ff1493;
-  transform: scale(1.05);
 }
-
 /* ===== Footer ===== */
 footer {
   background-color: #111;
