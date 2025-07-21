@@ -1,93 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Noire Barbie Beauty</title>
-  <link rel="stylesheet" href="style-new.css">
-</head>
-<body>
+/* Background Color */
+body {
+  background: linear-gradient(to bottom, #fffdf3, #fff2d1);
+  font-family: Arial, sans-serif;
+  color: #2c1f1f;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
-  <!-- Logo -->
-  <img src="./images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo" />
+/* Main Logo Styling */
+.main-logo {
+  width: 200px;
+  margin: 40px auto 10px;
+  display: block;
+  filter: drop-shadow(0 0 15px #ff69b4);
+  animation: shimmer 3s infinite;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
 
-  <!-- Welcome Message -->
-  <section class="welcome-section">
-    <h1 class="welcome">Welcome to Noire Barbie Beauty</h1>
-    <p>Your one-stop glam shop for wigs, beauty, and Barbie-approved looks.</p>
-  </section>
+/* Welcome Section */
+.welcome {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  color: #e91e63;
+}
 
-  <!-- Our Services Section -->
-  <section class="services-box">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Wig Sales – HHB and HH</li>
-      <li>Wig Installations</li>
-      <li>Wig Revamps</li>
-      <li>Soft & Full Glam Makeup</li>
-    </ul>
-  </section>
+.welcome p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
 
-  <!-- Barbie Approved Units Gallery -->
-  <section class="barbie-gallery">
-    <h2>Shop Our Barbie Approved Units</h2>
+/* Services Cloud-Like Box */
+.services-cloud {
+  background-color: #ffc0cb;
+  border-radius: 40px;
+  padding: 2rem;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
 
-    <div class="wig-card">
-      <img src="./images/yakistraight30.png" alt="Yaki Straight 30”">
-      <h4>Yaki Straight 30”</h4>
-      <p>Best Seller! Full frontal, silky finish</p>
-      <span class="price">R900</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+.services-cloud h2 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+}
 
-    <div class="wig-card">
-      <img src="./images/bobff10.png" alt="Bob FF 10”">
-      <h4>Bob Full Frontal 10”</h4>
-      <p>Classic cut with full frontal</p>
-      <span class="price">R1000</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+.services-cloud ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 2;
+}
 
-    <div class="wig-card">
-      <img src="./images/blacktopginger30.png" alt="Black Top Ginger 30”">
-      <h4>Black Top Ginger 30”</h4>
-      <p>Elegant dark roots, rich ginger ends</p>
-      <span class="price">R900</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+/* Wig Card Gallery */
+.barbie-gallery {
+  padding: 2rem;
+  background-color: #fffaf5;
+  border-top: 4px solid hotpink;
+  text-align: center;
+}
 
-    <div class="wig-card">
-      <img src="./images/caramelbrown30.png" alt="Caramel Brown 30">
-      <h4>Caramel Brown 30”</h4>
-      <p>Classic bounce with full frontal</p>
-      <span class="price">R900</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+.barbie-gallery h2 {
+  font-size: 2rem;
+  color: #e91e63;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
 
-    <div class="wig-card">
-      <img src="./images/pianobrown30.png" alt="Piano Brown 30">
-      <h4>Piano Brown 30”</h4>
-      <p>Baddie stripe with 5x5 frontal</p>
-      <span class="price">R800</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+.wig-card {
+  background: #fff;
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+}
 
-    <div class="wig-card">
-      <img src="./images/tipbouncy22.png" alt="Tip Bouncy Closure">
-      <h4>Tip Bouncy</h4>
-      <p>Elegant straight closure, bouncy ends</p>
-      <span class="price">R700</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+.wig-card img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px pink;
+}
 
-    <div class="wig-card">
-      <img src="./images/redginger30.png" alt="Red Ginger 30">
-      <h4>Red Ginger 30”</h4>
-      <p>Fiery Barbie full frontal</p>
-      <span class="price">R900</span>
-      <a href="https://wa.me/27683032091" class="btn">DM / WhatsApp to order</a>
-    </div>
+.wig-card h4 {
+  color: #d81b60;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
 
-  </section>
+.wig-card p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
 
-</body>
-</html>
+.price {
+  font-weight: bold;
+  color: gold;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: hotpink;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+}
