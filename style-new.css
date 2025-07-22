@@ -191,7 +191,22 @@ footer {
   line-height: 1.6;
 }
 
+.thumbnail-row {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
 
+.thumbnail {
+  width: 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
+.thumbnail:hover {
+  transform: scale(1.1);
+}
 
 
