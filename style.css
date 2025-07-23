@@ -1,137 +1,86 @@
-/* ===== Background and Body Styling ===== */
-body {
-  background-color: #121212; /* Matte black base */
-  background-image:
-    radial-gradient(circle at 25% 25%, #ff69b4 15%, transparent 40%),
-    radial-gradient(circle at 75% 75%, #ff1493 15%, transparent 40%);
-  background-blend-mode: screen;
-  backgrond-size: cover;
-  background-attachment: fixed;
-  font-family: Arial, sans-serif;
-  color: #f8bbd0;
-  text-align: center;
+/* GENERAL RESET */
+* {
   margin: 0;
   padding: 0;
-  position: relative;
-  overflow-x: hidden;
-}.wig-card h4 {
-  text-align: center;
-  margin-top: 10px;
+  box-sizing: border-box;
 }
 
-/* Sparkle overlay */
-body::after {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 2px, transparent 3px),
-    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6) 2px, transparent 3px),
-    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.7) 2px, transparent 3px);
-  background-size: 100px 100px;
-  animation: sparkle 12s linear infinite;
-  z-index: 0;
+/* BODY */
+body.theme-dark {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom right, #000000, #ffb6c1);
+  background-attachment: fixed;
+  background-blend-mode: screen;
 }
 
-@keyframes sparkle {
-  0% {
-    background-position: 0 0, 50px 50px, 100px 100px;
-  }
-  100% {
-    background-position: 100px 100px, 0 0, 50px 50px;
-  }
-}
-/* ===== Logo Styling ===== */
-.logo-wrapper {
-  margin-top: 30px;
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .main-logo {
   width: 180px;
-  border-radius: 12px;
-  border: 3px solid gold;
-  box-shadow: 0 0 20px gold, 0 0 30px hotpink;
-  animation: glowPulse 3s infinite alternate;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  filter: drop-shadow(0 0 15px #ffc0cb);
 }
 
-/* ===== Glow Animation ===== */
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 10px gold, 0 0 15px hotpink;
-  }
-  100% {
-    box-shadow: 0 0 25px gold, 0 0 40px hotpink;
-  }
-}
-
-/* ===== Welcome Section ===== */
-.welcome {
-  font-weight: 800;
-  margin: 1rem 20px 3rem;
-}
-
-.welcome h1 {
-  font-size: 2.8rem;
-  color: #e91e63;
-}
-
-.welcome p {
-  font-size: 1.3rem;
-  color: #444;
-}
-
-/* ===== Services Section - Pink Cloud Box ===== */
-.services-cloud {
-  background-color: #ffc0cb;
-  border-radius: 40px;
-  padding: 2rem 3rem;
-  margin: 0 auto 4rem;
-  max-width: 700px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
-  text-align: left;
-  color: #000;
-}
-
-.services-cloud h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.services-cloud ul {
+/* NAV */
+nav ul {
   list-style: none;
-  padding-left: 0;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  display: flex;
+  gap: 20px;
 }
 
-.services-cloud li {
-  margin: 0.6rem 0;
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* ===== Barbie Approved Gallery ===== */
-.barbie-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-  background-color: #fffaf5;
-  border-top: 4px solid hotpink;
+nav a:hover,
+nav a.active {
+  color: #ff69b4;
+}
+
+/* SECTION TITLES */
+.shop-section {
+  padding: 40px 20px;
   text-align: center;
 }
 
+.shop-section h1 {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.shop-section h2 {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin: 40px 0 20px;
+}
+
+/* WIG GALLERY */
+.wig-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+/* WIG CARD */
 .wig-card {
-  background: #fff;
-  border: 2px solid gold;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -139,433 +88,74 @@ body::after {
   transform: scale(1.03);
 }
 
+/* WIG IMAGES */
 .wig-card img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px pink;
-  transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
-.wig-card h4 {
-  color: #d81b60;
-  font-size: 1.3rem;
-}
-
-.price {
-  font-weight: bold;
-  color: gold;
-}
-
-.btn {
-  margin-top: 10px;
-  display: inline-block;
-  background-color: hotpink;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-/* ===== Footer ===== */
-footer {
-  background-color: #111;
-  color: gold;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  text-align: center;
-  margin-top: 4rem;
-}
-/* --- About Section Styling --- */
-.about-section, .services-table {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: #fffdf3;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.1);
-}
-
-.about-section h2, .services-table h2 {
-  color: #e91e63;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.about-section p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-.thumbnail-row {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
+/* THUMBNAIL CLASS */
 .thumbnail {
-  width: 60px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  border: 2px solid #ff69b4;
 }
 
-.thumbnail:hover {
-  transform: scale(1.1);
+/* YAKI SPECIAL LAYOUT */
+.wig-card.yaki-front {
+  width: 300px;
 }
 
-@media (max-width: 768px) {
-  .wig-card {
-    max-width: 90%;
-    margin: 1rem auto;
-  }
-
-  .thumbnail-row {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .thumbnail {
-    width: 50px;
-  }
-}
-/* Mobile Responsive Gallery */
-@media (max-width: 768px) {
-  .wig-card {
-    max-width: 90%;
-    margin: 1rem auto;
-  }
-
-  .wig-card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .barbie-gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .wig-card h4 {
-    font-size: 1.1rem;
-  }
-
-  .price {
-    font-size: 1rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-  }
-.owner-photo {
-  width: 250px;
-  max-width: 90%;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
-  transition: transform 0.3s ease;
+.yaki-side-back-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.owner-photo:hover {
-  transform: scale(1.05);
-}/* SHOP PAGE STYLES */
-.shop-section {
-  padding: 2rem;
-  text-align: center;
-  background: linear-gradient(to bottom, #fffdf3, #fff2d1);
+.yaki-side-back-wrapper img {
+  width: 100px;
+  border: 2px solid #ff69b4;
+  border-radius: 8px;
 }
 
-.shop-section h1 {
-  font-size: 2.5rem;
-  color: hotpink;
-  margin-bottom: 2rem;
-}
-
-.shop-section h2 {
-  font-size: 2rem;
-  color: #2c1f1f;
-  margin: 2rem 0 1rem;
-  border-bottom: 2px dashed pink;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.wig-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-  padding: 0 1rem;
-}
-
-.wig-card {
-  background: white;
-  border: 2px solid gold;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
-  text-align: center;
-}
-
-.wig-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px pink;
-}
-
+/* TEXT ELEMENTS */
 .wig-card h4 {
   font-size: 1.2rem;
-  color: #d81b60;
-  margin-top: 0.5rem;
+  color: #fff;
+  margin-top: 10px;
 }
 
 .price {
-  color: gold;
+  color: #ffd700;
   font-weight: bold;
-  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  margin: 5px 0;
 }
 
+/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: hotpink;
-  color: white;
-  border-radius: 10px;
+  margin-top: 8px;
+  background-color: #ff69b4;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-}  
-  /* Page Intro */
-.page-intro {
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffc0cb;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #ffb6c1;
   text-align: center;
-  padding: 2rem;
-  background: #fff0f5;
-}
-.page-intro h1 {
-  font-size: 2.5rem;
-  color: #e91e63;
-}
-.page-intro p {
-  font-size: 1.2rem;
-  color: #444;
-}
-
-/* Makeup Gallery Grid */
-.gallery-section {
-  padding: 2rem;
-}
-.gallery-section h2 {
-  text-align: center;
-  color: hotpink;
-  margin-bottom: 1rem;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 0 2rem;
-}
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ff69b4aa;
-  transition: transform 0.3s;
-}
-.gallery-grid img:hover {
-  transform: scale(1.03);
-}
-
-/* Coming Soon Section */
-.products-coming {
-  padding: 2rem;
-  background: #ffe4ec;
-  text-align: center;
-}
-.products-coming h2 {
-  color: #c2185b;
-}
-.products-coming p {
-  font-size: 1rem;
-  color: #555;
-}
-/* === Dark Theme Background and Styling === */
-body.theme-dark {
-  background: linear-gradient(to bottom, #fffdf3, #fff2d1); /* soft goldish white */
-  color: #333;
-  font-family: 'Poppins', sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
-/* Make images responsive */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Optional: Adjust section spacing */
-section {
   padding: 20px;
-}
-
-/* Optional: Style welcome section if needed */
-.welcome {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.owner-photo {
-  width: 200px;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
-}
-  body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #000000 60%, #ff69b4 100%);
-  background-size: cover;
-  background-attachment: fixed;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-}
-  body::before [
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-images: url['https://www.transparenttextures.com/patterns/stardust.png'];
-    opacity: 0.08; /* SUBTLE shimmer */
-    pointer-events: none;
-    z-index: 0;
-}
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 15px pink;
-}
-.wig-card img.thumbnail {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.wig-card img.thumbnail:hover {
-  transform: scale(1.03);
-}.angle-gallery {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.angle-gallery img {
-  width: 100px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.angle-gallery img:hover {
-  transform: scale(1.05);
-}.angle-gallery {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.angle-gallery img {
-  width: 80px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(255, 192, 203, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.angle-gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* Main wig image styling */
-.main-wig-img {
-  width: 200px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
-  display: block;
-  margin: 0 auto 10px auto;
-}
-
-/* Angle views */
-.angle-gallery {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.angle-gallery img {
-  width: 80px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(255, 192, 203, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.angle-gallery img:hover {
-  transform: scale(1.05);
-}
-/* Make main image larger on all screens */
-.main-wig-img {
-  width: 220px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
-  display: block;
-  margin: 0 auto 10px auto;
-}
-
-/* Thumbnails for side/back views */
-.angle-gallery {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.angle-gallery img {
-  width: 80px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(255, 192, 203, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.angle-gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* 🔒 Mobile fix: Ensure main stays bigger than thumbnails */
-@media (max-width: 480px) {
-  .main-wig-img {
-    width: 200px;
-  }
-
-  .angle-gallery img {
-    width: 70px;
-  }
+  margin-top: 50px;
+  font-size: 0.9rem;
 }
