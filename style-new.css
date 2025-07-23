@@ -1,3 +1,4 @@
+
 /* ===== Background and Body Styling ===== */
 body {
   background-color: #121212; /* Matte black base */
@@ -209,4 +210,18 @@ footer {
   transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+  .wig-card {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
 
+  .thumbnail-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .thumbnail {
+    width: 50px;
+  }
+}
