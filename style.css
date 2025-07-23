@@ -457,4 +457,22 @@ section {
 
 .wig-card img.thumbnail:hover {
   transform: scale(1.03);
+}.angle-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.angle-gallery img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.angle-gallery img:hover {
+  transform: scale(1.05);
 }
