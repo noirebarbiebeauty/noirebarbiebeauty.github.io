@@ -12,6 +12,21 @@ body.theme-dark {
   background: linear-gradient(to bottom right, #000000, #ffb6c1);
   background-attachment: fixed;
   background-blend-mode: screen;
+body::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left; 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/shimmer.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-postion: center;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 /* HEADER */
