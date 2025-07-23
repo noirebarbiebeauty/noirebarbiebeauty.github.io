@@ -178,3 +178,7 @@ footer {
   margin-top: 50px;
   font-size: 0.9rem;
 }
+.main-logo {
+  width: 180px;
+  filter: drop-shadow(0 0 15px #ffc0cb);
+}
