@@ -497,3 +497,34 @@ section {
 .angle-gallery img:hover {
   transform: scale(1.05);
 }
+
+/* Main wig image styling */
+.main-wig-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* Angle views */
+.angle-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.angle-gallery img {
+  width: 80px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(255, 192, 203, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.angle-gallery img:hover {
+  transform: scale(1.05);
+}
