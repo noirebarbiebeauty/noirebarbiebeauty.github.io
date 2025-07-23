@@ -266,4 +266,71 @@ footer {
 
 .owner-photo:hover {
   transform: scale(1.05);
+}/* SHOP PAGE STYLES */
+.shop-section {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #fffdf3, #fff2d1);
 }
+
+.shop-section h1 {
+  font-size: 2.5rem;
+  color: hotpink;
+  margin-bottom: 2rem;
+}
+
+.shop-section h2 {
+  font-size: 2rem;
+  color: #2c1f1f;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px dashed pink;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.wig-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.wig-card {
+  background: white;
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+  text-align: center;
+}
+
+.wig-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px pink;
+}
+
+.wig-card h4 {
+  font-size: 1.2rem;
+  color: #d81b60;
+  margin-top: 0.5rem;
+}
+
+.price {
+  color: gold;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: hotpink;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}  
