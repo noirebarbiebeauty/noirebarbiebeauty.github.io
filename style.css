@@ -182,3 +182,30 @@ footer {
   width: 180px;
   filter: drop-shadow(0 0 15px #ffc0cb);
 }
+/* CLIENT GALLERY */
+.client-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.client-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  width: 260px;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.client-card:hover {
+  transform: scale(1.02);
+}
+
+.client-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
