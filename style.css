@@ -14,6 +14,9 @@ body {
   padding: 0;
   position: relative;
   overflow-x: hidden;
+}.wig-card h4 {
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* Sparkle overlay */
