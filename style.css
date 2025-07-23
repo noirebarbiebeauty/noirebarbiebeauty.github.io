@@ -447,3 +447,14 @@ section {
   transition: transform 0.3s ease;
   box-shadow: 0 0 15px pink;
 }
+.wig-card img.thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.wig-card img.thumbnail:hover {
+  transform: scale(1.03);
+}
