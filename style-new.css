@@ -225,3 +225,34 @@ footer {
     width: 50px;
   }
 }
+/* Mobile Responsive Gallery */
+@media (max-width: 768px) {
+  .wig-card {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .wig-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .barbie-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .wig-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
