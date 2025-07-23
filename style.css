@@ -5,6 +5,8 @@ body {
     radial-gradient(circle at 25% 25%, #ff69b4 15%, transparent 40%),
     radial-gradient(circle at 75% 75%, #ff1493 15%, transparent 40%);
   background-blend-mode: screen;
+  backgrond-size: cover;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
   color: #f8bbd0;
   text-align: center;
