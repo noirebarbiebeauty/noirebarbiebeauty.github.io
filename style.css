@@ -288,3 +288,8 @@ footer {
 .makeup-card .btn:hover {
   background-color: #ffc0cb;
 }
+.rating-stars {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
