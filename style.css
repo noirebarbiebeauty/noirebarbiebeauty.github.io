@@ -209,3 +209,82 @@ footer {
   border-radius: 8px;
   object-fit: cover;
 }
+.makeup-products-section {
+  padding: 50px 20px;
+  background-color: #111; /* matte black */
+  text-align: center;
+}
+
+.makeup-products-section h2 {
+  font-size: 2.3rem;
+  color: #ff69b4;
+  margin-bottom: 30px;
+}
+
+.makeup-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.makeup-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.makeup-card:hover {
+  transform: scale(1.03);
+}
+
+.makeup-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-sub-gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.product-sub-gallery img {
+  width: 80px;
+  border-radius: 8px;
+  border: 2px solid #ff69b4;
+}
+
+.makeup-card h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.makeup-card .price {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.makeup-card .btn {
+  background-color: #ff69b4;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.makeup-card .btn:hover {
+  background-color: #ffc0cb;
+}
