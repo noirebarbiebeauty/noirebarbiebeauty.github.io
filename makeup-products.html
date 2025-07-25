@@ -365,15 +365,20 @@
    <h2 class="section-title">Shop Our Barbie-Approved Makeup Products</h2>
      <h2> ADVENTURE MAKEUP COLLECTION</h2>
    <div class="makeup-gallery">
-      <!-- BEST SKIN FOUNDATION -->
-    <div class="makeup-card"> 
-      <a href="images/bestskin1.jpg" data-lightbox="makeup" data-title="Best Skin Foundation">
-       <img src="images/bestskin1.jpg" alt="bestskin" />
+     <!-- BEST SKIN FOUNDATION -->
+    <div class="product" data-price="200">
+      <a href="images/bestskin1.jpg" data-lightbox="makeup" data-title="Best">
+        <img src="images/bestskin1.jpg" data-lightbox="makeup" data-title="best">
+        <img src="images/bestskin2.jpg" data-lightbox="makeup" data-title="best">
+        <img src="image/bestskin3.jpg" data-lightbox="makeup" data-title="besr" />
       </a>
-      </h4>Best Skin Foundation</h4>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <button class="add-to-cart" onclick="addToCart('Best Skin')">Add to Cart</button>
-    </div>
+      <div class="product-name">BEST SKIN FOUNDATION</div>
+      <div class="price">R200</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-best">Quantity:</label>
+      <input type="number" id="qty-best" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-best')">Add to Cart</button>
+    </div>     
         <!-- Concealer Pallet -->
     <div class="product" data-price="400">
       <a href="images/concealerpallet1.jpg" data-lightbox="makeup" data-title="Concealer Palette">
