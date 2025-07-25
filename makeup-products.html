@@ -377,7 +377,7 @@
       <div class="stars">⭐⭐⭐⭐</div>
       <label class="quantity-label" for="qty-best">Quantity:</label>
       <input type="number" id="qty-best" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-best')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-best skin foundation')">Add to Cart</button>
     </div>     
         <!-- Concealer Pallet -->
     <div class="product" data-price="400">
@@ -404,7 +404,7 @@
       <div class="stars">⭐⭐⭐⭐</div>
       <label class="quantity-label" for="qty-bronzer-palette">Quantity:</label>
       <input type="number" id="qty-bronzer-palette" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-bronzer-palette')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Blush Bronzer Pallet', 'qty-bronzer-palette')">Add to Cart</button>
     </div>
     <!-- Add more products below with similar structure and prices -->
   </div>
@@ -488,6 +488,26 @@
     // Initially hide cart count if empty
     updateCartCount();
   </script>
+   <script>
+  let cartItems = [];
+
+  function addToCart(productName) {
+    cartItems.push(productName);
+    alert(`${productName} added to cart!`);
+  }
+
+  function checkout() {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty, Barbie!");
+      return;
+    }
+    const message = encodeURIComponent(
+      "Hi Noire Barbie Beauty 💖 I’d like to order:\n\n" +
+      cartItems.map((item, index) => `• ${item}`).join('\n')
+    );
+    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+  }
+</script>
 </body>
 </html>
                                                                                                                      
