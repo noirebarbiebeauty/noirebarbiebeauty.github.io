@@ -2,6 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Makeup Gallery - Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(black, #1a1a1a);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff99cc;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      aspect-ratio: 3/4;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .client-name {
+      margin-top: 12px;
+      color: #ffccf9;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .product-used {
+      font-size: 14px;
+      color: #ffb3da;
+      margin-top: 6px;
+    }
+
+    .order-btn {
+      margin-top: 10px;
+      background: #ff66b2;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .order-btn:hover {
+      background: #e60073;
+    }
+  </style>
+</head>
+<body>
+  <h1>💋 Our Barbie Beauties – Client Gallery 💄</h1>
+
+  <div class="gallery-grid">
+    <!-- dee -->
+    <div class="gallery-item">
+      <a href="images/dee1.jpg" data-lightbox="clients" data-title="Full Glam by Noire Barbie Beauty">
+        <img src="images/dee1.jpg" alt="dee">
+        <img src="images/dee2.jpg" alt="dee">
+        <img src="images/dee3.jpg" alt="dee" />
+      </a>
+      <div class="dee">Soft Glam – Dee</div>
+      <div class="product-used">Used: Barbie Gloss & Glow Palette</div>
+      <button class="order-btn" onclick="orderNow('Barbie Gloss & Glow Palette')">Order Product</button>
+    </div>
+
+    <!-- ira-->
+    <div class="gallery-item">
+      <a href="images/ira.jpg" data-lightbox="clients" data-title="Bold Look by Noire Barbie Beauty">
+        <img src="images/ira.jpg" alt="ira">
+        <img src="images/ira1.jpg" alt="ira">
+        <img src="images/ira2.jpg" alt="ira" />
+      </a>
+      <div class="ira">Bold Glam – ira</div>
+      <div class="product-used">Used: Waterproof Brow Pencil</div>
+      <button class="order-btn" onclick="orderNow('Waterproof Brow Pencil')">Order Product</button>
+    </div>
+
+    <!-- gh-->
+    <div class="gallery-item">
+      <a href="images/gh.jpg" data-lightbox="gh" data-title="Subtle Glow by Noire Barbie Beauty">
+        <img src="images/gh.jpg" alt="gh">
+        <img src="images/gh1.jpg" alt="gh">
+        <img src="images/gh2.jpg" alt="gh" />
+      </a>
+      <div class="client-name">Subtle Glow – gh</div>
+      <div class="product-used">Used: Concealer Palette</div>
+      <button class="order-btn" onclick="orderNow('Concealer Palette')">Order Product</button>
+    </div>
+
+    <!-- Add more client looks below -->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <script>
+    function orderNow(productName) {
+      const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a look I love! I'd like to order: ${productName}`);
+      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Makeup | Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css">
