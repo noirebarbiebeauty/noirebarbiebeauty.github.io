@@ -297,3 +297,33 @@ footer {
 .rating-stars {
   text-align: center;
 }
+.makeup-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.makeup-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.makeup-card h4 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff69b4;
+}
+.rating-stars {
+  font-size: 14px;
+  color: gold;
+}
+.btn {
+  display: inline-block;
+  margin-top: 5px;
+  background: #ff69b4;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
