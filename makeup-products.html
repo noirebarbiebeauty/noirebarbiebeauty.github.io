@@ -64,17 +64,304 @@
     <div class="client-item"><a href="images/gd1.jpg" data-lightbox="gallery"><img src="images/gd1.jpg" alt=""></a></div>
     <div class="client-item"><a href="images/gd2.jpg" data-lightbox="gallery"><img src="images/gd2.jpg" alt=""></a></div
     
-  
 
-<section class="makeup-products-section">
-  <h2>💋 NOIRE BARBIE BEAUTY AFFORDABLE NIGERIAN MAKEUP PRODUCTS 💋</h2>
-  <h2>✨ Shop Adventure Makeup Collection 🛍️✨</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Makeup Products - Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(black, #1a1a1a);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
 
-  <div class="makeup-gallery-grid">
+    h1 {
+      text-align: center;
+      color: #ff99cc;
+      font-size: 36px;
+      margin-bottom: 10px;
+      position: relative;
+    }
 
-    <!-- Best Skin Foundation -->
-    <div class="makeup-item">
-      <a href="images/bestskin1.jpg" data-lightbox="product1" data-title="Best Skin Foundation">
+    /* Cart count bubble */
+    #cart-count {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: #ff66b2;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff66b2;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: 0 0 8px #ff66b2;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 1000;
+    }
+
+    .notification.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .makeup-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 0 10px;
+      margin-top: 30px;
+    }
+
+    .product {
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .product img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-name {
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #ffccf9;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #ff66b2;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 14px;
+    }
+
+    .quantity-label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-size: 14px;
+      color: #ffccf9;
+      font-weight: 600;
+    }
+
+    .quantity-input {
+      width: 50px;
+      padding: 4px 6px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: none;
+      text-align: center;
+    }
+
+    .add-to-cart {
+      margin-top: 8px;
+      padding: 6px 12px;
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .add-to-cart:hover {
+      background-color: #e60073;
+    }
+
+    .checkout-btn {
+      display: block;
+      margin: 40px auto 0;
+      padding: 12px 24px;
+      background-color: #ff66b2;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checkout-btn:hover {
+      background-color: #e60073;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Shop Our Barbie-Approved Makeup 💄
+    <div id="cart-count" title="Items in cart">0</div>
+  </h1>
+
+  <div class="makeup-gallery">
+    <!-- BEST SKIN FOUNDATION -->
+    <div class="product" data-price="250">
+      <a href="images/bestskin1.jpg" data-lightbox="makeup" data-title="Best Skin Foundation">
+        <img src="images/bestskin1.jpg" alt="Best Skin Foundation">
+      </a>
+      <a href="images/bestskin2.jpg" data-lightbox="makeup" data-title="Best Skin"
+      <div class="product-name">Best Skin</div>
+      <div class="price">R250</div>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-best-skin">Quantity:</label>
+      <input type="number" id="qty-barbie-gloss" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Barbie Gloss', 'qty-best-skin')">Add to Cart</button>
+    </div>
+
+    <div class="product" data-price="400">
+      <a href="images/concealerpallet1.jpg" data-lightbox="makeup" data-title="Concealer Palette">
+        <img src="images/concealerpallet1.jpg" alt="Concealer Palette" />
+      </a>
+      <div class="product-name">Concealer Palette</div>
+      <div class="price">R400</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-concealer-palette">Quantity:</label>
+      <input type="number" id="qty-concealer-palette" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-concealer-palette')">Add to Cart</button>
+    </div>
+
+    <!-- Add more products below with similar structure and prices -->
+  </div>
+
+  <button class="checkout-btn" onclick="checkout()">Checkout on WhatsApp</button>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <script>
+    const cart = {};
+
+    const cartCountEl = document.getElementById('cart-count');
+    const notificationEl = document.getElementById('notification');
+
+    function updateCartCount() {
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      cartCountEl.textContent = totalItems;
+      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    }
+
+    function showNotification(message) {
+      notificationEl.textContent = message;
+      notificationEl.classList.add('show');
+      setTimeout(() => {
+        notificationEl.classList.remove('show');
+      }, 2500);
+    }
+
+    function addToCart(productName, quantityInputId) {
+      const qtyInput = document.getElementById(quantityInputId);
+      let qty = parseInt(qtyInput.value);
+      if (isNaN(qty) || qty < 1) {
+        qty = 1;
+        qtyInput.value = qty;
+      }
+
+      // Find product div by matching productName and get its price attribute
+      const productDiv = [...document.querySelectorAll('.product')].find(div => {
+        return div.querySelector('.product-name').textContent === productName;
+      });
+
+      const price = productDiv ? parseFloat(productDiv.getAttribute('data-price')) : 0;
+
+      if (cart[productName]) {
+        cart[productName].quantity += qty;
+      } else {
+        cart[productName] = { quantity: qty, price: price };
+      }
+      updateCartCount();
+      showNotification(`${productName} x${qty} added to cart!`);
+    }
+
+    function checkout() {
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      if (totalItems === 0) {
+        alert("Your cart is empty, Barbie!");
+        return;
+      }
+
+      let message = "Hi Noire Barbie Beauty 💖 I’d like to order:\n\n";
+      let totalCost = 0;
+
+      for (const [product, details] of Object.entries(cart)) {
+        const itemTotal = details.price * details.quantity;
+        totalCost += itemTotal;
+        message += `• ${product} x${details.quantity} (R${details.price.toFixed(2)} each) - R${itemTotal.toFixed(2)}\n`;
+      }
+      message += `\nTotal: R${totalCost.toFixed(2)}`;
+
+      message = encodeURIComponent(message);
+
+      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+
+      // Clear cart after checkout
+      for (const key in cart) delete cart[key];
+      updateCartCount();
+    }
+
+    // Initially hide cart count if empty
+    updateCartCount();
+  </script>
+</body>
+</html>
+                                                                                                                     
+                                                                                                                     
+                                                                                                                     
+                                                                                                                     
+                                                                                                                     
+                                                                                                                     
+                                                                                                                     
+                                                                                                                     
+
+    <section class="makeup-products-section">
+       <h2>💋 NOIRE BARBIE BEAUTY AFFORDABLE NIGERIAN MAKEUP PRODUCTS 💋</h2>
+    <h2>✨ Shop Adventure Makeup Collection 🛍️✨</h2>
+
+     <div class="makeup-gallery-grid">
+
+        <!-- Best Skin Foundation -->
+     <div class="makeup-item">
+        <a href="images/bestskin1.jpg" data-lightbox="product1" data-title="Best Skin Foundation">
         <img src="images/bestskin1.jpg" alt="Best Skin Front">
       </a>
       <a href="images/bestskin2.jpg" data-lightbox="product1" style="display:none;"></a>
@@ -85,7 +372,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Best%20Skin%20Foundation%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-    <!-- Concealer Pallet -->
+           <!-- Concealer Pallet -->
     <div class="makeup-item">
       <a href="images/concealerpallet1.jpg" data-lightbox="product2" data-title="Concealer Pallet 18 in 1">
         <img src="images/concealerpallet1.jpg" alt="Concealer Pallet Front">
@@ -98,19 +385,19 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Concealer%20Pallet%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-    <!-- Blush Bronzer Pallet -->
+         <!-- Blush Bronzer Pallet -->
     <div class="makeup-item">
       <a href="images/blushbronzerpallet1.jpg" data-lightbox="product3" data-title="Cream Blush Bronzer Pallet">
         <img src="images/blushbronzerpallet1.jpg" alt="Blush Bronzer Front">
       </a>
-      <a href="images/blushbronzerpallet2.jpg" data-lightbox="product3" style="display:none;"></a>
-      <h4>CREAM BLUSH BRONZER PALLET</h4>
-      <div class="rating-stars">★ ★ ★ ★ ☆</div>
-      <p class="price">R650</p>
-      <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Blush%20Bronzer%20Pallet%20%F0%9F%92%8B" class="btn">Add to Cart</a>
-    </div>
+       <a href="images/blushbronzerpallet2.jpg" data-lightbox="product3" style="display:none;"></a>
+       <h4>CREAM BLUSH BRONZER PALLET</h4>
+       <div class="rating-stars">★ ★ ★ ★ ☆</div>
+       <p class="price">R650</p>
+       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Blush%20Bronzer%20Pallet%20%F0%9F%92%8B" class="btn">Add to Cart</a>
+     </div>
 
-    <!-- Blush Pallet -->
+         <!-- Blush Pallet -->
     <div class="makeup-item">
       <a href="images/blushpallet.jpg" data-lightbox="product4" data-title="Blush Pallet">
         <img src="images/blushpallet.jpg" alt="Blush Pallet Front">
@@ -121,7 +408,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Blush%20Pallet%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-    <!-- Eyeshadow Pallet -->
+       <!-- Eyeshadow Pallet -->
     <div class="makeup-item">
       <a href="images/eyeshadowpalletmain.jpg" data-lightbox="product5" data-title="3 in 1 Eyeshadow Pallet">
         <img src="images/eyeshadowpalletmain.jpg" alt="Eye Shadow Front">
@@ -134,7 +421,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Eyeshadow%20Pallet%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-    <!-- Compact Powder -->
+        <!-- Compact Powder -->
     <div class="makeup-item">
       <a href="images/compactpowder.jpg" data-lightbox="product6" data-title="Compact Powder">
         <img src="images/compactpowder.jpg" alt="Compact Powder">
@@ -145,7 +432,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Compact%20Powder%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-    <!-- Dewy Fix -->
+        <!-- Dewy Fix -->
     <div class="makeup-item">
       <a href="images/dewyfix.jpg" data-lightbox="product7" data-title="Dewy Fix">
         <img src="images/dewyfix.jpg" alt="Dewy Fix">
@@ -156,7 +443,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Dewy%20Fix%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-    <!-- Eye Liner -->
+         <!-- Eye Liner -->
     <div class="makeup-item">
       <a href="images/eyeliner.jpg" data-lightbox="product8" data-title="Eye Liner">
         <img src="images/eyeliner.jpg" alt="Eye Liner">
@@ -167,10 +454,9 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20the%20Eye%20Liner%20%F0%9F%92%8B" class="btn">Add to Cart</a>
     </div>
 
-  </div>
-</section> 
+     </div>
 
-    <!-- EYE LINER GEL -->
+         <!-- EYE LINER GEL -->
     <div class="makeup-card">
       <a href="images/eyelinergel.jpg" data-lightbox="eyeliner" data-title="Eye Liner Gel - R100">
         <img src="images/eyelinergel.jpg" alt="Eye Liner Gel">
@@ -182,7 +468,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Eye%20Liner%20Gel%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- GLASTING GLOSS -->
+        <!-- GLASTING GLOSS -->
     <div class="makeup-card">
       <a href="images/glastingglossmain.jpg" data-lightbox="glasting" data-title="Glasting Gloss - R50">
         <img src="images/glastingglossmain.jpg" alt="Glasting Gloss">
@@ -195,7 +481,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Glasting%20Gloss%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- HEALTHY SKIN FOUNDATION -->
+      <!-- HEALTHY SKIN FOUNDATION -->
     <div class="makeup-card">
       <a href="images/healthyskinfoundation.jpg" data-lightbox="foundation" data-title="Healthy Skin Foundation - R130">
         <img src="images/healthyskinfoundation.jpg" alt="Healthy Skin Foundation">
@@ -208,7 +494,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I'd%20like%20to%20order%20Healthy%20Skin%20Foundation%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- LIP LOCK LIPSTICK -->
+        <!-- LIP LOCK LIPSTICK -->
     <div class="makeup-card">
       <a href="images/liplock.jpg" data-lightbox="liplock" data-title="Lip Lock Lipstick - R70">
         <img src="images/liplock.jpg" alt="Lip Lock Lipstick">
@@ -221,7 +507,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I'd%20like%20to%20order%20Lip%20Lock%20Lipstick%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- LIP PALLET 18-in-1 -->
+        <!-- LIP PALLET 18-in-1 -->
     <div class="makeup-card">
       <a href="images/lippallet.jpg" data-lightbox="lippallet" data-title="Lip Pallet 18-in-1 - R110">
         <img src="images/lippallet.jpg" alt="Lip Pallet">
@@ -233,7 +519,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20NBB%2C%20I'd%20like%20to%20order%20Lip%20Pallet%2018-in-1%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- MASCARA -->
+        <!-- MASCARA -->
     <div class="makeup-card">
       <a href="images/mascara.jpg" data-lightbox="mascara" data-title="Mascara - R75">
         <img src="images/mascara.jpg" alt="Mascara">
@@ -244,7 +530,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20NBB%2C%20I'd%20like%20to%20order%20the%20Mascara%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- MATTE PRIMER -->
+        <!-- MATTE PRIMER -->
     <div class="makeup-card">
       <a href="images/matteprimer.jpg" data-lightbox="primer" data-title="Matte Primer - R95">
         <img src="images/matteprimer.jpg" alt="Matte Primer">
@@ -255,7 +541,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20NBB%2C%20I'd%20like%20to%20order%20Matte%20Primer%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- MOISTURIZER -->
+        <!-- MOISTURIZER -->
     <div class="makeup-card">
       <a href="images/moisturizer.jpg" data-lightbox="moist" data-title="Moisturizer - R85">
         <img src="images/moisturizer.jpg" alt="Moisturizer">
@@ -266,7 +552,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I'd%20like%20to%20order%20the%20Moisturizer%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- POWDER PALLET -->
+        <!-- POWDER PALLET -->
     <div class="makeup-card">
       <a href="images/powderpallet.jpg" data-lightbox="powder" data-title="Powder Pallet - R120">
         <img src="images/powderpallet.jpg" alt="Powder Pallet">
@@ -278,7 +564,7 @@
       <a href="https://wa.me/27683032091?text=Hi%20NBB%2C%20I'd%20like%20to%20order%20Powder%20Pallet%20💋" class="btn">Add to Cart</a>
     </div>
 
-    <!-- PRO BLEND CONCEALER -->
+         <!-- PRO BLEND CONCEALER -->
     <div class="makeup-card">
       <a href="images/problendconcealer.jpg" data-lightbox="concealer" data-title="Pro Blend Concealer - R105">
         <img src="images/problendconcealer.jpg" alt="Pro Blend Concealer">
@@ -290,11 +576,10 @@
       <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I'd%20like%20to%20order%20Pro%20Blend%20Concealer%20💋" class="btn">Add to Cart</a>
     </div>
 
-   </div>
-  </section>      
+   </div>     
 
-    <!-- SETTING POWDER -->
-  <div class="makeup-card">
+        <!-- SETTING POWDER -->
+    <div class="makeup-card">
    <a href="images/settingpowder.jpg" data-lightbox="settingpowder" data-title="SETTING POWDER">
     <img src="images/settingpowder.jpg" alt="Setting Powder Front" />
   </a>
@@ -303,20 +588,20 @@
   <div class="rating-stars">★ ★ ★ ★ ☆</div>
   <p class="price">R95</p>
   <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Setting%20Powder%20💋" class="btn">Add to Cart</a>
-</div>
+   </div>
 
-  <!-- SMOOTHENING PRIMER -->
-  <div class="makeup-card">
-  <a href="images/smoothprimer.jpg" data-lightbox="smootheningprimer" data-title="SMOOTHENING PRIMER">
-    <img src="images/smoothprimer.jpg" alt="Smoothening Primer Front" />
-  </a>
-  <h4>SMOOTHENING PRIMER</h4>
-  <div class="rating-stars">★ ★ ★ ★ ☆</div>
-  <p class="price">R85</p>
-  <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Smoothening%20Primer%20💋" class="btn">Add to Cart</a>
-</div>
+      <!-- SMOOTHENING PRIMER -->
+     <div class="makeup-card">
+     <a href="images/smoothprimer.jpg" data-lightbox="smootheningprimer" data-title="SMOOTHENING PRIMER">
+     <img src="images/smoothprimer.jpg" alt="Smoothening Primer Front" />
+    </a>
+    <h4>SMOOTHENING PRIMER</h4>
+    <div class="rating-stars">★ ★ ★ ★ ☆</div>
+    <p class="price">R85</p>
+    <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Smoothening%20Primer%20💋" class="btn">Add to Cart</a>
+   </div>
 
-    <!-- SWEAT OIL -->
+       <!-- SWEAT OIL -->
 <div class="makeup-card">
   <a href="images/sweatoil.jpg" data-lightbox="sweatoil" data-title="SWEAT OIL">
     <img src="images/sweatoil.jpg" alt="Sweat Oil Front" />
@@ -341,7 +626,7 @@
 
      <!-- HEGAI & ESTHER COLLECTION -->
 <div class="makeup-card">
-  <a href="images/hegai_main.jpg" data-lightbox="hegaiandesthercollection" data-title="HEGAI & ESTHER COLLECTION">
+  <a href="images/hegai_main.jpg" data-lightbox="hegaiandesthercollection" data-title="HEGAI & ESTHER COLLECTION">  
     <img src="images/hegai_main.jpg" alt="HEGAI & ESTHER Collection Front" />
   </a>
   <a href="images/hegai_1.jpg" data-lightbox="hegaiandesthercollection" class="hidden"></a>
@@ -353,8 +638,8 @@
 </div>  
            
           <!-- Brow -->
-<div class="makeup-card multi-view">
-  <img src="images/brow.jpg" alt="Brow Front" />
+<div class="makeup-card">
+  <a href="images/brow.jpg" alt="Brow Front" />
   <div class="product-sub-gallery">
     <img src="images/brow1.jpg" alt="Brow Side" />
     <img src="images/brow2.jpg" alt="Brow Swatch" />
@@ -365,7 +650,7 @@
   <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Waterproof%20Eyebrow%20Definer%20💋" class="btn">Add to Cart</a>
 </div>
 
-<!-- ONYX GEL LINER -->
+     <!-- ONYX GEL LINER -->
 <div class="makeup-card multi-view">
   <img src="images/heeye.jpg" alt="Heeye Front" />
   <div class="product-sub-gallery"></div>
@@ -414,7 +699,7 @@
   <a href="https://wa.me/27683032091?text=Hi%20Noire%20Barbie%20Beauty%2C%20I%20want%20to%20order%20Lip%20Gloss%20💋" class="btn">Add to Cart</a>
 </div>
 
-<!-- LIP PENCIL -->
+   <!-- LIP PENCIL -->
 <div class="makeup-card multi-view">
   <img src="images/lipp.jpg" alt="Lip Pencil Front" />
   <div class="product-sub-gallery">
