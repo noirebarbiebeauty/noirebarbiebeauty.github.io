@@ -227,429 +227,252 @@
 
 
     
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Makeup Products - Noire Barbie Beauty</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Makeup - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
-    body {
-      background: linear-gradient(black, #1a1a1a);
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #ff99cc;
-      font-size: 36px;
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    /* Cart count bubble */
-    #cart-count {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      background: #ff66b2;
+    .cart-counter {
+      background-color: hotpink;
       color: white;
+      padding: 2px 8px;
       border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      line-height: 24px;
       font-weight: bold;
       font-size: 14px;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
+      margin-left: 10px;
     }
 
     .notification {
+      display: none;
       position: fixed;
       bottom: 20px;
-      right: 20px;
-      background: #ff66b2;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f06292;
       color: white;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      box-shadow: 0 0 8px #ff66b2;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      z-index: 1000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 9999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .notification.show {
-      opacity: 1;
-      pointer-events: auto;
+      display: block;
     }
 
-    .makeup-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 15px;
-      padding: 0 10px;
-      margin-top: 30px;
+    .checkout-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: deeppink;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     .product {
-      background-color: #2a2a2a;
-      border-radius: 12px;
-      padding: 10px;
-      text-align: center;
-      position: relative;
+      background-color: #1c1c1c;
+      color: white;
+      border: 1px solid #ff69b4;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px;
+      width: 250px;
     }
 
-    .product img {
+    .product-gallery img {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
       border-radius: 8px;
-      transition: transform 0.3s ease;
+      margin-bottom: 5px;
     }
 
-    .product:hover img {
-      transform: scale(1.05);
+    .makeup-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .product-name {
-      margin: 10px 0 5px;
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
       font-weight: bold;
-      color: #ffccf9;
-    }
-
-    .price {
-      font-size: 16px;
-      color: #ff66b2;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .stars {
-      color: gold;
-      font-size: 14px;
-    }
-
-    .quantity-label {
-      display: block;
-      margin-top: 10px;
-      margin-bottom: 4px;
-      font-size: 14px;
-      color: #ffccf9;
-      font-weight: 600;
     }
 
     .quantity-input {
       width: 50px;
-      padding: 4px 6px;
-      font-size: 14px;
-      border-radius: 6px;
-      border: none;
-      text-align: center;
+      margin: 5px 0;
     }
 
-    .add-to-cart {
-      margin-top: 8px;
-      padding: 6px 12px;
-      background-color: #ff66b2;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      font-size: 14px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .add-to-cart:hover {
-      background-color: #e60073;
-    }
-
-    .checkout-btn {
-      display: block;
-      margin: 40px auto 0;
-      padding: 12px 24px;
-      background-color: #ff66b2;
-      border: none;
-      border-radius: 25px;
-      color: white;
-      font-size: 16px;
+    .product-name {
       font-weight: bold;
-      cursor: pointer;
-      user-select: none;
+      margin: 8px 0 4px;
     }
 
-    .checkout-btn:hover {
-      background-color: #e60073;
+    .price {
+      color: #ffb6c1;
     }
   </style>
 </head>
 <body>
-  <h1>
-    <div id="cart-count" title="Items in cart">0</div>
-  </h1>       
- <section class="makeup-products-section">
+
+<section class="makeup-products-section">
   <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄
-<span id="cart-count" style="display: none;" class="cart-counter">0</span>
+    <span id="cart-count" style="display: none;" class="cart-counter">0</span>
   </h2>
   <h3 class="makeup-subheading">🛍️ ADVENTURE MAKEUP COLLECTION 🛍️</h3>
 
   <div class="makeup-gallery">
     
-  <!-- BEST SKIN FOUNDATION -->
-  <div class="product" data-price="200">
-    <div class="product-gallery">
-      <a href="images/bestskin1.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Front">
-        <img src="images/bestskin1.jpg" alt="Best Skin 1">
-      </a>
-      <a href="images/bestskin2.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Side">
-        <img src="images/bestskin2.jpg" alt="Best Skin 2">
-      </a>
-      <a href="images/bestskin3.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Swatch">
-        <img src="images/bestskin3.jpg" alt="Best Skin 3">
-      </a>
+    <!-- BEST SKIN FOUNDATION -->
+    <div class="product" data-price="200">
+      <div class="product-gallery">
+        <a href="images/bestskin1.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Front">
+          <img src="images/bestskin1.jpg" alt="Best Skin 1">
+        </a>
+        <a href="images/bestskin2.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Side">
+          <img src="images/bestskin2.jpg" alt="Best Skin 2">
+        </a>
+        <a href="images/bestskin3.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Swatch">
+          <img src="images/bestskin3.jpg" alt="Best Skin 3">
+        </a>
+      </div>
+      <div class="product-name">BEST SKIN FOUNDATION</div>
+      <div class="price">R200</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-best-skin">Quantity:</label>
+      <input type="number" id="qty-best-skin" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-best-skin')">Add to Cart</button>
     </div>
-    <div class="product-name">BEST SKIN FOUNDATION</div>
-    <div class="price">R200</div>
-    <div class="stars">⭐⭐⭐⭐</div>
-    <label class="quantity-label" for="qty-best">Quantity:</label>
-    <input type="number" id="qty-best" class="quantity-input" min="1" value="1" />
-    <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-best-skin-foundation')">Add to Cart</button>
-  </div>
 
-  <!-- CONCEALER PALETTE -->
-  <div class="product" data-price="400">
-    <div class="product-gallery">
-      <a href="images/concealerpallet1.jpg" data-lightbox="concealer" data-title="Concealer Palette - Front">
-        <img src="images/concealerpallet1.jpg" alt="Concealer Palette 1">
-      </a>
-      <a href="images/concealerpallet2.jpg" data-lightbox="concealer" data-title="Concealer Palette - Side">
-        <img src="images/concealerpallet2.jpg" alt="Concealer Palette 2">
-      </a>
-      <a href="images/concealerpallet3.jpg" data-lightbox="concealer" data-title="Concealer Palette - Swatch">
-        <img src="images/concealerpallet3.jpg" alt="Concealer Palette 3">
-      </a>
+    <!-- CONCEALER PALETTE -->
+    <div class="product" data-price="400">
+      <div class="product-gallery">
+        <a href="images/concealerpallet1.jpg" data-lightbox="concealer" data-title="Concealer Palette - Front">
+          <img src="images/concealerpallet1.jpg" alt="Concealer Palette 1">
+        </a>
+        <a href="images/concealerpallet2.jpg" data-lightbox="concealer" data-title="Concealer Palette - Side">
+          <img src="images/concealerpallet2.jpg" alt="Concealer Palette 2">
+        </a>
+        <a href="images/concealerpallet3.jpg" data-lightbox="concealer" data-title="Concealer Palette - Swatch">
+          <img src="images/concealerpallet3.jpg" alt="Concealer Palette 3">
+        </a>
+      </div>
+      <div class="product-name">CONCEALER PALETTE</div>
+      <div class="price">R400</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-concealer-palette">Quantity:</label>
+      <input type="number" id="qty-concealer-palette" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-concealer-palette')">Add to Cart</button>
     </div>
-    <div class="product-name">CONCEALER PALETTE</div>
-    <div class="price">R400</div>
-    <div class="stars">⭐⭐⭐⭐</div>
-    <label class="quantity-label" for="qty-concealer-palette">Quantity:</label>
-    <input type="number" id="qty-concealer-palette" class="quantity-input" min="1" value="1" />
-    <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-concealer-palette')">Add to Cart</button>
-  </div>
 
-  <!-- BLUSH BRONZER PALETTE -->
-  <div class="product" data-price="650">
-    <div class="product-gallery">
-      <a href="images/blushbronzerpallet1.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Front">
-        <img src="images/blushbronzerpallet1.jpg" alt="Blush Bronzer 1">
-      </a>
-      <a href="images/blushbronzerpallet2.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Swatch">
-        <img src="images/blushbronzerpallet2.jpg" alt="Blush Bronzer 2">
-      </a>
+    <!-- BLUSH BRONZER PALETTE -->
+    <div class="product" data-price="650">
+      <div class="product-gallery">
+        <a href="images/blushbronzerpallet1.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Front">
+          <img src="images/blushbronzerpallet1.jpg" alt="Blush Bronzer 1">
+        </a>
+        <a href="images/blushbronzerpallet2.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Swatch">
+          <img src="images/blushbronzerpallet2.jpg" alt="Blush Bronzer 2">
+        </a>
+      </div>
+      <div class="product-name">CREAM BLUSH BRONZER PALETTE</div>
+      <div class="price">R650</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-bronzer-palette">Quantity:</label>
+      <input type="number" id="qty-bronzer-palette" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Cream Blush Bronzer Palette', 'qty-bronzer-palette')">Add to Cart</button>
     </div>
-    <div class="product-name">CREAM BLUSH BRONZER PALETTE</div>
-    <div class="price">R650</div>
-    <div class="stars">⭐⭐⭐⭐</div>
-    <label class="quantity-label" for="qty-bronzer-palette">Quantity:</label>
-    <input type="number" id="qty-bronzer-palette" class="quantity-input" min="1" value="1" />
-    <button class="add-to-cart" onclick="addToCart('Blush Bronzer Palette', 'qty-bronzer-palette')">Add to Cart</button>
+
   </div>
 
-</div>     
-    <!-- Add more products below with similar structure and prices -->
-  </div>
-
-  <!-- 👇 Paste the checkout button here -->
   <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
 </section>
 
-  <div id="notification" class="notification"></div>
+<div id="notification" class="notification"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-  <script>
-    const cart = {};
-
-    const cartCountEl = document.getElementById('cart-count');
-    const notificationEl = document.getElementById('notification');
-
-    function updateCartCount() {
-      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-      cartCountEl.textContent = totalItems;
-      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
-    }
-
-    function showNotification(message) {
-      notificationEl.textContent = message;
-      notificationEl.classList.add('show');
-      setTimeout(() => {
-        notificationEl.classList.remove('show');
-      }, 2500);
-    }
-
-    function addToCart(productName, quantityInputId) {
-      const qtyInput = document.getElementById(quantityInputId);
-      let qty = parseInt(qtyInput.value);
-      if (isNaN(qty) || qty < 1) {
-        qty = 1;
-        qtyInput.value = qty;
-      }
-
-      // Find product div by matching productName and get its price attribute
-      const productDiv = [...document.querySelectorAll('.product')].find(div => {
-        return div.querySelector('.product-name').textContent === productName;
-      });
-
-      const price = productDiv ? parseFloat(productDiv.getAttribute('data-price')) : 0;
-
-      if (cart[productName]) {
-        cart[productName].quantity += qty;
-      } else {
-        cart[productName] = { quantity: qty, price: price };
-      }
-      updateCartCount();
-      showNotification(`${productName} x${qty} added to cart!`);
-    }
-
-    function checkout() {
-      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-      if (totalItems === 0) {
-        alert("Your cart is empty, Barbie!");
-        return;
-      }
-
-      let message = "Hi Noire Barbie Beauty 💖 I’d like to order:\n\n";
-      let totalCost = 0;
-
-      for (const [product, details] of Object.entries(cart)) {
-        const itemTotal = details.price * details.quantity;
-        totalCost += itemTotal;
-        message += `• ${product} x${details.quantity} (R${details.price.toFixed(2)} each) - R${itemTotal.toFixed(2)}\n`;
-      }
-      message += `\nTotal: R${totalCost.toFixed(2)}`;
-
-      message = encodeURIComponent(message);
-
-      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-
-      // Clear cart after checkout
-      for (const key in cart) delete cart[key];
-      updateCartCount();
-    }
-
-    // Initially hide cart count if empty
-    updateCartCount();
-  </script>
-   <script>
-  let cartItems = [];
-
-  function addToCart(productName) {
-    cartItems.push(productName);
-    alert(`${productName} added to cart!`);
-  }
-
-  function checkout() {
-    if (cartItems.length === 0) {
-      alert("Your cart is empty, Barbie!");
-      return;
-    }
-    const message = encodeURIComponent(
-      "Hi Noire Barbie Beauty 💖 I’d like to order:\n\n" +
-      cartItems.map((item, index) => `• ${item}`).join('\n')
-    );
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-  }
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script>
-  const cartItems = [];
+  const cart = {};
+  const cartCountEl = document.getElementById('cart-count');
+  const notificationEl = document.getElementById('notification');
 
-  function addToCart(productName, qtyInputId) {
-    const qty = document.getElementById(qtyInputId).value;
-    const productDiv = document.getElementById(qtyInputId).closest('.product');
+  function updateCartCount() {
+    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    cartCountEl.textContent = totalItems;
+    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+  }
+
+  function showNotification(message) {
+    notificationEl.textContent = message;
+    notificationEl.classList.add('show');
+    setTimeout(() => {
+      notificationEl.classList.remove('show');
+    }, 2500);
+  }
+
+  function addToCart(productName, quantityInputId) {
+    const qtyInput = document.getElementById(quantityInputId);
+    let qty = parseInt(qtyInput.value);
+    if (isNaN(qty) || qty < 1) {
+      qty = 1;
+      qtyInput.value = qty;
+    }
+
+    const productDiv = qtyInput.closest('.product');
     const price = parseFloat(productDiv.getAttribute('data-price'));
 
-    if (qty < 1) return;
-
-    const existing = cartItems.find(item => item.name === productName);
-    if (existing) {
-      existing.qty = parseInt(existing.qty) + parseInt(qty);
+    if (cart[productName]) {
+      cart[productName].quantity += qty;
     } else {
-      cartItems.push({ name: productName, qty: parseInt(qty), price: price });
+      cart[productName] = { quantity: qty, price: price };
     }
 
-    alert(`${productName} x${qty} added to cart!`);
+    updateCartCount();
+    showNotification(`${productName} x${qty} added to cart!`);
   }
 
   function checkoutCart() {
-    if (cartItems.length === 0) {
-      alert("Your cart is empty!");
+    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    if (totalItems === 0) {
+      alert("Your cart is empty, Barbie!");
       return;
     }
 
-    let message = "🛍️ *Noire Barbie Beauty Order* 🛍️\n\n";
-    let total = 0;
-
-    cartItems.forEach(item => {
-      const itemTotal = item.qty * item.price;
-      message += `*${item.name}* x${item.qty} = R${itemTotal}\n`;
-      total += itemTotal;
-    });
-
-    message += `\n*Total: R${total}*`;
-
-    const encodedMessage = encodeURIComponent(message);
-    const phone = "0683032091";
-    const url = `https://wa.me/27${phone.replace(/^0/, '')}?text=${encodedMessage}`;
-
-    window.open(url, '_blank');
-  }
-</script>
-  <script>
-  function addToCart(productName, quantityId) {
-    const qtyInput = document.getElementById(quantityId);
-    const quantity = parseInt(qtyInput.value);
-    const productDiv = qtyInput.closest('.product');
-    const price = parseInt(productDiv.getAttribute('data-price'));
-
-    if (!cart[productName]) {
-      cart[productName] = { quantity: 0, price: price };
-    }
-
-    cart[productName].quantity += quantity;
-
-    updateCartCount();
-    showNotification(`${productName} added to cart!`);
-  }
-
-  function checkout() {
-    if (Object.keys(cart).length === 0) {
-      alert("Your cart is empty Barbie 💕");
-      return;
-    }
-
-    let message = "*💄 NOIRE BARBIE BEAUTY ORDER 💄*%0A";
-    let total = 0;
+    let message = "*💄 NOIRE BARBIE BEAUTY ORDER 💄*%0A%0A";
+    let totalCost = 0;
 
     for (const [product, data] of Object.entries(cart)) {
       const itemTotal = data.quantity * data.price;
-      total += itemTotal;
+      totalCost += itemTotal;
       message += `• ${product} — ${data.quantity} x R${data.price} = R${itemTotal}%0A`;
     }
 
-    message += `%0A*TOTAL: R${total}*%0A💋Thank you for shopping with Noire Barbie Beauty!`;
+    message += `%0A*TOTAL: R${totalCost}*%0A💋 Thank you for shopping with Noire Barbie Beauty!`;
 
-    const phone = "0683032091"; // Your WhatsApp number
+    const phone = "0683032091";
     const whatsappURL = `https://wa.me/27${phone.slice(1)}?text=${message}`;
 
-    window.open(whatsappURL, '_blank');
+    window.open(whatsappURL, "_blank");
+
+    // Clear cart
+    for (const key in cart) delete cart[key];
+    updateCartCount();
   }
-</script>  
+
+  updateCartCount();
+</script>
+
 </body>
 </html>
                                                                                                                      
