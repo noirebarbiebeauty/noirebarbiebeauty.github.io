@@ -362,7 +362,9 @@
     <div id="cart-count" title="Items in cart">0</div>
   </h1>       
  <section class="makeup-products-section">
-  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄
+<span id="cart-count" style="display: none;" class="cart-counter">0</span>
+  </h2>
   <h3 class="makeup-subheading">🛍️ ADVENTURE MAKEUP COLLECTION 🛍️</h3>
 
   <div class="makeup-gallery">
@@ -574,6 +576,46 @@
     window.open(url, '_blank');
   }
 </script>
+  <script>
+  function addToCart(productName, quantityId) {
+    const qtyInput = document.getElementById(quantityId);
+    const quantity = parseInt(qtyInput.value);
+    const productDiv = qtyInput.closest('.product');
+    const price = parseInt(productDiv.getAttribute('data-price'));
+
+    if (!cart[productName]) {
+      cart[productName] = { quantity: 0, price: price };
+    }
+
+    cart[productName].quantity += quantity;
+
+    updateCartCount();
+    showNotification(`${productName} added to cart!`);
+  }
+
+  function checkout() {
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty Barbie 💕");
+      return;
+    }
+
+    let message = "*💄 NOIRE BARBIE BEAUTY ORDER 💄*%0A";
+    let total = 0;
+
+    for (const [product, data] of Object.entries(cart)) {
+      const itemTotal = data.quantity * data.price;
+      total += itemTotal;
+      message += `• ${product} — ${data.quantity} x R${data.price} = R${itemTotal}%0A`;
+    }
+
+    message += `%0A*TOTAL: R${total}*%0A💋Thank you for shopping with Noire Barbie Beauty!`;
+
+    const phone = "0683032091"; // Your WhatsApp number
+    const whatsappURL = `https://wa.me/27${phone.slice(1)}?text=${message}`;
+
+    window.open(whatsappURL, '_blank');
+  }
+</script>  
 </body>
 </html>
                                                                                                                      
