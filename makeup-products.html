@@ -528,6 +528,49 @@
     );
     window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
   }
+<script>
+  const cartItems = [];
+
+  function addToCart(productName, qtyInputId) {
+    const qty = document.getElementById(qtyInputId).value;
+    const productDiv = document.getElementById(qtyInputId).closest('.product');
+    const price = parseFloat(productDiv.getAttribute('data-price'));
+
+    if (qty < 1) return;
+
+    const existing = cartItems.find(item => item.name === productName);
+    if (existing) {
+      existing.qty = parseInt(existing.qty) + parseInt(qty);
+    } else {
+      cartItems.push({ name: productName, qty: parseInt(qty), price: price });
+    }
+
+    alert(`${productName} x${qty} added to cart!`);
+  }
+
+  function checkoutCart() {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    let message = "🛍️ *Noire Barbie Beauty Order* 🛍️\n\n";
+    let total = 0;
+
+    cartItems.forEach(item => {
+      const itemTotal = item.qty * item.price;
+      message += `*${item.name}* x${item.qty} = R${itemTotal}\n`;
+      total += itemTotal;
+    });
+
+    message += `\n*Total: R${total}*`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const phone = "0683032091";
+    const url = `https://wa.me/27${phone.replace(/^0/, '')}?text=${encodedMessage}`;
+
+    window.open(url, '_blank');
+  }
 </script>
 </body>
 </html>
