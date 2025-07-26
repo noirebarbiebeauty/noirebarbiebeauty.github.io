@@ -363,3 +363,15 @@ footer {
   font-size: 14px;
   margin-left: 10px;
 }
+.adventure-logo-container {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.adventure-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+}
