@@ -593,3 +593,14 @@ html, body {
   color: gold;
   margin-top: 10px;
 }
+
+.about-us {
+  font-size: 4.2vw;
+  font-weight: 400;
+  color: #ffe4f0;
+  margin-top: 15px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
