@@ -419,7 +419,10 @@
 <body>
 
 <section class="makeup-products-section">
-  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄
+  <h2> class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+  
+    <div id="product-container">
+      
     <span id="cart-count" style="display: none;" class="cart-counter">0</span>
   </h2>
   <h3 class="makeup-subheading">🛍️ ADVENTURE MAKEUP COLLECTION 🛍️</h3>
@@ -1191,6 +1194,8 @@
   
     
   </div>
+    <!-- PAGINATION CONTROLS HERE -->
+    <div class="pagination" id="pagination"></div>
 
   <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
 </section>
@@ -1269,6 +1274,45 @@
 
   updateCartCount();
 </script>
+
+<!--PAGINATION SCRIPT BELOW THIS -->
+<script>
+  const itemsPerPage = 6;
+  const productContainer = document.getElementById("product-container");
+  const products = Array.from(productContainer.getElementsByClassName("product"));
+  const pagination = document.getElementById("pagination");
+
+  function showPage(pageNumber) {
+    const start = (pageNumber - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    products.forEach((product, index) => {
+      product.style.display = index >= start && index < end ? "block" : "none";
+    });
+
+    updatePagination(pageNumber);
+  }
+
+  function updatePagination(currentPage) {
+    const totalPages = Math.ceil(products.length / itemsPerPage);
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.innerText = i;
+      btn.classList.add("page-btn");
+      if (i === currentPage) btn.classList.add("active");
+      btn.addEventListener("click", () => showPage(i));
+      pagination.appendChild(btn);
+    }
+  }
+
+  // Load first page
+  showPage(1);
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
