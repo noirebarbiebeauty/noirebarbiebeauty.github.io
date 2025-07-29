@@ -633,3 +633,22 @@ p {
   margin: 30px auto;
   border-radius: 10px;
 }
+
+.load-more-btn {
+  background: hotpink;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background: #ff69b4;
+  transform: scale(1.05);
+}
