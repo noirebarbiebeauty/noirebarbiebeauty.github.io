@@ -565,3 +565,31 @@ html, body {
   background-color: #e91e63;
   color: white;
 }
+
+.welcome-text {
+  text-align: center;
+  padding: 20px 15px;
+  color: #ffc0cb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.welcome-text h1 {
+  font-size: 7vw;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.brand-name {
+  font-size: 8vw;
+  font-weight: 800;
+  color: #ff69b4;
+  text-shadow: 1px 1px 2px #00000080;
+}
+
+.tagline {
+  font-size: 5vw;
+  font-weight: 500;
+  color: gold;
+  margin-top: 10px;
+}
