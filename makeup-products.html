@@ -1278,7 +1278,8 @@
 
 <!--PAGINATION SCRIPT BELOW THIS -->
 <script>
-  const itemsPerPage = 6;
+  let itemsPerPage = window.innerWidth <= 768 ? 3 : 4;
+  
   const productContainer = document.getElementById("product-container");
   const products = Array.from(productContainer.getElementsByClassName("product"));
   const pagination = document.getElementById("pagination");
@@ -1312,7 +1313,8 @@
   showPage(1);
 </script>
     <script>
-  const clientsPerPage = 4; // change to 6 if you prefer
+  let clientsPerPage = window.innerWidth <= 768 / 3 : 6;
+      
   const galleryContainer = document.getElementById("client-gallery-container");
   const clientCards = Array.from(galleryContainer.getElementsByClassName("makeup-card"));
   const galleryPagination = document.getElementById("client-gallery-pagination");
