@@ -125,7 +125,7 @@
 
   <h1>💋 Our Barbie Beauties – Client Gallery 💄</h1>
 
-  <div class="gallery-grid">
+  <div id="client-gallery-container">
 
 <!-- DEE -->
 <div class="makeup-card multi-view">
@@ -306,6 +306,7 @@
 </div>
 
   </div>
+  <div class="pagination" id="client-gallery-pagination"></div>
 </section>
 
 <!-- Lightbox JS -->
@@ -1310,7 +1311,40 @@
   // Load first page
   showPage(1);
 </script>
+    <script>
+  const clientsPerPage = 4; // change to 6 if you prefer
+  const galleryContainer = document.getElementById("client-gallery-container");
+  const clientCards = Array.from(galleryContainer.getElementsByClassName("makeup-card"));
+  const galleryPagination = document.getElementById("client-gallery-pagination");
 
+  function showClientPage(pageNumber) {
+    const start = (pageNumber - 1) * clientsPerPage;
+    const end = start + clientsPerPage;
+
+    clientCards.forEach((card, index) => {
+      card.style.display = index >= start && index < end ? "block" : "none";
+    });
+
+    updateClientPagination(pageNumber);
+  }
+
+  function updateClientPagination(currentPage) {
+    const totalPages = Math.ceil(clientCards.length / clientsPerPage);
+    galleryPagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.innerText = i;
+      btn.classList.add("page-btn");
+      if (i === currentPage) btn.classList.add("active");
+      btn.addEventListener("click", () => showClientPage(i));
+      galleryPagination.appendChild(btn);
+    }
+  }
+
+  // Load page 1 by default
+  showClientPage(1);
+</script>
 </body>
 </html>
 
