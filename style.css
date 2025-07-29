@@ -652,3 +652,63 @@ p {
   background: #ff69b4;
   transform: scale(1.05);
 }
+.load-more-btn {
+  background: linear-gradient(135deg, #ff69b4, #ffc0cb);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 30px auto 40px;
+  display: block;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #ff69b4;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.load-more-btn:hover {
+  background: #ff69b4;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff69b4, 0 0 30px #ffc0cb;
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #ff69b4; }
+  50% { box-shadow: 0 0 20px #ffc0cb; }
+  100% { box-shadow: 0 0 10px #ff69b4; }
+}
+
+.load-more-btn {
+  animation: glow 2s infinite;
+}
+.load-more-btn {
+  background: linear-gradient(135deg, #ff69b4, #ffc0cb);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 30px auto 40px;
+  display: block;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #ff69b4;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #ff69b4; }
+  50% { box-shadow: 0 0 20px #ffc0cb; }
+  100% { box-shadow: 0 0 10px #ff69b4; }
+}
+
+.load-more-btn:hover {
+  background: #ff69b4;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff69b4, 0 0 30px #ffc0cb;
+}
