@@ -305,6 +305,7 @@
   <button class="add-to-cart" onclick="orderNow('Waterproof Eye Pencil')">Order Product</button>
 </div>
 
+ <button id="load-more-clients" class="load-more-btn">Load More Clients</button>
   </div>
   <div class="pagination" id="client-gallery-pagination"></div>
 </section>
@@ -430,7 +431,7 @@
   <div class="adventure-logo-container">
   <img src="images/adventure-logo.png" alt="Adventure Brand Logo" class="adventure-logo" />
 </div>
-  <div class="makeup-gallery">
+  <div class="makeup-gallery" id="product-container">
     
     <!-- BEST SKIN FOUNDATION -->
     <div class="product" data-price="200">
@@ -1195,8 +1196,8 @@
   
     
   </div>
-    <!-- PAGINATION CONTROLS HERE -->
-    <div class="pagination" id="pagination"></div>
+    
+    <button id="load-more-products" class="load-more-btn">Load More Products</button>
 
   <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
 </section>
@@ -1278,39 +1279,32 @@
 
 <!--PAGINATION SCRIPT BELOW THIS -->
 <script>
-  let itemsPerPage = window.innerWidth <= 768 ? 3 : 4;
-  
+  let itemsToShow = window.innerWidth <= 768 ? 3 : 6;
+  let currentIndex = 0;
+
   const productContainer = document.getElementById("product-container");
   const products = Array.from(productContainer.getElementsByClassName("product"));
-  const pagination = document.getElementById("pagination");
+  const loadMoreBtn = document.getElementById("load-more-products");
 
-  function showPage(pageNumber) {
-    const start = (pageNumber - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
+  function showNextProducts() {
+    const endIndex = currentIndex + itemsToShow;
 
-    products.forEach((product, index) => {
-      product.style.display = index >= start && index < end ? "block" : "none";
-    });
+    for (let i = currentIndex; i < endIndex && i < products.length; i++) {
+      products[i].style.display = "block";
+    }
 
-    updatePagination(pageNumber);
-  }
+    currentIndex = endIndex;
 
-  function updatePagination(currentPage) {
-    const totalPages = Math.ceil(products.length / itemsPerPage);
-    pagination.innerHTML = "";
-
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement("button");
-      btn.innerText = i;
-      btn.classList.add("page-btn");
-      if (i === currentPage) btn.classList.add("active");
-      btn.addEventListener("click", () => showPage(i));
-      pagination.appendChild(btn);
+    if (currentIndex >= products.length) {
+      loadMoreBtn.style.display = "none";
     }
   }
 
-  // Load first page
-  showPage(1);
+  // Hide all products initially
+  products.forEach(product => product.style.display = "none");
+
+  // Load initial batch
+  showNextProducts();
 </script>
     <script>
   let clientsPerPage = window.innerWidth <= 768 / 3 : 6;
@@ -1346,7 +1340,41 @@
 
   // Load page 1 by default
   showClientPage(1);
+</script><!-- WhatsApp Order Script -->
+<script>
+  function orderNow(productName) {
+    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
+    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+  }
 </script>
+
+<!-- ✅ Load More Clients Script -->
+<script>
+  let clientsToShow = window.innerWidth <= 768 ? 3 : 6;
+  let currentClientIndex = 0;
+
+  const clientContainer = document.getElementById("client-gallery-container");
+  const clientCards = Array.from(clientContainer.getElementsByClassName("makeup-card"));
+  const loadMoreClientsBtn = document.getElementById("load-more-clients");
+
+  function showNextClients() {
+    const endIndex = currentClientIndex + clientsToShow;
+
+    for (let i = currentClientIndex; i < endIndex && i < clientCards.length; i++) {
+      clientCards[i].style.display = "block";
+    }
+
+    currentClientIndex = endIndex;
+
+    if (currentClientIndex >= clientCards.length) {
+      loadMoreClientsBtn.style.display = "none";
+    }
+  }
+
+  clientCards.forEach(card => card.style.display = "none");
+  showNextClients();
+  loadMoreClientsBtn.addEventListener("click", showNextClients);
+</script>    
 </body>
 </html>
 
