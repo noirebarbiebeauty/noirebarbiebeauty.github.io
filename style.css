@@ -505,3 +505,16 @@ html, body {
   margin-top: 20px;
   border-radius: 10px;
 }
+
+.welcome h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  color: #f5c2e7;
+  font-weight: normal;
+  text-shadow: 2px 2px 5px gold;
+  margin-bottom: 10px;
+}
+.brand-name {
+  color: gold;
+  font-weight: 800;
+}
