@@ -604,3 +604,32 @@ html, body {
   margin-right: auto;
   line-height: 1.5;
 }
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.main-logo {
+  width: 200px;
+  max-width: 90%;
+  display: block;
+  margin: 20px auto;
+}
+
+.about-us,
+h1,
+p {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.ceo-photo {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 10px;
+}
