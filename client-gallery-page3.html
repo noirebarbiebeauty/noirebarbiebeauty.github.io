@@ -38,8 +38,24 @@
       <button class="add-to-cart" onclick="orderNow('Waterproof Eye Pencil')">Order Product</button>
     </div>
 
-  </div>
+</div> <!-- closes .makeup-gallery -->
+</section>
+
+<!-- Lightbox Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+<!-- WhatsApp Order Script -->
+<script>
+  function orderNow(productName) {
+    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
+    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+  }
+</script>
+</body>
+</html>
+  
   <div class="pagination">
+    <a class="page-link" href="client-gallery-page2.html"><- Previous</a>
     <a class="page-link" href="client-gallerypage1.html">1</a>
     <a class="page-link" href="client-gallery-page2.html">2</a>
     <a class="page-link active" href="client-gallery-page3.html">3</a>
