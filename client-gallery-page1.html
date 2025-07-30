@@ -73,9 +73,24 @@
       <p class="product-used">Used: Waterproof Eyeliner</p>
       <button class="add-to-cart" onclick="orderNow('Waterproof Eyeliner')">Order Product</button>
     </div>
-  </div>
 
-  <!-- Pagination Links -->
+    
+  </div>
+</section>
+
+<!-- Lightbox Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+<!-- WhatsApp Order Script -->
+<script>
+  function orderNow(productName) {
+    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
+    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+  }
+</script>
+</body>
+</html> 
+<!-- Pagination Links -->
   <div class="pagination">
     <a class="page-link active" href="client-gallery-page1.html">1</a>
     <a class="page-link" href="client-gallery-page2.html">2</a>
