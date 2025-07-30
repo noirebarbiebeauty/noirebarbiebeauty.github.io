@@ -92,23 +92,39 @@
     .price {
       color: #ffb6c1;
     }
+
+    .pagination {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .pagination .page-link {
+      display: inline-block;
+      background: #ff69b4;
+      color: white;
+      padding: 8px 12px;
+      margin: 0 5px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .pagination .active {
+      background: deeppink;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
 <section class="makeup-products-section">
   <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
-      <!-- BLUSH PALLET -->
+
+  <div class="makeup-gallery">
+    <!-- BLUSH PALLET -->
     <div class="product" data-price="250">
       <div class="product-gallery">
-        <a href="images/blushpallet.jpg" data-lightbox="blush" data-title="blush- Front">
-          <img src="images/blushpallet.jpg" alt="blush">
-        </a>
-        <a href="images/blushpallet.jpg" data-lightbox="blush" data-title="blush- Side">
-          <img src="images/blushpallet.jpg" alt="stay 2">
-        </a>
-        <a href="images/blushpallet.jpg" data-lightbox="stay" data-title="blush - Swatch">
-          <img src="images/blushpallet.jpg" alt="blush">
+        <a href="images/blushpallet.jpg" data-lightbox="blush" data-title="Blush Pallet - Front">
+          <img src="images/blushpallet.jpg" alt="Blush Pallet">
         </a>
       </div>
       <div class="product-name">BLUSH PALLET</div>
@@ -116,20 +132,14 @@
       <div class="stars">⭐⭐⭐⭐</div>
       <label class="quantity-label" for="qty-blush">Quantity:</label>
       <input type="number" id="qty-blush" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-blush)">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Blush Pallet', 'qty-blush')">Add to Cart</button>
     </div>
 
-      <!-- COMPACT POWDER -->
+    <!-- COMPACT POWDER -->
     <div class="product" data-price="250">
       <div class="product-gallery">
-        <a href="images/compactpowder.jpg" data-lightbox="compact" data-title="compact- Front">
-          <img src="images/compactpowder.jpg" alt="compact 1">
-        </a>
-        <a href="images/compactpowder.jpg" data-lightbox="compact" data-title="compact- Side">
-          <img src="images/compactpowder.jpg" alt="compact 2">
-        </a>
-        <a href="images/compactpowder.jpg" data-lightbox="compact" data-title="compact - Swatch">
-          <img src="images/compactpowder.jpg" alt="compact 3">
+        <a href="images/compactpowder.jpg" data-lightbox="compact" data-title="Compact Powder - Front">
+          <img src="images/compactpowder.jpg" alt="Compact Powder">
         </a>
       </div>
       <div class="product-name">COMPACT POWDER</div>
@@ -137,25 +147,25 @@
       <div class="stars">⭐⭐⭐⭐</div>
       <label class="quantity-label" for="qty-compact-powder">Quantity:</label>
       <input type="number" id="qty-compact-powder" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-compact-powder)">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Compact Powder', 'qty-compact-powder')">Add to Cart</button>
     </div>
-    
-       <!-- EYELINER -->
+
+    <!-- EYELINER -->
     <div class="product" data-price="100">
       <div class="product-gallery">
-        <a href="images/eyeliner.jpg" data-lightbox="stay" data-title="eyeliner- Front">
-          <img src="images/eyeliner.jpg" alt="stay 1">
+        <a href="images/eyeliner.jpg" data-lightbox="eyeliner" data-title="Eyeliner - Front">
+          <img src="images/eyeliner.jpg" alt="Eyeliner">
         </a>
       </div>
       <div class="product-name">EYELINER</div>
       <div class="price">R100</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-stay-foundation">Quantity:</label>
+      <label class="quantity-label" for="qty-eyeliner">Quantity:</label>
       <input type="number" id="qty-eyeliner" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('eyeliner', 'qty-eyeliner)">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Eyeliner', 'qty-eyeliner')">Add to Cart</button>
     </div>
 
-<!-- HEGAI & ESTHER COLLECTION -->
+    <!-- HEGAI & ESTHER COLLECTION -->
 <div style="text-align: center; margin: 30px 0;">
   <h3 class="makeup-subheading" style="margin-bottom: 15px; color: #ff69b4; font-size: 1.6em;">
     💋 HEGAI & ESTHER COLLECTION 💋
@@ -163,18 +173,17 @@
   <div style="display: flex; justify-content: center; align-items: center;">
     <img src="images/hegai-logo.jpg" alt="HEGAI & ESTHER Logo" style="max-height: 120px; width: auto;">
   </div>
-  
-        <!--PERFECT POWDER FOUNDATION -->
+    <!-- PERFECT POWDER FOUNDATION -->
     <div class="product" data-price="150">
       <div class="product-gallery">
-        <a href="images/pf.jpg" data-lightbox="pf" data-title="pf- Front">
-          <img src="images/pf.jpg" alt="pf 1">
+        <a href="images/pf.jpg" data-lightbox="pf" data-title="Perfect Powder Foundation - Front">
+          <img src="images/pf.jpg" alt="Perfect Powder Foundation">
         </a>
-        <a href="images/pf1.jpg" data-lightbox="pf" data-title="pf- Side">
-          <img src="images/pf1.jpg" alt="pf 2">
+        <a href="images/pf1.jpg" data-lightbox="pf" data-title="Side">
+          <img src="images/pf1.jpg" alt="Side">
         </a>
-        <a href="images/pf2.jpg" data-lightbox="pf" data-title="pf - Swatch">
-          <img src="images/pf2.jpg" alt="pf 3">
+        <a href="images/pf2.jpg" data-lightbox="pf" data-title="Swatch">
+          <img src="images/pf2.jpg" alt="Swatch">
         </a>
       </div>
       <div class="product-name">PERFECT POWDER FOUNDATION</div>
@@ -182,32 +191,54 @@
       <div class="stars">⭐⭐⭐⭐</div>
       <label class="quantity-label" for="qty-pf">Quantity:</label>
       <input type="number" id="qty-pf" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-pf)">Add to Cart</button>
-</diV>  
-
-
+      <button class="add-to-cart" onclick="addToCart('Perfect Powder Foundation', 'qty-pf')">Add to Cart</button>
+    </div>
   </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination">
+    <a class="page-link" href="makeup-products-page4.html">⬅️ Previous</a>
+    <a class="page-link" href="makeup-products-page1.html">1</a>
+    <a class="page-link" href="makeup-products-page2.html">2</a>
+    <a class="page-link" href="makeup-products-page3.html">3</a>
+    <a class="page-link" href="makeup-products-page4.html">4</a>
+    <a class="page-link active" href="makeup-products-page5.html">5</a>
+    <a class="page-link" href="makeup-products-page6.html">6</a>
+    <a class="page-link" href="makeup-products-page6.html">Next ➡️</a>
+  </div>
+
+  <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
 </section>
 
-<!-- Lightbox Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+<div id="notification" class="notification"></div>
 
-<!-- WhatsApp Order Script -->
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script>
-  function orderNow(productName) {
-    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+  const cart = {};
+  const notificationEl = document.getElementById('notification');
+
+  function addToCart(productName, qtyId) {
+    const quantity = parseInt(document.getElementById(qtyId).value);
+    if (!cart[productName]) {
+      cart[productName] = { quantity };
+    } else {
+      cart[productName].quantity += quantity;
+    }
+    showNotification(`${productName} added to cart`);
+  }
+
+  function showNotification(message) {
+    notificationEl.textContent = message;
+    notificationEl.classList.add('show');
+    setTimeout(() => notificationEl.classList.remove('show'), 2000);
+  }
+
+  function checkoutCart() {
+    const message = Object.entries(cart).map(([name, item]) => `${item.quantity} x ${name}`).join('%0A');
+    const whatsappLink = `https://wa.me/27683032091?text=Hi Noire Barbie Beauty 💖 I want to order:%0A${message}`;
+    window.open(whatsappLink, "_blank");
   }
 </script>
 </body>
-</html>  
-<div class="pagination">
-  <a class="page-link" href="makeup-products-page4.html">⬅️ Previous</a>
-  <a class="page-link" href="makeup-products-page1.html">1</a>
-  <a class="page-link" href="makeup-products-page2.html">2</a>
-  <a class="page-link" href="makeup-products-page3.html">3</a>
-  <a class="page-link" href="makeup-products-page4.html">4</a>
-  <a class="page-link active" href="makeup-products-page5.html">5</a>
-  <a class="page-link" href="makeup-products-page6.html">6</a>
-  <a class="page-link" href="makeup-products-page6.html">Next ➡️</a>
-</div>
+</html>
