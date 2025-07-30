@@ -1,8 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Makeup - Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .cart-counter {
+      background-color: hotpink;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 14px;
+      margin-left: 10px;
+    }
 
+    .notification {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f06292;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 9999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
 
+    .notification.show {
+      display: block;
+    }
 
+    .checkout-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: deeppink;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
+    .product {
+      background-color: #1c1c1c;
+      color: white;
+      border: 1px solid #ff69b4;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px;
+      width: 250px;
+    }
 
+    .product-gallery img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+
+    .makeup-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .quantity-input {
+      width: 50px;
+      margin: 5px 0;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 8px 0 4px;
+    }
+
+    .price {
+      color: #ffb6c1;
+    }
+  </style>
+</head>
+<body>
+
+<section class="makeup-products-section">
+  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+    
 <!-- Setting Powder -->
     <div class="product" data-price="150">
       <div class="product-gallery">
@@ -102,3 +198,6 @@
       <input type="number" id="qty-stay-foundation" class="quantity-input" min="1" value="1" />
       <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-stay-foundation)">Add to Cart</button>
     </div>
+
+
+    
