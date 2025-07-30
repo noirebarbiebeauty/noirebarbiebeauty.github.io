@@ -206,5 +206,38 @@
   <a class="page-link" href="makeup-products-page7.html">7</a>
   <a class="page-link active" href="makeup-products-page8.html">8</a>
 </div>
+  <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
+</section>
 
-  
+<div id="notification" class="notification"></div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  const cart = {};
+  const notificationEl = document.getElementById('notification');
+
+  function addToCart(productName, qtyId) {
+    const quantity = parseInt(document.getElementById(qtyId).value);
+    if (!cart[productName]) {
+      cart[productName] = { quantity };
+    } else {
+      cart[productName].quantity += quantity;
+    }
+    showNotification(`${productName} added to cart`);
+  }
+
+  function showNotification(message) {
+    notificationEl.textContent = message;
+    notificationEl.classList.add('show');
+    setTimeout(() => notificationEl.classList.remove('show'), 2000);
+  }
+
+  function checkoutCart() {
+    const message = Object.entries(cart).map(([name, item]) => `${item.quantity} x ${name}`).join('%0A');
+    const whatsappLink = `https://wa.me/27683032091?text=Hi Noire Barbie Beauty 💖 I want to order:%0A${message}`;
+    window.open(whatsappLink, "_blank");
+  }
+</script>
+</body>
+</html>    
