@@ -712,3 +712,18 @@ p {
   transform: scale(1.05);
   box-shadow: 0 0 20px #ff69b4, 0 0 30px #ffc0cb;
 }
+/* ✨ Barbie Glam Link Styling ✨ */
+.glam-link {
+  font-size: 18px;
+  color: #ff66b2;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #ff99cc;
+  transition: all 0.3s ease;
+}
+
+.glam-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2;
+}
