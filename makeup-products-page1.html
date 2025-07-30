@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Makeup - Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .cart-counter {
+      background-color: hotpink;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 14px;
+      margin-left: 10px;
+    }
 
+    .notification {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f06292;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 9999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .notification.show {
+      display: block;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: deeppink;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .product {
+      background-color: #1c1c1c;
+      color: white;
+      border: 1px solid #ff69b4;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px;
+      width: 250px;
+    }
+
+    .product-gallery img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+
+    .makeup-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .quantity-input {
+      width: 50px;
+      margin: 5px 0;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 8px 0 4px;
+    }
+
+    .price {
+      color: #ffb6c1;
+    }
+  </style>
+</head>
+<body>
+
+<section class="makeup-products-section">
+  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+  
+    <div id="product-container">
+      
+    <span id="cart-count" style="display: none;" class="cart-counter">0</span>
+  </h2>
+  <h3 class="makeup-subheading">🛍️ ADVENTURE MAKEUP COLLECTION 🛍️</h3>
+  <div class="adventure-logo-container">
+  <img src="images/adventure-logo.png" alt="Adventure Brand Logo" class="adventure-logo" />
+</div>
+  <div class="makeup-gallery" id="product-container">
+    
+    <!-- BEST SKIN FOUNDATION -->
+    <div class="product" data-price="200">
+      <div class="product-gallery">
+        <a href="images/bestskin1.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Front">
+          <img src="images/bestskin1.jpg" alt="Best Skin 1">
+        </a>
+        <a href="images/bestskin2.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Side">
+          <img src="images/bestskin2.jpg" alt="Best Skin 2">
+        </a>
+        <a href="images/bestskin3.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Swatch">
+          <img src="images/bestskin3.jpg" alt="Best Skin 3">
+        </a>
+      </div>
+      <div class="product-name">BEST SKIN FOUNDATION</div>
+      <div class="price">R200</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-best-skin">Quantity:</label>
+      <input type="number" id="qty-best-skin" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-best-skin')">Add to Cart</button>
+    </div>
+
+    <!-- CONCEALER PALETTE -->
+    <div class="product" data-price="600">
+      <div class="product-gallery">
+        <a href="images/concealerpallet1.jpg" data-lightbox="concealer" data-title="Concealer Palette - Front">
+          <img src="images/concealerpallet1.jpg" alt="Concealer Palette 1">
+        </a>
+        <a href="images/concealerpallet2.jpg" data-lightbox="concealer" data-title="Concealer Palette - Side">
+          <img src="images/concealerpallet2.jpg" alt="Concealer Palette 2">
+        </a>
+        <a href="images/concealerpallet3.jpg" data-lightbox="concealer" data-title="Concealer Palette - Swatch">
+          <img src="images/concealerpallet3.jpg" alt="Concealer Palette 3">
+        </a>
+      </div>
+      <div class="product-name">CONCEALER PALETTE</div>
+      <div class="price">600</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-concealer-palette">Quantity:</label>
+      <input type="number" id="qty-concealer-palette" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-concealer-palette')">Add to Cart</button>
+    </div>
+
+    <!-- BLUSH BRONZER PALETTE -->
+    <div class="product" data-price="650">
+      <div class="product-gallery">
+        <a href="images/blushbronzerpallet1.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Front">
+          <img src="images/blushbronzerpallet1.jpg" alt="Blush Bronzer 1">
+        </a>
+        <a href="images/blushbronzerpallet2.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Swatch">
+          <img src="images/blushbronzerpallet2.jpg" alt="Blush Bronzer 2">
+        </a>
+      </div>
+      <div class="product-name">CREAM BLUSH BRONZER PALETTE</div>
+      <div class="price">R650</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-bronzer-palette">Quantity:</label>
+      <input type="number" id="qty-bronzer-palette" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Cream Blush Bronzer Palette', 'qty-bronzer-palette')">Add to Cart</button>
+    </div>
+    <!-- Lip Pallet -->
+    <div class="product" data-price="600">
+      <div class="product-gallery">
+        <a href="images/lippallet1.jpg" data-lightbox="bestskin" data-title="Lip Pallet - Front">
+          <img src="images/lippallet1.jpg" alt="Lip Pallet 1">
+        </a>
+        <a href="images/lippallet2.jpg" data-lightbox="bestskin" data-title="Lip Pallet- Swatch">
+          <img src="images/lippallet2.jpg" alt="Lip Pallet 2">
+        </a>
+      </div>
+      <div class="product-name">LIP PALLET</div>
+      <div class="price">R600</div>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <label class="quantity-label" for="qty-best-skin">Quantity:</label>
+      <input type="number" id="qty-lip-pallet" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-lip-pallet')">Add to Cart</button>
+    </div>
+
+    <!-- Pagination Controls -->
+<div class="pagination">
+  <a class="page-link active" href="makeup-products-page1.html">1</a>
+  <a class="page-link" href="makeup-products-page2.html">2</a>
+  <a class="page-link" href="makeup-products-page2.html">Next ➡️</a>
+</div>
