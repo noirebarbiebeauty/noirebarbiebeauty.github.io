@@ -945,3 +945,11 @@ body::before {
   backdrop-filter: blur(1px); /* Adds that classy blurred glam */
   z-index: -1;
 }
+.welcome-section p {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+}
+.welcome-section h1 {
+  text-shadow: 2px 2px 4px black;
+}
