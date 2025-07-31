@@ -5,108 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noire Barbie Beauty</title>
   <style>
-    html, body {
-      height: 100%;
-    }
-    body {
-  background: url('images/ceo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: fixed;
- color: white;
-  position: relative;
-}
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+    color: white;
+    background: url('images/ceo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.55); /* for soft overlay fade */
-  backdrop-filter: blur(1px); /* glam glow */
-  z-index: -1;
-}
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background: black;
-      color: white;
-      font-family: 'Arial Rounded MT Bold', sans-serif;
-      width: 100vw;
-      overflow-x: hidden;
-    }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* overlay for text readability */
+    backdrop-filter: blur(1px);
+    z-index: -1;
+  }
 
-    header {
-      text-align: center;
-      padding: 20px 0;
-    }
+  header {
+    text-align: center;
+    padding: 20px 0;
+  }
 
-    .main-logo {
-      width: 200px;
-      max-width: 90%;
-      display: block;
-      margin: 0 auto 10px;
-      box-shadow: 0 0 25px #ff69b4;
-    }
+  .main-logo {
+    width: 200px;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 25px #ff69b4;
+  }
 
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    color: pink;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .welcome-section {
+    text-align: center;
+    padding: 30px 20px 10px;
+  }
+
+  .welcome-section h1 {
+    color: #ff69b4;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px black;
+  }
+
+  .welcome-section p {
+    color: #f2f2f2;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
     nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: pink;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .welcome-section {
-      text-align: center;
-      padding: 30px 20px 10px;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .welcome-section h1 {
-      color: #ff69b4;
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 1.6rem;
     }
 
     .welcome-section p {
-      color: #f2f2f2;
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 0.95rem;
     }
-
-    .ceo-photo {
-      width: 90%;
-      max-width: 400px;
-      display: block;
-      margin: 30px auto;
-      border-radius: 15px;
-    }
-
-    @media screen and (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .welcome-section h1 {
-        font-size: 1.6rem;
-      }
-
-      .welcome-section p {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 <header>
