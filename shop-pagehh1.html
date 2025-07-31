@@ -47,3 +47,40 @@
   <p class="price">R1000</p>
   <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
   </div>  
+
+
+
+
+
+
+<!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>  
+        <script>
+  const itemsToShow = 6;
+  let currentIndex = 0;
+
+  const products = document.querySelectorAll("#productGrid .wig-card");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  function showNextProducts() {
+    for (let i = currentIndex; i < currentIndex + itemsToShow && i < products.length; i++) {
+      products[i].style.display = "block";
+    }
+    currentIndex += itemsToShow;
+
+    if (currentIndex >= products.length) {
+      loadMoreBtn.style.display = "none";
+    }
+  }
+
+  // Initially hide all
+  products.forEach(p => p.style.display = "none");
+
+  // Show first batch
+  showNextProducts();
+
+  // Button click event
+  loadMoreBtn.addEventListener("click", showNextProducts);
+</script>
+</body>
+</html>        
