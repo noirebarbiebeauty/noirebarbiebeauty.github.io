@@ -920,3 +920,4 @@ body::before {
   backdrop-filter: blur(1px); /* Optional glam touch */
   z-index: -1;
 }
+text-shadow: 2px 2px 5px black;
