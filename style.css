@@ -896,3 +896,27 @@ nav ul li {
   font-weight: bold;
   color: pink;
 }
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  background: url('images/ceo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.55); /* Soft fade */
+  backdrop-filter: blur(1px); /* Optional glam touch */
+  z-index: -1;
+}
