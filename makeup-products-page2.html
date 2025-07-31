@@ -232,6 +232,51 @@
     window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
   }
 </script>
+<script>
+  const cart = {};
+
+  function addToCart(productName, qtyId) {
+    const qty = parseInt(document.getElementById(qtyId).value);
+    if (!qty || qty < 1) return;
+
+    if (cart[productName]) {
+      cart[productName].quantity += qty;
+    } else {
+      cart[productName] = {
+        name: productName,
+        quantity: qty
+      };
+    }
+
+    updateCartCount();
+    showNotification(`${qty} x ${productName} added to cart`);
+  }
+
+  function updateCartCount() {
+    const cartCountEl = document.getElementById('cart-count');
+    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    cartCountEl.textContent = totalItems;
+    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+  }
+
+  function showNotification(message) {
+    const notification = document.getElementById('notification');
+    if (notification) {
+      notification.textContent = message;
+      notification.style.display = 'block';
+      setTimeout(() => notification.style.display = 'none', 2500);
+    }
+  }
+
+  function checkoutCart() {
+    let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
+    for (const item in cart) {
+      message += `• ${item} x ${cart[item].quantity}\n`;
+    }
+    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+</script>  
 </body>
 </html>
 
