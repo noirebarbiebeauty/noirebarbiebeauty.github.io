@@ -920,4 +920,28 @@ body::before {
   backdrop-filter: blur(1px); /* Optional glam touch */
   z-index: -1;
 }
-text-shadow: 2px 2px 5px black;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  background: url('images/ceo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.55); /* Soft fade for readability */
+  backdrop-filter: blur(1px); /* Adds that classy blurred glam */
+  z-index: -1;
+}
