@@ -5,12 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
-  <!--Lightbox2 CSS for multi-angle popups -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid pink;
+      margin-right: 10px;
+    }
+
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .add-to-cart:hover {
+      background-color: deeppink;
+    }
+
+    .notification {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      z-index: 999;
+      display: none;
+    }
+
+    .cart-counter {
+      background-color: hotpink;
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+
+    .cart-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      color: hotpink;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 <header>
   <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+  <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
   <nav>
     <ul>
       <li><a href="index.html">HOME</a></li>
@@ -22,106 +78,71 @@
     </ul>
   </nav>
 </header> 
-  <!-- Shop Section -->
-  <section class="shop-section">
-    <h1>Shop Barbie Approved Units 💖</h1>
 
-    <h2>Human Hair Blend (HHB)</h2>
-    <div class="wig-gallery" id="productGrid">
-  <div class="wig-card">
-  <!-- Main Front View -->
-  <a href="images/yakistraight30.png" data-lightbox="yakistraight30" data-title="Yaki Straight Front">
-    <img src="images/yakistraight30.png" alt="Yaki Straight 30” Front View" class="main-wig-img" />
-  </a>
+<section class="shop-section">
+  <h1>Shop Barbie Approved Units 💖</h1>
+  <h2>Human Hair Blend (HHB)</h2>
+  <div class="wig-gallery" id="productGrid">
 
-  <!-- Smaller Thumbnails (Side + Back Views) -->
-  <div class="angle-gallery">
-    <a href="images/yakiside.jpg" data-lightbox="yakistraight30" data-title="Side View">
-      <img src="images/yakiside.jpg" alt="Yaki Side View" />
-    </a>
-    <a href="images/yakiback.jpg" data-lightbox="yakistraight30" data-title="Back View">
-      <img src="images/yakiback.jpg" alt="Yaki Back View" />
-    </a>
+    <!-- Wig 1 -->
+    <div class="wig-card">
+      <a href="images/yakistraight30.png" data-lightbox="yakistraight30" data-title="Yaki Straight Front">
+        <img src="images/yakistraight30.png" alt="Yaki Straight 30” Front View" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/yakiside.jpg" data-lightbox="yakistraight30" data-title="Side View"><img src="images/yakiside.jpg" /></a>
+        <a href="images/yakiback.jpg" data-lightbox="yakistraight30" data-title="Back View"><img src="images/yakiback.jpg" /></a>
+      </div>
+      <h4>Yaki Straight 30"🔥🔥 [HHB]</h4>
+      <p class="price">R900</p>
+      <label for="qty-yaki">Qty:</label>
+      <input type="number" id="qty-yaki" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Yaki Straight 30\\"', 'qty-yaki')">Add to Cart</button>
+    </div>
+
+    <!-- BLACKTOPGINGER -->
+    <div class="wig-card">
+      <a href="images/blacktopginger30.png" data-lightbox="blacktopginger30" data-title="Black Top Ginger">
+        <img src="images/blacktopginger30.png" alt="Black Top Ginger 30” Front View" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/blacktopgingerside.jpg" data-lightbox="blacktopginger30" data-title="Side View"><img src="images/blacktopgingerside.jpg" /></a>
+        <a href="images/blacktopgingerback.jpg" data-lightbox="blacktopginger30" data-title="Back View"><img src="images/blacktopgingerback.jpg" /></a>
+      </div>
+      <h4>Black Top Ginger 30" [HHB]</h4>
+      <p class="price">R900</p>
+      <label for="qty-ginger">Qty:</label>
+      <input type="number" id="qty-ginger" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Black Top Ginger 30\\"', 'qty-ginger')">Add to Cart</button>
+    </div>
+
   </div>
-
-  <h4>Yaki Straight 30"🔥🔥 [HHB]</h4>
-  <p class="price">R900</p>
-  <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-</div>
-      <!--Black Top Ginger 30" -->
- <div class="wig-card">
-  <!-- Main Front View -->
-  <a href="images/blacktopginger30.png" data-lightbox="blacktopginger30" data-title="Black Top Ginger">
-    <img src="images/blacktopginger30.png" alt="Black Top Ginger 30” Front View" class="main-wig-img" />
-  </a>
-
-  <!-- Smaller Thumbnails (Side + Back Views) -->
-  <div class="angle-gallery">
-    <a href="images/blacktopgingerside.jpg" data-lightbox="blacktopginger30" data-title="Side View">
-      <img src="images/blacktopgingerside.jpg" alt="Black Top Ginger Side View" />
-    </a>
-    <a href="images/blacktopgingerback.jpg" data-lightbox="blacktopginger30" data-title="Back View">
-      <img src="images/blacktopgingerback.jpg" alt="Black Top Ginger Back View" />
-    </a>
-  </div>
-
-  <h4>Black Top Ginger 30" [HHB]</h4>
-  <p class="price">R900</p>
-  <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-</div>        
       <!--3 Tone Blonde 30" -->
  <div class="wig-card">
-  <!-- Main Front View -->
   <a href="images/3toneblonde30.png" data-lightbox="3toneblonde30" data-title="3 Tone Blonde">
     <img src="images/3toneblonde30.png" alt="3 Tone Blonde 30” Front View" class="main-wig-img" />
   </a>
-
-  <!-- Smaller Thumbnails (Side + Back Views) -->
   <div class="angle-gallery">
-    <a href="images/3toneblondeside.jpg" data-lightbox="3toneblonde30" data-title="Side View">
-      <img src="images/3toneblondeside.jpg" alt="3 Tone Blonde Side View" />
-    </a>
-    <a href="images/3toneblondeback.jpg" data-lightbox="3toneblonde30" data-title="Back View">
-      <img src="images/3toneblondeback.jpg" alt="3 Tone Blonde Back View" />
-    </a>
+    <a href="images/3toneblondeside.jpg" data-lightbox="3toneblonde30" data-title="Side View"><img src="images/3toneblondeside.jpg" /></a>
+    <a href="images/3toneblondeback.jpg" data-lightbox="3toneblonde30" data-title="Back View"><img src="images/3toneblondeback.jpg" /></a>   
   </div>
-
   <h4>3 Tone Blonde 30"🔥🔥 [HHB]</h4>
   <p class="price">R900</p>
-  <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-</div> 
-<div class="pagination">
-  <a class="page-link" href="shop-page2.html">Next ➡️</a>
+  <label for="qty-ginger">Qty:</label>
+  <input type="number" id="qty-ginger" class="quantity-input" value="1" min="1">
+  <button class="add-to-cart" onclick="addToCart('Black Top Ginger 30\\"', 'qty-ginger')">Add to Cart</button>
+ </div> 
+  
 </div>
-      <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>  
-        <script>
-  const itemsToShow = 6;
-  let currentIndex = 0;
 
-  const products = document.querySelectorAll("#productGrid .wig-card");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  <div class="pagination">
+    <a class="page-link" href="shop-page2.html">Next ➡️</a>
+  </div>
+</section>
 
-  function showNextProducts() {
-    for (let i = currentIndex; i < currentIndex + itemsToShow && i < products.length; i++) {
-      products[i].style.display = "block";
-    }
-    currentIndex += itemsToShow;
+<div id="notification" class="notification"></div>
 
-    if (currentIndex >= products.length) {
-      loadMoreBtn.style.display = "none";
-    }
-  }
-
-  // Initially hide all
-  products.forEach(p => p.style.display = "none");
-
-  // Show first batch
-  showNextProducts();
-
-  // Button click event
-  loadMoreBtn.addEventListener("click", showNextProducts);
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 <script>
   const cart = {};
 
@@ -166,7 +187,6 @@
     const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
-</script>      
+</script>
 </body>
 </html>
-      
