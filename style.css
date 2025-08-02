@@ -981,4 +981,31 @@ body {
   height: 100%;
   background: rgba(255, 255, 255, 0.05); /* soft fade over the logo */
   z-index: -1;
+} 
+
+.homepage-welcome {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffe4f2;
+  border-left: 5px solid #e91e63;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  color: #2e2e2e;
+  line-height: 1.7;
+}
+
+.homepage-welcome h1 {
+  color: #c2185b;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.homepage-welcome .tagline {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #e91e63;
 }
