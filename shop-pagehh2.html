@@ -5,179 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
-  <!--Lightbox2 CSS for multi-angle popups -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
   <header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-    </ul>
-  </nav>
-</header> 
-  <!-- Shop Section -->
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html" class="active">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header> 
+
   <section class="shop-section">
-    <h1>Shop Barbie Approved Units(HH) 💖</h1>
-        <h2>Human Hair (HH)</h2>
+    <h1>Shop Barbie Approved Units (HH) 💖</h1>
+    <h2>Human Hair (HH)</h2>
 
-<!--CAJUN PIANO BOUNCE BOB -->
- <div class="wig-card">
-  <!-- Main Front View -->
-  <a href="images/ran.jpg" data-lightbox="ran" data-title="ran">
-    <img src="images/ran.jpg" alt="ran" Front View" class="main-wig-img" />
-  </a>
+    <div class="wig-gallery" id="productGrid">
 
-  <!-- Smaller Thumbnails (Side + Back Views) -->
-  <div class="angle-gallery">
-    <a href="images/ran1.jpg" data-lightbox="ran" data-title="Side View">
-      <img src="images/ran1.jpg" alt="ran Side View" />
-    </a>
-    <a href="images/ran2.jpg" data-lightbox="ran" data-title="Back View">
-      <img src="images/ran2.jpg" alt="ran Back View" />
-    </a>
-  </div>
+      <!-- CAJUN PIANO BOUNCE BOB -->
+      <div class="wig-card">
+        <a href="images/ran.jpg" data-lightbox="ran" data-title="Front View">
+          <img src="images/ran.jpg" alt="Cajun Piano Bounce Bob Front" class="main-wig-img" />
+        </a>
+        <div class="angle-gallery">
+          <a href="images/ran1.jpg" data-lightbox="ran" data-title="Side View"><img src="images/ran1.jpg" /></a>
+          <a href="images/ran2.jpg" data-lightbox="ran" data-title="Back View"><img src="images/ran2.jpg" /></a>
+        </div>
+        <h4>Cajun Piano Bounce Bob [HH]</h4>
+        <p class="price">R700</p>
+        <label for="qty-ran">Qty:</label>
+        <input type="number" id="qty-ran" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Cajun Piano Bounce Bob', 'qty-ran')">Add to Cart</button>
+      </div>
 
-  <h4>CAJUN PIANO BOUNCE BOB" [HH]</h4>
-  <p class="price">R700</p>
-  <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-</div>   
+      <!-- PIXIE TIWA CURL -->
+      <div class="wig-card">
+        <a href="images/pxcurl.jpg" data-lightbox="pixie" data-title="Front View">
+          <img src="images/pxcurl.jpg" alt="Pixie Tiwa Curl Front" class="main-wig-img" />
+        </a>
+        <div class="angle-gallery">
+          <a href="images/pxcurl1.jpg" data-lightbox="pixie" data-title="Side View"><img src="images/pxcurl1.jpg" /></a>
+          <a href="images/pxcurl2.jpg" data-lightbox="pixie" data-title="Back View"><img src="images/pxcurl2.jpg" /></a>
+        </div>
+        <h4>Pixie Tiwa Curl [HH]</h4>
+        <p class="price">R600</p>
+        <label for="qty-pxtiwa">Qty:</label>
+        <input type="number" id="qty-pxtiwa" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Pixie Tiwa Curl', 'qty-pxtiwa')">Add to Cart</button>
+      </div>
 
-<!--PIXIE TIWA CURL" -->
- <div class="wig-card">
-  <!-- Main Front View -->
-  <a href="images/pxcurl.jpg" data-lightbox="pixie" data-title="pixie">
-    <img src="images/pxcurl.jpg" alt="pixie" Front View" class="main-wig-img" />
-  </a>
+      <!-- PIXIE CUT -->
+      <div class="wig-card">
+        <a href="images/pxcut.jpg" data-lightbox="pixie" data-title="Front View">
+          <img src="images/pxcut.jpg" alt="Pixie Cut Front" class="main-wig-img" />
+        </a>
+        <div class="angle-gallery">
+          <a href="images/pxcut1.jpg" data-lightbox="pixie" data-title="Side View"><img src="images/pxcut1.jpg" /></a>
+          <a href="images/pxcut2.jpg" data-lightbox="pixie" data-title="Back View"><img src="images/pxcut2.jpg" /></a>
+        </div>
+        <h4>Pixie Cut [HH]</h4>
+        <p class="price">R500</p>
+        <label for="qty-pxcut">Qty:</label>
+        <input type="number" id="qty-pxcut" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Pixie Cut', 'qty-pxcut')">Add to Cart</button>
+      </div>
 
-  <!-- Smaller Thumbnails (Side + Back Views) -->
-  <div class="angle-gallery">
-    <a href="images/pxcurl1.jpg" data-lightbox="pixie" data-title="Side View">
-      <img src="images/pxcurl1.jpg" alt="pixie Side View" />
-    </a>
-    <a href="images/pxcurl2.jpg" data-lightbox="greyblack30" data-title="Back View">
-      <img src="images/pxcurl2.jpg" alt="pixie Back View" />
-    </a>
-  </div>
+    </div>
 
-  <h4>PIXIE TIWA CURL" [HH]</h4>
-  <p class="price">R600</p>
-  <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-</div>   
+    <div class="pagination">
+      <a class="page-link" href="shop-pagehh1.html">⬅️ Previous</a>
+      <a class="page-link" href="shop-pagehh3.html">Next ➡️</a>
+    </div>
+  </section>
 
+  <div id="notification" class="notification"></div>
 
-<!--PIXIE CUT" -->
- <div class="wig-card">
-  <!-- Main Front View -->
-  <a href="images/pxcut.jpg" data-lightbox="pixie" data-title="pixie">
-    <img src="images/pxcut.jpg" alt="pixie" Front View" class="main-wig-img" />
-  </a>
-
-  <!-- Smaller Thumbnails (Side + Back Views) -->
-  <div class="angle-gallery">
-    <a href="images/pxcut1.jpg" data-lightbox="pixie" data-title="Side View">
-      <img src="images/pxcut1.jpg" alt="pixie Side View" />
-    </a>
-    <a href="images/pxcut2.jpg" data-lightbox="greyblack30" data-title="Back View">
-      <img src="images/pxcut2.jpg" alt="pixie Back View" />
-    </a>
-  </div>
-
-  <h4>PIXIE CUT" [HH]</h4>
-  <p class="price">R500</p>
-  <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-</div>   
-
-
-
-
-
-
-<div>   
-<div class="pagination">
-  <a class="page-link" href="shop-pagehh1.html">⬅️ Previous</a>
-  <a class="page-link" href="shop-pagehh3.html">Next ➡️</a>
-</div>
-
-       <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>  
-        <script>
-  const itemsToShow = 6;
-  let currentIndex = 0;
-
-  const products = document.querySelectorAll("#productGrid .wig-card");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
-
-  function showNextProducts() {
-    for (let i = currentIndex; i < currentIndex + itemsToShow && i < products.length; i++) {
-      products[i].style.display = "block";
-    }
-    currentIndex += itemsToShow;
-
-    if (currentIndex >= products.length) {
-      loadMoreBtn.style.display = "none";
-    }
-  }
-
-  // Initially hide all
-  products.forEach(p => p.style.display = "none");
-
-  // Show first batch
-  showNextProducts();
-
-  // Button click event
-  loadMoreBtn.addEventListener("click", showNextProducts);
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
-  const cart = {};
+    const cart = {};
 
-  function addToCart(productName, qtyId) {
-    const qty = parseInt(document.getElementById(qtyId).value);
-    if (!qty || qty < 1) return;
+    function addToCart(productName, qtyId) {
+      const qty = parseInt(document.getElementById(qtyId).value);
+      if (!qty || qty < 1) return;
 
-    if (cart[productName]) {
-      cart[productName].quantity += qty;
-    } else {
-      cart[productName] = {
-        name: productName,
-        quantity: qty
-      };
+      if (cart[productName]) {
+        cart[productName].quantity += qty;
+      } else {
+        cart[productName] = { name: productName, quantity: qty };
+      }
+
+      updateCartCount();
+      showNotification(`${qty} x ${productName} added to cart`);
     }
 
-    updateCartCount();
-    showNotification(`${qty} x ${productName} added to cart`);
-  }
+    function updateCartCount() {
+      const cartCountEl = document.getElementById('cart-count');
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      cartCountEl.textContent = totalItems;
+      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    }
 
-  function updateCartCount() {
-    const cartCountEl = document.getElementById('cart-count');
-    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    cartCountEl.textContent = totalItems;
-    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
-  }
-
-  function showNotification(message) {
-    const notification = document.getElementById('notification');
-    if (notification) {
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
       notification.textContent = message;
       notification.style.display = 'block';
       setTimeout(() => notification.style.display = 'none', 2500);
     }
-  }
 
-  function checkoutCart() {
-    let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
-    for (const item in cart) {
-      message += `• ${item} x ${cart[item].quantity}\n`;
+    function checkoutCart() {
+      let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
+      for (const item in cart) {
+        message += `• ${item} x ${cart[item].quantity}\n`;
+      }
+      const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
     }
-    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  }
-</script>
-</body
-</html>        
+  </script>
+</body>
+</html>
