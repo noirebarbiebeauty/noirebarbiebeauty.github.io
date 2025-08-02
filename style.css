@@ -869,3 +869,24 @@ body {
   backdrop-filter: blur(1px);
   z-index: -1;
 }
+.info-postit {
+  background: #ffe4f2;
+  border-left: 5px solid #e91e63;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+.info-postit h3 {
+  color: #c2185b;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.info-postit ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
