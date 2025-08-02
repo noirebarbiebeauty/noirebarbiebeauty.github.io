@@ -113,31 +113,35 @@
 }
 .floating-welcome-box {
   position: fixed;
-  bottom: 30px;
-  right: 20px;
-  max-width: 320px;
+  bottom: 20px;
+  right: 15px;
+  width: 290px;
+  max-height: 230px;
+  overflow-y: auto;
   background: rgba(0, 0, 0, 0.7);
-  padding: 15px 20px;
+  padding: 15px;
   border-radius: 12px;
   box-shadow: 0 0 15px #ff69b4;
-  z-index: 100;
+  z-index: 999;
   color: white;
-  text-align: left;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  backdrop-filter: blur(3px);
 }
+
 .floating-welcome-box h1 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ff69b4;
-  margin-bottom: 8px;
   text-align: center;
+  margin-bottom: 8px;
 }
+
 .floating-welcome-box .tagline {
   color: #ff69b4;
   font-weight: bold;
-  margin-top: 10px;
   text-align: center;
-}
+  margin-top: 8px;
+}    
   </style>
 </head>
 <body>
