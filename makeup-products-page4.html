@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop Makeup - Noire Barbie Beauty</title>
+  <title>Shop Makeup - Page 4 | Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
   <style>
     .cart-counter {
       background-color: hotpink;
@@ -100,115 +101,117 @@
   <nav>
     <ul>
       <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+      <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
       <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
       <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
     </ul>
   </nav>
-</header> 
-  <!-- HEALTHY SKIN FOUNDATION -->
+</header>
+
+<section class="makeup-products-section">
+  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+  <div class="makeup-gallery">
+
+    <!-- HEALTHY SKIN FOUNDATION -->
     <div class="product" data-price="100">
       <div class="product-gallery">
-        <a href="images/healthyskin1.jpg" data-lightbox="stay" data-title="stay- Front">
-          <img src="images/healthyskin1.jpg" alt="stay 1">
+        <a href="images/healthyskin1.jpg" data-lightbox="healthyskin" data-title="Healthy Skin - Front">
+          <img src="images/healthyskin1.jpg" alt="Healthy Skin Front">
         </a>
-        <a href="images/healthyskin2.jpg" data-lightbox="stay" data-title="stay- Side">
-          <img src="images/healthyskin2.jpg" alt="stay 2">
+        <a href="images/healthyskin2.jpg" data-lightbox="healthyskin" data-title="Healthy Skin - Side">
+          <img src="images/healthyskin2.jpg" alt="Healthy Skin Side">
         </a>
       </div>
       <div class="product-name">HEALTHY SKIN FOUNDATION</div>
       <div class="price">R100</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-healthyskin-foundation">Quantity:</label>
-      <input type="number" id="qty-healthyskin-foundation" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('healthyskin foundation', 'qty-healthyskin-foundation)">Add to Cart</button>
-    </div   
-      
+      <label for="qty-healthyskin">Quantity:</label>
+      <input type="number" id="qty-healthyskin" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Healthy Skin Foundation', 'qty-healthyskin')">Add to Cart</button>
+    </div>
+
     <!-- MASCARA -->
     <div class="product" data-price="70">
       <div class="product-gallery">
-        <a href="images/mascara.jpg" data-lightbox="mascara" data-title="stay- Front">
-          <img src="images/mascara.jpg" alt="mascara 1">
+        <a href="images/mascara.jpg" data-lightbox="mascara" data-title="Mascara - Front">
+          <img src="images/mascara.jpg" alt="Mascara">
         </a>
       </div>
-      <div class="product-name">MASACRA</div>
+      <div class="product-name">MASCARA</div>
       <div class="price">R70</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-mascara">Quantity:</label>
+      <label for="qty-mascara">Quantity:</label>
       <input type="number" id="qty-mascara" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('mascara', 'qty-mascara)">Add to Cart</button>
-    </div>      
-    
-   <!-- GLASTING LIPGLOSS -->
+      <button class="add-to-cart" onclick="addToCart('Mascara', 'qty-mascara')">Add to Cart</button>
+    </div>
+
+    <!-- GLASTING LIPGLOSS -->
     <div class="product" data-price="50">
       <div class="product-gallery">
-        <a href="images/glastingglossmain.jpg" data-lightbox="gloss" data-title="gloss- Front">
-          <img src="images/glastingglossmain.jpg" alt="gloss main">
+        <a href="images/glastingglossmain.jpg" data-lightbox="glastinggloss" data-title="Glasting Gloss - Front">
+          <img src="images/glastingglossmain.jpg" alt="Glasting Gloss Main">
         </a>
-        <a href="images/glastinggloss1.jpg" data-lightbox="gloss" data-title="gloss- Side">
-          <img src="images/glastinggloss1.jpg" alt="gloss 1">
+        <a href="images/glastinggloss1.jpg" data-lightbox="glastinggloss" data-title="Glasting Gloss - Side">
+          <img src="images/glastinggloss1.jpg" alt="Glasting Gloss Side">
         </a>
-        <a href="images/glastingglos2.jpg" data-lightbox="gloss" data-title="gloss - Swatch">
-          <img src="images/glastinggloss2.jpg" alt="gloss 2">
+        <a href="images/glastinggloss2.jpg" data-lightbox="glastinggloss" data-title="Glasting Gloss - Swatch">
+          <img src="images/glastinggloss2.jpg" alt="Glasting Gloss Swatch">
         </a>
       </div>
       <div class="product-name">GLASTING LIPGLOSS</div>
       <div class="price">R50</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-stay-foundation">Quantity:</label>
-      <input type="number" id="qty-stay-foundation" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-stay-foundation)">Add to Cart</button>
-    </div>  
+      <label for="qty-glasting">Quantity:</label>
+      <input type="number" id="qty-glasting" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Glasting Lipgloss', 'qty-glasting')">Add to Cart</button>
+    </div>
 
-   <!-- SWEAT OIL -->
-    <div class="product" data-price="120">
+    <!-- SWEAT OIL -->
+    <div class="product" data-price="170">
       <div class="product-gallery">
-        <a href="images/sweatoil1.jpg" data-lightbox="stay" data-title="sweatoil- Front">
-          <img src="images/sweatoil1.jpg" alt="sweatoil1">
+        <a href="images/sweatoil1.jpg" data-lightbox="sweatoil" data-title="Sweat Oil - Front">
+          <img src="images/sweatoil1.jpg" alt="Sweat Oil">
         </a>
       </div>
-      <div class="product-name">SWEATOIL</div>
+      <div class="product-name">SWEAT OIL</div>
       <div class="price">R170</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-sweatoil">Quantity:</label>
+      <label for="qty-sweatoil">Quantity:</label>
       <input type="number" id="qty-sweatoil" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-stay-foundation)">Add to Cart</button>
-    </div>    
+      <button class="add-to-cart" onclick="addToCart('Sweat Oil', 'qty-sweatoil')">Add to Cart</button>
+    </div>
 
-   <!-- DEWYFIX -->
+    <!-- DEWYFIX -->
     <div class="product" data-price="150">
       <div class="product-gallery">
-        <a href="images/dewyfix.jpg" data-lightbox="dewy" data-title="dewy- Front">
-          <img src="images/dewyfix.jpg" alt="dewy 1">
+        <a href="images/dewyfix.jpg" data-lightbox="dewyfix" data-title="Dewyfix - Front">
+          <img src="images/dewyfix.jpg" alt="Dewyfix">
         </a>
       </div>
-      <div class="product-name">DEWYFIX</div>
+      <div class="product-name">DEWYFIX SPRAY</div>
       <div class="price">R150</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-stay-foundation">Quantity:</label>
-      <input type="number" id="qty-stay-dewy" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('dewy', 'qty-stay-foundation)">Add to Cart</button>
+      <label for="qty-dewyfix">Quantity:</label>
+      <input type="number" id="qty-dewyfix" class="quantity-input" min="1" value="1" />
+      <button class="add-to-cart" onclick="addToCart('Dewyfix Spray', 'qty-dewyfix')">Add to Cart</button>
     </div>
 
   </div>
-    <div class="pagination">
-  <a class="page-link" href="makeup-products-page3.html">⬅️ Previous</a>
-  <a class="page-link" href="makeup-products-page5.html">Next ➡️</a>
-</div>
-  </section>
 
-<!-- Lightbox Script -->
+  <div class="pagination">
+    <a class="page-link" href="makeup-products-page3.html">⬅️ Previous</a>
+    <a class="page-link" href="makeup-products-page5.html">Next ➡️</a>
+  </div>
+
+  <button class="checkout-btn" onclick="checkoutCart()">Checkout on WhatsApp</button>
+  <div id="notification" class="notification"></div>
+</section>
+
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
-<!-- WhatsApp Order Script -->
-<script>
-  function orderNow(productName) {
-    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-  }
-</script>
 <script>
   const cart = {};
 
@@ -219,10 +222,7 @@
     if (cart[productName]) {
       cart[productName].quantity += qty;
     } else {
-      cart[productName] = {
-        name: productName,
-        quantity: qty
-      };
+      cart[productName] = { name: productName, quantity: qty };
     }
 
     updateCartCount();
@@ -231,17 +231,19 @@
 
   function updateCartCount() {
     const cartCountEl = document.getElementById('cart-count');
-    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    cartCountEl.textContent = totalItems;
-    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    if (cartCountEl) {
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      cartCountEl.textContent = totalItems;
+      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    }
   }
 
   function showNotification(message) {
     const notification = document.getElementById('notification');
     if (notification) {
       notification.textContent = message;
-      notification.style.display = 'block';
-      setTimeout(() => notification.style.display = 'none', 2500);
+      notification.classList.add('show');
+      setTimeout(() => notification.classList.remove('show'), 2500);
     }
   }
 
@@ -250,10 +252,9 @@
     for (const item in cart) {
       message += `• ${item} x ${cart[item].quantity}\n`;
     }
-    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const url = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   }
-</script>  
+</script>
 </body>
-</html>  
-
+</html>
