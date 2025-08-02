@@ -3,31 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop - Noire Barbie Beauty</title>
+  <title>Shop Page 3 - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
-  <!--Lightbox2 CSS for multi-angle popups -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid pink;
+      margin-right: 10px;
+    }
+
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .add-to-cart:hover {
+      background-color: deeppink;
+    }
+
+    .notification {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      z-index: 999;
+      display: none;
+    }
+
+    .cart-counter {
+      background-color: hotpink;
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+
+    .cart-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      color: hotpink;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 <header>
   <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+  <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
   <nav>
     <ul>
       <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
+      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
       <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
       <li><a href="wigservices.html">WIG SERVICES</a></li>
       <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
     </ul>
   </nav>
-</header>
+</header> 
 
 <section class="shop-section">
-  <h1>Shop Barbie Approved Units 💖</h1>
+  <h1>Shop More Barbie Units 💖</h1>
   <div class="wig-gallery" id="productGrid">
 
-    <!-- Wig 1 -->
+    <!-- White ff -->
     <div class="wig-card">
       <a href="images/whiteff30.png" data-lightbox="whiteff30" data-title="White FF">
         <img src="images/whiteff30.png" alt="White FF 30” Front" class="main-wig-img" />
@@ -47,7 +103,7 @@
       <button class="add-to-cart" onclick="addToCart('White FF 30', 'qty-whiteff')">Add to Cart</button>
     </div>
 
-    <!-- Wig 2 -->
+    <!-- Selena bounce -->
     <div class="wig-card">
       <a href="images/selenabouncycurl20.png" data-lightbox="selenabouncycurl20" data-title="Selena Bouncy">
         <img src="images/selenabouncycurl20.png" alt="Selena Bouncy Curl Front" class="main-wig-img" />
@@ -67,7 +123,7 @@
       <button class="add-to-cart" onclick="addToCart('Selena Bouncy Curl 5x5', 'qty-selena')">Add to Cart</button>
     </div>
 
-    <!-- Wig 3 -->
+    <!-- Tip bouncy -->
     <div class="wig-card">
       <a href="images/tipbouncy22.png" data-lightbox="tipbouncy22" data-title="Tip Bouncy">
         <img src="images/tipbouncy22.png" alt="Tip Bouncy 22 Front" class="main-wig-img" />
@@ -87,7 +143,7 @@
       <button class="add-to-cart" onclick="addToCart('Tip Bouncy Closure 22', 'qty-tip')">Add to Cart</button>
     </div>
 
-    <!-- Wig 4 -->
+    <!-- Barbieblonde -->
     <div class="wig-card">
       <a href="images/barbieblonde30.jpg" data-lightbox="barbieblonde30" data-title="Barbie Blonde">
         <img src="images/barbieblonde30.jpg" alt="Barbie Blonde 30” Front" class="main-wig-img" />
@@ -108,20 +164,17 @@
     </div>
 
   </div>
-</section>
 
 <div class="pagination">
   <a class="page-link" href="shop-page2.html">⬅️ Previous</a>
   <a class="page-link" href="shop-page4.html">Next ➡️</a>
 </div>
+</section>
 <!-- Notification Bubble -->
-<div id="notification" class="notification" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background-color:#f06292;color:white;padding:10px 20px;border-radius:8px;z-index:999;"></div>
-
-<!-- Lightbox JS -->
+<div id="notification" class="notification"></div>
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
-<!-- Cart + WhatsApp Script -->
-<script>
+<script>  
   const cart = {};
 
   function addToCart(productName, qtyId) {
