@@ -1220,3 +1220,50 @@ body {
     font-size: 0.95rem;
   }
 }
+.wig-revamp-section {
+  background: rgba(255, 192, 203, 0.1);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+}
+
+.wig-revamp-section h2 {
+  color: #ff69b4;
+  font-size: 1.8rem;
+}
+
+.hair-care-section {
+  margin-top: 1rem;
+}
+
+.hair-care-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hair-care-section li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.revamp-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.revamp-btn, .revamp-order-btn {
+  background-color: #ff69b4;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.revamp-btn:hover, .revamp-order-btn:hover {
+  background-color: #e754a6;
+}
