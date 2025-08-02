@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Client Makeup Gallery | Noire Barbie Beauty</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Client Glam Gallery - Page 3 | Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
     body {
@@ -52,47 +52,38 @@
       margin: 30px 0;
     }
 
-    .gallery-grid {
+    .makeup-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 20px;
     }
 
-    .gallery-item {
+    .makeup-card {
       background-color: #2a2a2a;
       border-radius: 12px;
       overflow: hidden;
       text-align: center;
       padding: 15px;
-      position: relative;
     }
 
-    .gallery-item img {
+    .makeup-card img {
       width: 100%;
       border-radius: 8px;
       object-fit: cover;
-      transition: transform 0.3s ease;
       aspect-ratio: 3/4;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .client-name {
-      margin-top: 12px;
-      color: #ffccf9;
-      font-weight: bold;
-      font-size: 18px;
+    .product-sub-gallery {
+      display: none;
     }
 
     .product-used {
       font-size: 14px;
       color: #ffb3da;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
-    .order-btn {
+    .add-to-cart {
       margin-top: 10px;
       background: #ff66b2;
       color: white;
@@ -103,28 +94,46 @@
       cursor: pointer;
     }
 
-    .order-btn:hover {
+    .add-to-cart:hover {
       background: #e60073;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+
+    .page-link {
+      color: hotpink;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .page-link.active {
+      color: white;
+      border-bottom: 2px solid hotpink;
     }
   </style>
 </head>
-
 <body>
+
   <header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-    </ul>
-  </nav>
-</header> 
-  <section class="makeup-products-section">
-  <h1 class="makeup-heading">💋 Our Barbie Beauties – Page 3 💄</h1>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page3.html" class="active">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>💋 Our Barbie Beauties – Page 3 💄</h1>
+
   <div class="makeup-gallery">
 
     <!-- GD -->
@@ -132,14 +141,8 @@
       <a href="images/gd.jpg" data-lightbox="gd" data-title="Baddie Glow – Gd">
         <img src="images/gd.jpg" alt="Gd Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/gd1.jpg" data-lightbox="gd">
-          <img src="images/gd1.jpg" alt="Gd Side">
-        </a>
-        <a href="images/gd2.jpg" data-lightbox="gd">
-          <img src="images/gd2.jpg" alt="Gd Detail">
-        </a>
-      </div>
+      <a href="images/gd1.jpg" data-lightbox="gd"></a>
+      <a href="images/gd2.jpg" data-lightbox="gd"></a>
       <h4>Baddie Glow – Gd</h4>
       <p class="product-used">Used: Concealer Palette</p>
       <button class="add-to-cart" onclick="orderNow('Concealer Palette')">Order Product</button>
@@ -150,60 +153,45 @@
       <a href="images/pril.jpg" data-lightbox="pril" data-title="Sassy Baddie – Pril">
         <img src="images/pril.jpg" alt="Pril Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/pril1.jpg" data-lightbox="pril">
-          <img src="images/pril1.jpg" alt="Pril Side">
-        </a>
-        <a href="images/pril2.jpg" data-lightbox="pril">
-          <img src="images/pril2.jpg" alt="Pril Detail">
-        </a>
-      </div>
+      <a href="images/pril1.jpg" data-lightbox="pril"></a>
+      <a href="images/pril2.jpg" data-lightbox="pril"></a>
       <h4>Sassy Baddie – Pril</h4>
       <p class="product-used">Used: Waterproof Eye Pencil</p>
       <button class="add-to-cart" onclick="orderNow('Waterproof Eye Pencil')">Order Product</button>
     </div>
-    
+
     <!-- CNO -->
     <div class="makeup-card multi-view">
-      <a href="images/cno.jpg" data-lightbox="CNO" data-title="Spicy Baddie – CNO">
+      <a href="images/cno.jpg" data-lightbox="cno" data-title="Sassy Baddie – CNO">
         <img src="images/cno.jpg" alt="Cno Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/cno1.jpg" data-lightbox="cno">
-          <img src="images/cno1.jpg" alt="Cno Side">
-        </a>
-        <a href="images/cno2.jpg" data-lightbox="cno">
-          <img src="images/cno2.jpg" alt="Cno Detail">
-        </a>
-      </div>
+      <a href="images/cno1.jpg" data-lightbox="cno"></a>
+      <a href="images/cno2.jpg" data-lightbox="cno"></a>
       <h4>Sassy Baddie – CNO</h4>
       <p class="product-used">Used: Lip Pencil</p>
       <button class="add-to-cart" onclick="orderNow('Lip Pencil')">Order Product</button>
     </div>
 
+  </div>
 
-    
-
-</div> <!-- closes .makeup-gallery -->
-</section>
-
-<!-- Lightbox Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-
-<!-- WhatsApp Order Script -->
-<script>
-  function orderNow(productName) {
-    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-  }
-</script>
-</body>
-</html>
-  
+  <!-- Pagination -->
   <div class="pagination">
-    <a class="page-link" href="client-gallery-page2.html"><- Previous</a>
-    <a class="page-link" href="client-gallerypage1.html">1</a>
+    <a class="page-link" href="client-gallery-page2.html">← Previous</a>
+    <a class="page-link" href="client-gallery-page1.html">1</a>
     <a class="page-link" href="client-gallery-page2.html">2</a>
     <a class="page-link active" href="client-gallery-page3.html">3</a>
   </div>
-</section>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  <!-- WhatsApp Order -->
+  <script>
+    function orderNow(productName) {
+      const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
+      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+    }
+  </script>
+
+</body>
+</html>
