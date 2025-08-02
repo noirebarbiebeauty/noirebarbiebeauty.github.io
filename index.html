@@ -112,31 +112,38 @@
   margin-top: 30px;
 }
 .floating-welcome-box {
-  max-width: 680px;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 18px;
-  padding: 25px 30px;
-  margin: 40px auto;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  color: #fff;
+  max-width: 95%;
+  width: 600px;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+  z-index: 10;
+  overflow-y: auto;
+  max-height: 90vh;
   text-align: center;
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.7;
 }
 
 .floating-welcome-box h1 {
-  font-size: 2rem;
   color: #ff69b4;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px black;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.floating-welcome-box p {
+  font-size: 1rem;
+  margin: 8px 0;
+  line-height: 1.5;
 }
 
 .floating-welcome-box .tagline {
-  margin-top: 20px;
-  font-style: italic;
-  color: #ffc0cb;
   font-weight: bold;
+  color: #ff69b4;
 }
   </style>
 </head>
