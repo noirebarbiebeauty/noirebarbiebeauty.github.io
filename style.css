@@ -1132,3 +1132,13 @@ body {
   text-align: center;
   font-size: 16px;
 }
+@media (max-width: 600px) {
+  .floating-welcome-box {
+    position: static;
+    margin: 20px auto;
+    width: 90%;
+    right: auto;
+    top: auto;
+    padding: 20px;
+  }
+}
