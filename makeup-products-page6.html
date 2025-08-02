@@ -29,7 +29,6 @@
       border-radius: 8px;
       font-size: 14px;
       z-index: 9999;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .notification.show {
@@ -92,6 +91,24 @@
     .price {
       color: #ffb6c1;
     }
+
+    .pagination {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .pagination .page-link {
+      background-color: #ff69b4;
+      color: white;
+      padding: 8px 14px;
+      margin: 0 6px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .pagination .active {
+      background-color: deeppink;
+    }
   </style>
 </head>
 <body>
@@ -100,146 +117,67 @@
   <nav>
     <ul>
       <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+      <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
       <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
       <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
     </ul>
   </nav>
-</header> 
-  <!-- HEGAI & ESTHER COLLECTION -->
-<div style="text-align: center; margin: 30px 0;">
-  <h3 class="makeup-subheading" style="margin-bottom: 15px; color: #ff69b4; font-size: 1.6em;">
-    💋 HEGAI & ESTHER COLLECTION 💋
-  </h3>
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="images/hegai-logo.jpg" alt="HEGAI & ESTHER Logo" style="max-height: 120px; width: auto;">
-  </div>
-       <!--EYE SHADOW PALLET -->
-    <div class="product" data-price="180">
-      <div class="product-gallery">
-        <a href="images/esp.jpg" data-lightbox="esp" data-title="esp- Front">
-          <img src="images/esp.jpg" alt="esp 1">
-        </a>
-        <a href="images/esp1.jpg" data-lightbox="esp" data-title="esp- Side">
-          <img src="images/esp1.jpg" alt="esp 2">
-        </a>
-      </div>
-      <div class="product-name">EYE SHADOW PALLET</div>
-      <div class="price">R180</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-pf">Quantity:</label>
-      <input type="number" id="qty-pf" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('esp, 'qty-pf)">Add to Cart</button>
-</diV>
+</header>
 
-       <!--PHOTO PERFECT FOUNDATION -->
+<section class="makeup-products-section">
+  <h2 class="makeup-heading">💄🛒 HEGAI & ESTHER COLLECTION CONTINUED 🛒💄</h2>
+
+  <div class="makeup-gallery">
+
+    <!-- Add your product cards here, example below -->
+
     <div class="product" data-price="200">
       <div class="product-gallery">
-        <a href="images/ppf.jpg" data-lightbox="ppf" data-title="ppf- Front">
-          <img src="images/ppf.jpg" alt="pf 1">
+        <a href="images/ppf.jpg" data-lightbox="ppf" data-title="Photo Perfect Foundation - Front">
+          <img src="images/ppf.jpg" alt="Photo Perfect Foundation">
         </a>
-        <a href="images/ppf1.jpg" data-lightbox="ppf" data-title="ppf- Side">
-          <img src="images/ppf1.jpg" alt="pf 2">
+        <a href="images/ppf1.jpg" data-lightbox="ppf" data-title="Side View">
+          <img src="images/ppf1.jpg" alt="Side View">
         </a>
-        <a href="images/ppf2.jpg" data-lightbox="ppf" data-title="ppf - Swatch">
-          <img src="images/ppf2.jpg" alt="ppf 3">
+        <a href="images/ppf2.jpg" data-lightbox="ppf" data-title="Swatch">
+          <img src="images/ppf2.jpg" alt="Swatch">
         </a>
       </div>
       <div class="product-name">PHOTO PERFECT FOUNDATION</div>
       <div class="price">R200</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-ppf">Quantity:</label>
-      <input type="number" id="qty-ppf" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('ppc', 'qty-pf)">Add to Cart</button>
-</diV>
+      <label for="qty-ppf">Quantity:</label>
+      <input type="number" id="qty-ppf" class="quantity-input" value="1" min="1" />
+      <button class="add-to-cart" onclick="addToCart('Photo Perfect Foundation', 'qty-ppf')">Add to Cart</button>
+    </div>
 
-       <!--PHOTO PERFECT CONCEALER -->
-    <div class="product" data-price="100">
-      <div class="product-gallery">
-        <a href="images/ppc.jpg" data-lightbox="ppc" data-title="ppc- Front">
-          <img src="images/ppc.jpg" alt="pf 1">
-        </a>
-        <a href="images/ppc1.jpg" data-lightbox="ppc" data-title="ppc- Side">
-          <img src="images/ppc1.jpg" alt="ppc 2">
-        </a>
-        <a href="images/ppc2.jpg" data-lightbox="ppc" data-title="ppc - Swatch">
-          <img src="images/ppc2.jpg" alt="ppc 3">
-        </a>
-      </div>
-      <div class="product-name">PHOTO PERFECT CONCEALER</div>
-      <div class="price">R100</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-ppc">Quantity:</label>
-      <input type="number" id="qty-ppc" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('ppc', 'qty-ppc)">Add to Cart</button>
-</diV>
+    <!-- Continue adding more products here -->
 
-       <!--SCULPTING EYEBROW PENCIL -->
-    <div class="product" data-price="200">
-      <div class="product-gallery">
-        <a href="images/sep.jpg" data-lightbox="sep" data-title="sep- Front">
-          <img src="images/sep.jpg" alt="sep 1">
-        </a>
-        <a href="images/sep1.jpg" data-lightbox="sep" data-title="sep- Side">
-          <img src="images/sep1.jpg" alt="sep 2">
-        </a>
-        <a href="images/sep2.jpg" data-lightbox="sep" data-title="sep - Swatch">
-          <img src="images/sep2.jpg" alt="sep 3">
-        </a>
-      </div>
-      <div class="product-name">SCULPTING EYEBROW PENCIL</div>
-      <div class="price">R50</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-sep">Quantity:</label>
-      <input type="number" id="qty-ppf" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('sep', 'qty-sep)">Add to Cart</button>
-</diV>
+  </div>
 
-       <!--VELVET MATTE LIPSTICK -->
-    <div class="product" data-price="100">
-      <div class="product-gallery">
-        <a href="images/velvet.jpg" data-lightbox="ppf" data-title="velvet- Front">
-          <img src="images/velvet.jpg" alt="pf 1">
-        </a>
-        <a href="images/velvet1.jpg" data-lightbox="ppf" data-title="velvet- Side">
-          <img src="images/velvet1.jpg" alt="pf 2">
-        </a>
-        <a href="images/velvet2.jpg" data-lightbox="ppf" data-title="velvet - Swatch">
-          <img src="images/velvet2.jpg" alt="ppf 3">
-        </a>
-      </div>
-      <div class="product-name">VELVET MATTE LIPSTICK</div>
-      <div class="price">R100</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-velvet">Quantity:</label>
-      <input type="number" id="qty-velvet" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('stay foundation', 'qty-velvet)">Add to Cart</button>
-</diV>
-<div class="pagination">
-  <a class="page-link" href="makeup-products-page5.html">⬅️ Previous</a>
-  <a class="page-link" href="makeup-products-page7.html">Next ➡️</a>
-</div>
-  <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
+  <div class="pagination">
+    <a class="page-link" href="makeup-products-page5.html">⬅️ Previous</a>
+    <a class="page-link" href="makeup-products-page7.html">Next ➡️</a>
+  </div>
+
+  <button class="checkout-btn" onclick="checkoutCart()">Checkout on WhatsApp</button>
 </section>
 
 <div id="notification" class="notification"></div>
 
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script>
   const cart = {};
   const notificationEl = document.getElementById('notification');
 
   function addToCart(productName, qtyId) {
-    const quantity = parseInt(document.getElementById(qtyId).value);
-    if (!cart[productName]) {
-      cart[productName] = { quantity };
-    } else {
-      cart[productName].quantity += quantity;
-    }
-    showNotification(`${productName} added to cart`);
+    const qty = parseInt(document.getElementById(qtyId).value);
+    if (!qty || qty < 1) return;
+    cart[productName] = cart[productName] || { quantity: 0 };
+    cart[productName].quantity += qty;
+    showNotification(`${qty} x ${productName} added to cart`);
   }
 
   function showNotification(message) {
@@ -249,10 +187,12 @@
   }
 
   function checkoutCart() {
-    const message = Object.entries(cart).map(([name, item]) => `${item.quantity} x ${name}`).join('%0A');
-    const whatsappLink = `https://wa.me/27683032091?text=Hi Noire Barbie Beauty 💖 I want to order:%0A${message}`;
-    window.open(whatsappLink, "_blank");
+    const message = Object.entries(cart)
+      .map(([name, item]) => `${item.quantity} x ${name}`)
+      .join('%0A');
+    const whatsappURL = `https://wa.me/27683032091?text=Hi Noire Barbie Beauty 💖 I want to order:%0A${message}`;
+    window.open(whatsappURL, "_blank");
   }
 </script>
 </body>
-</html>  
+</html>
