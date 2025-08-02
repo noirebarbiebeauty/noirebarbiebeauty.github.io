@@ -6,93 +6,6 @@
   <title>Shop Makeup - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-  <style>
-    .cart-counter {
-      background-color: hotpink;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 14px;
-      margin-left: 10px;
-    }
-
-    .notification {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #f06292;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      z-index: 9999;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .notification.show {
-      display: block;
-    }
-
-    .checkout-btn {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: deeppink;
-      color: white;
-      border: none;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .product {
-      background-color: #1c1c1c;
-      color: white;
-      border: 1px solid #ff69b4;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px;
-      width: 250px;
-    }
-
-    .product-gallery img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 5px;
-    }
-
-    .makeup-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .add-to-cart {
-      background-color: hotpink;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .quantity-input {
-      width: 50px;
-      margin: 5px 0;
-    }
-
-    .product-name {
-      font-weight: bold;
-      margin: 8px 0 4px;
-    }
-
-    .price {
-      color: #ffb6c1;
-    }
-  </style>
 </head>
 <body>
 <header>
@@ -100,124 +13,132 @@
   <nav>
     <ul>
       <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+      <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
       <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
       <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
     </ul>
   </nav>
 </header> 
-  <!--ARTISTICK MATTE LIPSTICK-->
-    <div class="product" data-price="100">
-      <div class="product-gallery">
-        <a href="images/mattestick.jpg" data-lightbox="matte" data-title="matte- Front">
-          <img src="images/mattestick.jpg" alt="matte 1">
-        </a>
-        <a href="images/mattestick1.jpg" data-lightbox="matte" data-title="matte- Side">
-          <img src="images/mattestick1.jpg" alt="matte 2">
-        </a>
-        <a href="images/mattestick2.jpg" data-lightbox="matte" data-title="matte - Swatch">
-          <img src="images/mattestick2.jpg" alt="matte 3">
-        </a>
-      </div>
-      <div class="product-name">ARTISTICK MATTE LIPSTICK</div>
-      <div class="price">R100</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-prime">Quantity:</label>
-      <input type="number" id="qty-matte" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('matte', 'qty-prime)">Add to Cart</button>
-</diV>
 
-  <!--LIPGLOSS-->
-    <div class="product" data-price="100">
-      <div class="product-gallery">
-        <a href="images/lipgoss.jpg" data-lightbox="gloss" data-title="gloss- Front">
-          <img src="images/lipgloss.jpg" alt="gloss 1">
-        </a>
-        <a href="images/lipgloss1.jpg" data-lightbox="gloss" data-title="gloss- Side">
-          <img src="images/lipgloss1.jpg" alt="gloss 2">
-        </a>
-        <a href="images/lipgloss2.jpg" data-lightbox="gloss" data-title="gloss - Swatch">
-          <img src="images/lipgloss2.jpg" alt="gloss 3">
-        </a>
-      </div>
-      <div class="product-name">LIP GLOSS</div>
-      <div class="price">R100</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-gloss">Quantity:</label>
-      <input type="number" id="qty-gloss" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('gloss', 'qty-gloss)">Add to Cart</button>
-</diV>
-    <!--LIP PENCIL-->
-    <div class="product" data-price="70">
-      <div class="product-gallery">
-        <a href="images/lipp.jpg" data-lightbox="lip" data-title="lip- Front">
-          <img src="images/lipp.jpg" alt="lip 1">
-        </a>
-        <a href="images/lipp1.jpg" data-lightbox="lip" data-title="lip- Side">
-          <img src="images/lipp1.jpg" alt="lip 2">
-        </a>
-        <a href="images/lipp2.jpg" data-lightbox="lip" data-title="lip - Swatch">
-          <img src="images/lipp2.jpg" alt="lip 3">
-        </a>
-      </div>
-      <div class="product-name">LIP PENCIL</div>
-      <div class="price">R70</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-lip">Quantity:</label>
-      <input type="number" id="qty-lip" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('lip', 'qty-lip)">Add to Cart</button>
-</diV>
+<section class="makeup-gallery">
 
-    <!--PHOTO PERFECT SETTING POWDER-->
-    <div class="product" data-price="150">
-      <div class="product-gallery">
-        <a href="images/setp.jpg" data-lightbox="set" data-title="set- Front">
-          <img src="images/setp.jpg" alt="prime 1">
-        </a>
-        <a href="images/setp1.jpg" data-lightbox="set" data-title="set- Side">
-          <img src="images/setp1.jpg" alt="set 2">
-        </a>
-        <a href="images/setp2.jpg" data-lightbox="set" data-title="set - Swatch">
-          <img src="images/setp2.jpg" alt="set 3">
-        </a>
-      </div>
-      <div class="product-name">PHOTO PERFECT SETTING POWDER</div>
-      <div class="price">R150</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-set">Quantity:</label>
-      <input type="number" id="qty-set" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('set', 'qty-prime)">Add to Cart</button>
-</diV>
-<!--MAKEUP SEAL-->
-    <div class="product" data-price="220">
-      <div class="product-gallery">
-        <a href="images/seal.jpg" data-lightbox="seal" data-title="seal- Front">
-          <img src="images/seal.jpg" alt="seal 1">
-        </a>
-        <a href="images/seal1.jpg" data-lightbox="seal" data-title="seal- Side">
-          <img src="images/seal1.jpg" alt="seal 2">
-        </a>
-      </div>
-      <div class="product-name">MAKEUP SEAL</div>
-      <div class="price">R220</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-prime">Quantity:</label>
-      <input type="number" id="qty-seal" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('seal', 'qty-seal)">Add to Cart</button>
-</diV>
-<div class="pagination">
-  <a class="page-link" href="makeup-products-page7.html">⬅️ Previous</a>
-</div>  <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
+  <!-- ARTISTICK MATTE LIPSTICK -->
+  <div class="product" data-price="100">
+    <div class="product-gallery">
+      <a href="images/mattestick.jpg" data-lightbox="matte" data-title="Front">
+        <img src="images/mattestick.jpg" alt="matte 1">
+      </a>
+      <a href="images/mattestick1.jpg" data-lightbox="matte" data-title="Side">
+        <img src="images/mattestick1.jpg" alt="matte 2">
+      </a>
+      <a href="images/mattestick2.jpg" data-lightbox="matte" data-title="Swatch">
+        <img src="images/mattestick2.jpg" alt="matte 3">
+      </a>
+    </div>
+    <div class="product-name">ARTISTICK MATTE LIPSTICK</div>
+    <div class="price">R100</div>
+    <div class="stars">⭐⭐⭐⭐</div>
+    <label for="qty-matte">Quantity:</label>
+    <input type="number" id="qty-matte" class="quantity-input" min="1" value="1" />
+    <button class="add-to-cart" onclick="addToCart('ARTISTICK MATTE LIPSTICK', 'qty-matte')">Add to Cart</button>
+  </div>
+
+  <!-- LIP GLOSS -->
+  <div class="product" data-price="100">
+    <div class="product-gallery">
+      <a href="images/lipgloss.jpg" data-lightbox="gloss" data-title="Front">
+        <img src="images/lipgloss.jpg" alt="gloss 1">
+      </a>
+      <a href="images/lipgloss1.jpg" data-lightbox="gloss" data-title="Side">
+        <img src="images/lipgloss1.jpg" alt="gloss 2">
+      </a>
+      <a href="images/lipgloss2.jpg" data-lightbox="gloss" data-title="Swatch">
+        <img src="images/lipgloss2.jpg" alt="gloss 3">
+      </a>
+    </div>
+    <div class="product-name">LIP GLOSS</div>
+    <div class="price">R100</div>
+    <div class="stars">⭐⭐⭐⭐</div>
+    <label for="qty-gloss">Quantity:</label>
+    <input type="number" id="qty-gloss" class="quantity-input" min="1" value="1" />
+    <button class="add-to-cart" onclick="addToCart('LIP GLOSS', 'qty-gloss')">Add to Cart</button>
+  </div>
+
+  <!-- LIP PENCIL -->
+  <div class="product" data-price="70">
+    <div class="product-gallery">
+      <a href="images/lipp.jpg" data-lightbox="lip" data-title="Front">
+        <img src="images/lipp.jpg" alt="lip 1">
+      </a>
+      <a href="images/lipp1.jpg" data-lightbox="lip" data-title="Side">
+        <img src="images/lipp1.jpg" alt="lip 2">
+      </a>
+      <a href="images/lipp2.jpg" data-lightbox="lip" data-title="Swatch">
+        <img src="images/lipp2.jpg" alt="lip 3">
+      </a>
+    </div>
+    <div class="product-name">LIP PENCIL</div>
+    <div class="price">R70</div>
+    <div class="stars">⭐⭐⭐⭐</div>
+    <label for="qty-lip">Quantity:</label>
+    <input type="number" id="qty-lip" class="quantity-input" min="1" value="1" />
+    <button class="add-to-cart" onclick="addToCart('LIP PENCIL', 'qty-lip')">Add to Cart</button>
+  </div>
+
+  <!-- PHOTO PERFECT SETTING POWDER -->
+  <div class="product" data-price="150">
+    <div class="product-gallery">
+      <a href="images/setp.jpg" data-lightbox="set" data-title="Front">
+        <img src="images/setp.jpg" alt="set 1">
+      </a>
+      <a href="images/setp1.jpg" data-lightbox="set" data-title="Side">
+        <img src="images/setp1.jpg" alt="set 2">
+      </a>
+      <a href="images/setp2.jpg" data-lightbox="set" data-title="Swatch">
+        <img src="images/setp2.jpg" alt="set 3">
+      </a>
+    </div>
+    <div class="product-name">PHOTO PERFECT SETTING POWDER</div>
+    <div class="price">R150</div>
+    <div class="stars">⭐⭐⭐⭐</div>
+    <label for="qty-set">Quantity:</label>
+    <input type="number" id="qty-set" class="quantity-input" min="1" value="1" />
+    <button class="add-to-cart" onclick="addToCart('PHOTO PERFECT SETTING POWDER', 'qty-set')">Add to Cart</button>
+  </div>
+
+  <!-- MAKEUP SEAL -->
+  <div class="product" data-price="220">
+    <div class="product-gallery">
+      <a href="images/seal.jpg" data-lightbox="seal" data-title="Front">
+        <img src="images/seal.jpg" alt="seal 1">
+      </a>
+      <a href="images/seal1.jpg" data-lightbox="seal" data-title="Side">
+        <img src="images/seal1.jpg" alt="seal 2">
+      </a>
+    </div>
+    <div class="product-name">MAKEUP SEAL</div>
+    <div class="price">R220</div>
+    <div class="stars">⭐⭐⭐⭐</div>
+    <label for="qty-seal">Quantity:</label>
+    <input type="number" id="qty-seal" class="quantity-input" min="1" value="1" />
+    <button class="add-to-cart" onclick="addToCart('MAKEUP SEAL', 'qty-seal')">Add to Cart</button>
+  </div>
+
 </section>
 
+<!-- Pagination and Checkout -->
+<div class="pagination">
+  <a class="page-link" href="makeup-products-page7.html">⬅️ Previous</a>
+</div>
+<button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
+
+<!-- Notification -->
 <div id="notification" class="notification"></div>
 
 <!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js">
-  
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script>
   const cart = {};
   const notificationEl = document.getElementById('notification');
@@ -239,10 +160,12 @@
   }
 
   function checkoutCart() {
-    const message = Object.entries(cart).map(([name, item]) => `${item.quantity} x ${name}`).join('%0A');
+    const message = Object.entries(cart)
+      .map(([name, item]) => `${item.quantity} x ${name}`)
+      .join('%0A');
     const whatsappLink = `https://wa.me/27683032091?text=Hi Noire Barbie Beauty 💖 I want to order:%0A${message}`;
     window.open(whatsappLink, "_blank");
   }
 </script>
 </body>
-</html>    
+</html>
