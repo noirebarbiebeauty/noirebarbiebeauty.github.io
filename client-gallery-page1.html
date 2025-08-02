@@ -64,7 +64,6 @@
       overflow: hidden;
       text-align: center;
       padding: 15px;
-      position: relative;
     }
 
     .gallery-item img {
@@ -106,117 +105,111 @@
     .order-btn:hover {
       background: #e60073;
     }
+
+    .pagination {
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+
+    .page-link {
+      color: hotpink;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .page-link.active {
+      color: white;
+      border-bottom: 2px solid hotpink;
+    }
   </style>
 </head>
 <body>
   <header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-    </ul>
-  </nav>
-</header> 
-  <h1>💋 Our Barbie Beauties – Client Gallery 💄</h>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page1.html" class="active">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header> 
+
+  <h1>💋 Our Barbie Beauties – Client Gallery 💄</h1>
+
+  <div class="gallery-grid">
 
     <!-- DEE -->
-    <div class="makeup-card multi-view">
+    <div class="gallery-item">
       <a href="images/dee1.jpg" data-lightbox="dee" data-title="Soft Glam – Dee">
         <img src="images/dee1.jpg" alt="Dee Glam 1">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/dee2.jpg" data-lightbox="dee">
-          <img src="images/dee2.jpg" alt="Dee Glam 2">
-        </a>
-        <a href="images/dee3.jpg" data-lightbox="dee">
-          <img src="images/dee3.jpg" alt="Dee Glam 3">
-        </a>
-      </div>
-      <h4>Soft Glam – Dee</h4>
-      <p class="product-used">Used: Barbie Gloss & Glow Palette</p>
-      <button class="add-to-cart" onclick="orderNow('Barbie Gloss & Glow Palette')">Order Product</button>
+      <a href="images/dee2.jpg" data-lightbox="dee"></a>
+      <a href="images/dee3.jpg" data-lightbox="dee"></a>
+      <div class="client-name">Soft Glam – Dee</div>
+      <div class="product-used">Used: Barbie Gloss & Glow Palette</div>
+      <button class="order-btn" onclick="orderNow('Barbie Gloss & Glow Palette')">Order Product</button>
     </div>
 
     <!-- IRA -->
-    <div class="makeup-card multi-view">
+    <div class="gallery-item">
       <a href="images/ira.jpg" data-lightbox="ira" data-title="Bold Glam – Ira">
         <img src="images/ira.jpg" alt="Ira Glam 1">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/ira1.jpg" data-lightbox="ira">
-          <img src="images/ira1.jpg" alt="Ira Glam 2">
-        </a>
-        <a href="images/ira2.jpg" data-lightbox="ira">
-          <img src="images/ira2.jpg" alt="Ira Glam 3">
-        </a>
-      </div>
-      <h4>Bold Glam – Ira</h4>
-      <p class="product-used">Used: Waterproof Brow Pencil</p>
-      <button class="add-to-cart" onclick="orderNow('Waterproof Brow Pencil')">Order Product</button>
+      <a href="images/ira1.jpg" data-lightbox="ira"></a>
+      <a href="images/ira2.jpg" data-lightbox="ira"></a>
+      <div class="client-name">Bold Glam – Ira</div>
+      <div class="product-used">Used: Waterproof Brow Pencil</div>
+      <button class="order-btn" onclick="orderNow('Waterproof Brow Pencil')">Order Product</button>
     </div>
 
     <!-- GH -->
-    <div class="makeup-card multi-view">
+    <div class="gallery-item">
       <a href="images/gh.jpg" data-lightbox="gh" data-title="Subtle Glow – GH">
         <img src="images/gh.jpg" alt="GH Glam 1">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/gh1.jpg" data-lightbox="gh">
-          <img src="images/gh1.jpg" alt="GH Glam 2">
-        </a>
-        <a href="images/gh2.jpg" data-lightbox="gh">
-          <img src="images/gh2.jpg" alt="GH Glam 3">
-        </a>
-      </div>
-      <h4>Subtle Glow – GH</h4>
-      <p class="product-used">Used: Concealer Palette</p>
-      <button class="add-to-cart" onclick="orderNow('Concealer Palette')">Order Product</button>
+      <a href="images/gh1.jpg" data-lightbox="gh"></a>
+      <a href="images/gh2.jpg" data-lightbox="gh"></a>
+      <div class="client-name">Subtle Glow – GH</div>
+      <div class="product-used">Used: Concealer Palette</div>
+      <button class="order-btn" onclick="orderNow('Concealer Palette')">Order Product</button>
     </div>
 
     <!-- BEE -->
-    <div class="makeup-card multi-view">
+    <div class="gallery-item">
       <a href="images/bee.jpg" data-lightbox="bee" data-title="Bold Glow – Bee">
         <img src="images/bee.jpg" alt="Bee Glam 1">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/bee1.jpg" data-lightbox="bee">
-          <img src="images/bee1.jpg" alt="Bee Glam 2">
-        </a>
-        <a href="images/bee2.jpg" data-lightbox="bee">
-          <img src="images/bee2.jpg" alt="Bee Glam 3">
-        </a>
-      </div>
-      <h4>Bold Glow – Bee</h4>
-      <p class="product-used">Used: Waterproof Eyeliner</p>
-      <button class="add-to-cart" onclick="orderNow('Waterproof Eyeliner')">Order Product</button>
+      <a href="images/bee1.jpg" data-lightbox="bee"></a>
+      <a href="images/bee2.jpg" data-lightbox="bee"></a>
+      <div class="client-name">Bold Glow – Bee</div>
+      <div class="product-used">Used: Waterproof Eyeliner</div>
+      <button class="order-btn" onclick="orderNow('Waterproof Eyeliner')">Order Product</button>
     </div>
 
-    
   </div>
-</section>
 
-<!-- Lightbox Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-
-<!-- WhatsApp Order Script -->
-<script>
-  function orderNow(productName) {
-    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-  }
-</script>
-</body>
-</html> 
-<!-- Pagination Links -->
+  <!-- Pagination -->
   <div class="pagination">
     <a class="page-link active" href="client-gallery-page1.html">1</a>
     <a class="page-link" href="client-gallery-page2.html">2</a>
     <a class="page-link" href="client-gallery-page3.html">3</a>
-    <a class="page-link" href="client-gallery-page2.html">Next -></a>
+    <a class="page-link" href="client-gallery-page2.html">Next →</a>
   </div>
-</section>
+
+  <!-- Lightbox Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  <!-- WhatsApp Order Script -->
+  <script>
+    function orderNow(productName) {
+      const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
+      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+    }
+  </script>
+</body>
+</html>
