@@ -962,3 +962,23 @@ body {
   font-size: 16px;
   margin-top: 20px;
 }
+
+.makeup-faded-bg {
+  background-image: url('images/logo-bg.png'); /* your logo file */
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 400px auto;
+  background-attachment: fixed;
+  background-blend-mode: lighten;
+}
+
+.makeup-faded-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05); /* soft fade over the logo */
+  z-index: -1;
+}
