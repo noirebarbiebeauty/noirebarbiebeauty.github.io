@@ -890,3 +890,12 @@ body {
   padding-left: 20px;
   margin-top: 5px;
 }
+/* ✨ Faded Logo Background for Full Page ✨ */
+.page-faded-logo {
+  background-image: url('images/logo-bg.png'); /* Update if filename is different */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px auto;
+  background-attachment: fixed;
+  opacity: 0.04;
+}
