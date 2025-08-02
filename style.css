@@ -1204,4 +1204,19 @@ body {
   line-height: 1.6;
   position: relative;
   padding-left: 10px;
+} 
+
+@media screen and (max-width: 600px) {
+  .floating-welcome-box {
+    width: 90%;
+    padding: 10px 15px;
+  }
+
+  .floating-welcome-box h1 {
+    font-size: 1.4rem;
+  }
+
+  .floating-welcome-box p {
+    font-size: 0.95rem;
+  }
 }
