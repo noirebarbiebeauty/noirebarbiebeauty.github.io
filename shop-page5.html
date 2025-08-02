@@ -6,77 +6,174 @@
   <title>Shop Page 5 - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid pink;
+      margin-right: 10px;
+    }
+
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .add-to-cart:hover {
+      background-color: deeppink;
+    }
+
+    .notification {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      z-index: 999;
+      display: none;
+    }
+
+    .cart-counter {
+      background-color: hotpink;
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+
+    .cart-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      color: hotpink;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="shop-section">
-    <h1>Shop Barbie Approved Units 💖</h1>
-    <div class="wig-gallery" id="productGrid">
+<header>
+  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+  <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
+      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+    </ul>
+  </nav>
+</header>
 
-      <!-- BUTTERFLYLOCKS-->
-      <div class="wig-card">
-        <a href="images/butter.jpg" data-lightbox="butter" data-title="butter">
-          <img src="images/butter.jpg" alt="butter" Front View" class="main-wig-img" />
+<section class="shop-section">
+  <h1>Shop Barbie Approved Units 💖</h1>
+  <div class="wig-gallery" id="productGrid">
+
+    <!-- BUTTERFLY LOCS -->
+    <div class="wig-card">
+      <a href="images/butter.jpg" data-lightbox="butter" data-title="Butterfly Locs Front">
+        <img src="images/butter.jpg" alt="Butterfly Locs Front" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/butter1.jpg" data-lightbox="butter" data-title="Side View">
+          <img src="images/butter1.jpg" />
         </a>
-        <div class="angle-gallery">
-          <a href="images/buttter1.jpg" data-lightbox="loosewave24" data-title="Side View">
-            <img src="images/butter1.jpg" alt="Loose Wave Side View" />
-          </a>
-          <a href="images/butter2.jpg" data-lightbox="loosewave24" data-title="Back View">
-            <img src="images/butter2.jpg" alt="Loose Wave Back View" />
-          </a>
-        </div>
-        <h4>BUTTERFLY LOCS</h4>
-        <p class="price">500</p>
-        <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-      </div>
-
-      <!-- HIGH BOUNCY -->
-      <div class="wig-card">
-        <a href="images/hbh.jpg" data-lightbox="loosewave24" data-title="Loose Wave">
-          <img src="images/hbh.jpg" alt="Loose Wave 24" Front View" class="main-wig-img" />
+        <a href="images/butter2.jpg" data-lightbox="butter" data-title="Back View">
+          <img src="images/butter2.jpg" />
         </a>
-        <div class="angle-gallery">
-          <a href="images/hbh1.jpg" data-lightbox="loosewave24" data-title="Side View">
-            <img src="images/hbh1.jpg" alt="Loose Wave Side View" />
-          </a>
-          <a href="images/hbh2.jpg" data-lightbox="loosewave24" data-title="Back View">
-            <img src="images/hbh2.jpg" alt="Loose Wave Back View" />
-          </a>
-        </div>
-        <h4>HIGH BOUNCY [HHB]</h4>
-        <p class="price">500</p>
-        <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
       </div>
-
-      <!-- WIG 3 -->
-
-
-      <!-- WIG 4 -->
-
-
+      <h4>Butterfly Locs [HHB]</h4>
+      <p class="price">R500</p>
+      <label for="qty-butter">Qty:</label>
+      <input type="number" id="qty-butter" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Butterfly Locs', 'qty-butter')">Add to Cart</button>
     </div>
-  </section>
+
+    <!-- HIGH BOUNCY -->
+    <div class="wig-card">
+      <a href="images/hbh.jpg" data-lightbox="highbouncy" data-title="High Bouncy Front">
+        <img src="images/hbh.jpg" alt="High Bouncy Front" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/hbh1.jpg" data-lightbox="highbouncy" data-title="Side View">
+          <img src="images/hbh1.jpg" />
+        </a>
+        <a href="images/hbh2.jpg" data-lightbox="highbouncy" data-title="Back View">
+          <img src="images/hbh2.jpg" />
+        </a>
+      </div>
+      <h4>High Bouncy [HHB]</h4>
+      <p class="price">R500</p>
+      <label for="qty-bouncy">Qty:</label>
+      <input type="number" id="qty-bouncy" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('High Bouncy', 'qty-bouncy')">Add to Cart</button>
+    </div>
+
+  </div>
 
   <div class="pagination">
     <a class="page-link" href="shop-page4.html">⬅️ Previous</a>
     <a class="page-link" href="shop-page6.html">Next ➡️</a>
   </div>
+</section>
 
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<div id="notification" class="notification"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+  const cart = {};
+
+  function addToCart(productName, qtyId) {
+    const qty = parseInt(document.getElementById(qtyId).value);
+    if (!qty || qty < 1) return;
+
+    if (cart[productName]) {
+      cart[productName].quantity += qty;
+    } else {
+      cart[productName] = { name: productName, quantity: qty };
+    }
+
+    updateCartCount();
+    showNotification(`${qty} x ${productName} added to cart`);
+  }
+
+  function updateCartCount() {
+    const cartCountEl = document.getElementById('cart-count');
+    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    cartCountEl.textContent = totalItems;
+    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+  }
+
+  function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(() => notification.style.display = 'none', 2500);
+  }
+
+  function checkoutCart() {
+    let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
+    for (const item in cart) {
+      message += `• ${item} x ${cart[item].quantity}\n`;
+    }
+    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+</script>
 </body>
 </html>
