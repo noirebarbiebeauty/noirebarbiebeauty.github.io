@@ -899,3 +899,23 @@ body {
   background-attachment: fixed;
   opacity: 0.04;
 }
+.page-faded-logo {
+  background-image: url('images/logo-bg.png'); /* Use your faded NBB logo */
+  background-repeat: no-repeat;
+  background-position: bottom right; /* moves it out of the center */
+  background-size: 300px auto;
+  background-attachment: fixed;
+  background-blend-mode: lighten;
+  opacity: 1; /* keep full opacity */
+}
+
+.page-faded-logo::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.03); /* softens the entire view slightly */
+  z-index: -1;
+}
