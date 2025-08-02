@@ -6,107 +6,215 @@
   <title>Shop Page 4 - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid pink;
+      margin-right: 10px;
+    }
+
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .add-to-cart:hover {
+      background-color: deeppink;
+    }
+
+    .notification {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      z-index: 999;
+      display: none;
+    }
+
+    .cart-counter {
+      background-color: hotpink;
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+
+    .cart-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      color: hotpink;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="shop-section">
-    <h1>Shop Barbie Approved Units 💖</h1>
-    <div class="wig-gallery" id="productGrid">
+<header>
+  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+  <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
+      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+    </ul>
+  </nav>
+</header>
 
-      <!-- WIG 1 -->
-      <div class="wig-card">
-        <a href="images/greyblack30.jpg" data-lightbox="greyblack30" data-title="Grey Black">
-          <img src="images/greyblack30.jpg" alt="Grey Black 30” Front View" class="main-wig-img" />
+<section class="shop-section">
+  <h1>Shop Barbie Approved Units 💖</h1>
+  <div class="wig-gallery" id="productGrid">
+
+    <!-- GREY BLACK -->
+    <div class="wig-card">
+      <a href="images/greyblack30.jpg" data-lightbox="greyblack30" data-title="Grey Black Front">
+        <img src="images/greyblack30.jpg" alt="Grey Black 30” Front View" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/greyblackside.jpg" data-lightbox="greyblack30" data-title="Side View">
+          <img src="images/greyblackside.jpg" />
         </a>
-        <div class="angle-gallery">
-          <a href="images/greyblackside.jpg" data-lightbox="greyblack30" data-title="Side View">
-            <img src="images/greyblackside.jpg" alt="Grey Black Side View" />
-          </a>
-          <a href="images/greyblackback.jpg" data-lightbox="greyblack30" data-title="Back View">
-            <img src="images/greyblackback.jpg" alt="Grey Black Back View" />
-          </a>
-        </div>
-        <h4>Grey Black 30" [HHB]</h4>
-        <p class="price">R900</p>
-        <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-      </div>
-
-      <!-- WIG 2 -->
-      <div class="wig-card">
-        <a href="images/loosewave24.jpg" data-lightbox="loosewave24" data-title="Loose Wave">
-          <img src="images/loosewave24.jpg" alt="Loose Wave 24" Front View" class="main-wig-img" />
+        <a href="images/greyblackback.jpg" data-lightbox="greyblack30" data-title="Back View">
+          <img src="images/greyblackback.jpg" />
         </a>
-        <div class="angle-gallery">
-          <a href="images/loosewaveside.jpg" data-lightbox="loosewave24" data-title="Side View">
-            <img src="images/loosewaveside.jpg" alt="Loose Wave Side View" />
-          </a>
-          <a href="images/loosewaveback.jpg" data-lightbox="loosewave24" data-title="Back View">
-            <img src="images/loosewaveback.jpg" alt="Loose Wave Back View" />
-          </a>
-        </div>
-        <h4>Loose Wave 24" [HHB]</h4>
-        <p class="price">R800</p>
-        <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
       </div>
-
-      <!-- WIG 3 -->
-      <div class="wig-card">
-        <a href="images/pix1.jpg" data-lightbox="pixie" data-title="Pixie Front">
-          <img src="images/pix1.jpg" alt="Pixie Front View" class="main-wig-img" />
-        </a>
-        <div class="angle-gallery">
-          <a href="images/pix2.jpg" data-lightbox="pixie" data-title="Side View">
-            <img src="images/pix2.jpg" alt="Pixie Side View" />
-          </a>
-          <a href="images/pix3.jpg" data-lightbox="pixie" data-title="Back View">
-            <img src="images/pix3.jpg" alt="Pixie Back View" />
-          </a>
-        </div>
-        <h4>Budget Pixie 12" [HHB]</h4>
-        <p class="price">R600</p>
-        <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-      </div>
-
-      <!-- WIG 4 -->
-      <div class="wig-card">
-        <a href="images/kiki1.jpg" data-lightbox="kiki" data-title="Kiki Front">
-          <img src="images/kiki1.jpg" alt="Kiki Front View" class="main-wig-img" />
-        </a>
-        <div class="angle-gallery">
-          <a href="images/kiki2.jpg" data-lightbox="kiki" data-title="Side View">
-            <img src="images/kiki2.jpg" alt="Kiki Side View" />
-          </a>
-          <a href="images/kiki3.jpg" data-lightbox="kiki" data-title="Back View">
-            <img src="images/kiki3.jpg" alt="Kiki Back View" />
-          </a>
-        </div>
-        <h4>Kiki Bounce" [HHB]</h4>
-        <p class="price">R900</p>
-        <a href="https://wa.me/27683032091" class="btn">DM or WhatsApp to Order</a>
-      </div>
-
+      <h4>Grey Black 30" [HHB]</h4>
+      <p class="price">R900</p>
+      <label for="qty-greyblack">Qty:</label>
+      <input type="number" id="qty-greyblack" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Grey Black 30\\"', 'qty-greyblack')">Add to Cart</button>
     </div>
-  </section>
+
+    <!-- LOOSE WAVE -->
+    <div class="wig-card">
+      <a href="images/loosewave24.jpg" data-lightbox="loosewave24" data-title="Loose Wave Front">
+        <img src="images/loosewave24.jpg" alt="Loose Wave 24 Front" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/loosewaveside.jpg" data-lightbox="loosewave24" data-title="Side View">
+          <img src="images/loosewaveside.jpg" />
+        </a>
+        <a href="images/loosewaveback.jpg" data-lightbox="loosewave24" data-title="Back View">
+          <img src="images/loosewaveback.jpg" />
+        </a>
+      </div>
+      <h4>Loose Wave 24" [HHB]</h4>
+      <p class="price">R800</p>
+      <label for="qty-loosewave">Qty:</label>
+      <input type="number" id="qty-loosewave" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Loose Wave 24\\"', 'qty-loosewave')">Add to Cart</button>
+    </div>
+
+    <!-- PIXIE -->
+    <div class="wig-card">
+      <a href="images/pix1.jpg" data-lightbox="pixie" data-title="Pixie Front">
+        <img src="images/pix1.jpg" alt="Pixie Front View" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/pix2.jpg" data-lightbox="pixie" data-title="Side View">
+          <img src="images/pix2.jpg" />
+        </a>
+        <a href="images/pix3.jpg" data-lightbox="pixie" data-title="Back View">
+          <img src="images/pix3.jpg" />
+        </a>
+      </div>
+      <h4>Budget Pixie 12" [HHB]</h4>
+      <p class="price">R600</p>
+      <label for="qty-pixie">Qty:</label>
+      <input type="number" id="qty-pixie" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Budget Pixie 12\\"', 'qty-pixie')">Add to Cart</button>
+    </div>
+
+    <!-- KIKI -->
+    <div class="wig-card">
+      <a href="images/kiki1.jpg" data-lightbox="kiki" data-title="Kiki Front">
+        <img src="images/kiki1.jpg" alt="Kiki Front View" class="main-wig-img" />
+      </a>
+      <div class="angle-gallery">
+        <a href="images/kiki2.jpg" data-lightbox="kiki" data-title="Side View">
+          <img src="images/kiki2.jpg" />
+        </a>
+        <a href="images/kiki3.jpg" data-lightbox="kiki" data-title="Back View">
+          <img src="images/kiki3.jpg" />
+        </a>
+      </div>
+      <h4>Kiki Bounce [HHB]</h4>
+      <p class="price">R900</p>
+      <label for="qty-kiki">Qty:</label>
+      <input type="number" id="qty-kiki" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Kiki Bounce 30\\"', 'qty-kiki')">Add to Cart</button>
+    </div>
+
+  </div>
 
   <div class="pagination">
     <a class="page-link" href="shop-page3.html">⬅️ Previous</a>
     <a class="page-link" href="shop-page5.html">Next ➡️</a>
   </div>
+</section>
 
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- Notification -->
+<div id="notification" class="notification"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+  const cart = {};
+
+  function addToCart(productName, qtyId) {
+    const qty = parseInt(document.getElementById(qtyId).value);
+    if (!qty || qty < 1) return;
+
+    if (cart[productName]) {
+      cart[productName].quantity += qty;
+    } else {
+      cart[productName] = { name: productName, quantity: qty };
+    }
+
+    updateCartCount();
+    showNotification(`${qty} x ${productName} added to cart`);
+  }
+
+  function updateCartCount() {
+    const cartCountEl = document.getElementById('cart-count');
+    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    cartCountEl.textContent = totalItems;
+    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+  }
+
+  function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(() => notification.style.display = 'none', 2500);
+  }
+
+  function checkoutCart() {
+    let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
+    for (const item in cart) {
+      message += `• ${item} x ${cart[item].quantity}\n`;
+    }
+    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+</script>
 </body>
 </html>
