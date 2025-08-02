@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Client Makeup Gallery | Noire Barbie Beauty</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Client Glam Gallery - Page 2 | Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
     body {
@@ -52,47 +52,38 @@
       margin: 30px 0;
     }
 
-    .gallery-grid {
+    .makeup-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 20px;
     }
 
-    .gallery-item {
+    .makeup-card {
       background-color: #2a2a2a;
       border-radius: 12px;
       overflow: hidden;
       text-align: center;
       padding: 15px;
-      position: relative;
     }
 
-    .gallery-item img {
+    .makeup-card img {
       width: 100%;
       border-radius: 8px;
       object-fit: cover;
-      transition: transform 0.3s ease;
       aspect-ratio: 3/4;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .client-name {
-      margin-top: 12px;
-      color: #ffccf9;
-      font-weight: bold;
-      font-size: 18px;
+    .product-sub-gallery {
+      display: none;
     }
 
     .product-used {
       font-size: 14px;
       color: #ffb3da;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
-    .order-btn {
+    .add-to-cart {
       margin-top: 10px;
       background: #ff66b2;
       color: white;
@@ -103,28 +94,46 @@
       cursor: pointer;
     }
 
-    .order-btn:hover {
+    .add-to-cart:hover {
       background: #e60073;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+
+    .page-link {
+      color: hotpink;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .page-link.active {
+      color: white;
+      border-bottom: 2px solid hotpink;
     }
   </style>
 </head>
-
 <body>
+
   <header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-    </ul>
-  </nav>
-</header> 
-  <section class="makeup-products-section">
-  <h1 class="makeup-heading">💋 Our Barbie Beauties – Page 2 💄</h1>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page2.html" class="active">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>💋 Our Barbie Beauties – Page 2 💄</h1>
+
   <div class="makeup-gallery">
 
     <!-- BD -->
@@ -132,14 +141,8 @@
       <a href="images/bd.jpg" data-lightbox="bd" data-title="Baddie Glow – Bd">
         <img src="images/bd.jpg" alt="Bd Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/bd1.jpg" data-lightbox="bd">
-          <img src="images/bd1.jpg" alt="Bd Side">
-        </a>
-        <a href="images/bd2.jpg" data-lightbox="bd">
-          <img src="images/bd2.jpg" alt="Bd Detail">
-        </a>
-      </div>
+      <a href="images/bd1.jpg" data-lightbox="bd"></a>
+      <a href="images/bd2.jpg" data-lightbox="bd"></a>
       <h4>Baddie Glow – Bd</h4>
       <p class="product-used">Used: Lip Palette</p>
       <button class="add-to-cart" onclick="orderNow('Lip Palette')">Order Product</button>
@@ -150,14 +153,8 @@
       <a href="images/joy.jpg" data-lightbox="joy" data-title="Bold Glow – Joy">
         <img src="images/joy.jpg" alt="Joy Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/joy1.jpg" data-lightbox="joy">
-          <img src="images/joy1.jpg" alt="Joy Side">
-        </a>
-        <a href="images/joy2.jpg" data-lightbox="joy">
-          <img src="images/joy2.jpg" alt="Joy Detail">
-        </a>
-      </div>
+      <a href="images/joy1.jpg" data-lightbox="joy"></a>
+      <a href="images/joy2.jpg" data-lightbox="joy"></a>
       <h4>Bold Glow – Joy</h4>
       <p class="product-used">Used: Concealer Palette</p>
       <button class="add-to-cart" onclick="orderNow('Concealer Palette')">Order Product</button>
@@ -168,14 +165,8 @@
       <a href="images/vee.jpg" data-lightbox="vee" data-title="Baddie Glow – Vee">
         <img src="images/vee.jpg" alt="Vee Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/vee1.jpg" data-lightbox="vee">
-          <img src="images/vee1.jpg" alt="Vee Side">
-        </a>
-        <a href="images/vee2.jpg" data-lightbox="vee">
-          <img src="images/vee2.jpg" alt="Vee Detail">
-        </a>
-      </div>
+      <a href="images/vee1.jpg" data-lightbox="vee"></a>
+      <a href="images/vee2.jpg" data-lightbox="vee"></a>
       <h4>Baddie Glow – Vee</h4>
       <p class="product-used">Used: Lip Palette</p>
       <button class="add-to-cart" onclick="orderNow('Lip Palette')">Order Product</button>
@@ -186,39 +177,34 @@
       <a href="images/bt.jpg" data-lightbox="bt" data-title="Baddie Glow – Bt">
         <img src="images/bt.jpg" alt="Bt Glam">
       </a>
-      <div class="product-sub-gallery">
-        <a href="images/bt1.jpg" data-lightbox="bt">
-          <img src="images/bt1.jpg" alt="Bt Side">
-        </a>
-        <a href="images/bt2.jpg" data-lightbox="bt">
-          <img src="images/bt2.jpg" alt="Bt Detail">
-        </a>
-      </div>
+      <a href="images/bt1.jpg" data-lightbox="bt"></a>
+      <a href="images/bt2.jpg" data-lightbox="bt"></a>
       <h4>Baddie Glow – Bt</h4>
       <p class="product-used">Used: Blush Palette</p>
       <button class="add-to-cart" onclick="orderNow('Blush Palette')">Order Product</button>
     </div>
 
-  </div> <!-- closes .makeup-gallery -->
-</section>
+  </div>
 
-<!-- Lightbox Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <!-- Pagination -->
+  <div class="pagination">
+    <a class="page-link" href="client-gallery-page1.html">← Previous</a>
+    <a class="page-link" href="client-gallery-page1.html">1</a>
+    <a class="page-link active" href="client-gallery-page2.html">2</a>
+    <a class="page-link" href="client-gallery-page3.html">3</a>
+    <a class="page-link" href="client-gallery-page3.html">Next →</a>
+  </div>
 
-<!-- WhatsApp Order Script -->
-<script>
-  function orderNow(productName) {
-    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-  }
-</script>
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  <!-- WhatsApp Order -->
+  <script>
+    function orderNow(productName) {
+      const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
+      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+    }
+  </script>
+
 </body>
-</html>  
-
-<div class="pagination">
-  <a class="page-link" href="client-gallery-page1.html">← Previous</a>
-  <a class="page-link" href="client-gallery-page1.html">1</a>
-  <a class="page-link active" href="client-gallery-page2.html">2</a>
-  <a class="page-link" href="client-gallery-page3.html">3</a>
-  <a class="page-link" href="client-gallery-page3.html">Next →</a>
-</div>
+</html>
