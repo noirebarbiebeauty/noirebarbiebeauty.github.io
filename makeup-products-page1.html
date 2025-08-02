@@ -92,40 +92,47 @@
     .price {
       color: #ffb6c1;
     }
+
+    .adventure-logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .adventure-logo {
+      width: 120px;
+    }
   </style>
 </head>
 <body>
 <header>
   <div class="topbar">
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <a href="#" onclick="checkoutCart()" class="cart-icon">
-    🛒 <span id="cart-count" class="cart-counter">0</span>
-  </a>
-</div>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <a href="#" onclick="checkoutCart()" class="cart-icon">
+      🛒 <span id="cart-count" class="cart-counter">0</span>
+    </a>
+  </div>
   <nav>
     <ul>
       <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
+      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+      <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
       <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
       <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
     </ul>
   </nav>
 </header> 
+
 <section class="makeup-products-section">
   <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
-  
-    <div id="product-container">
-      
-    <span id="cart-count" style="display: none;" class="cart-counter">0</span>
-  </h2>
   <h3 class="makeup-subheading">🛍️ ADVENTURE MAKEUP COLLECTION 🛍️</h3>
+
   <div class="adventure-logo-container">
-  <img src="images/adventure-logo.png" alt="Adventure Brand Logo" class="adventure-logo" />
-</div>
+    <img src="images/adventure-logo.png" alt="Adventure Brand Logo" class="adventure-logo" />
+  </div>
+
   <div class="makeup-gallery" id="product-container">
-    
+
     <!-- BEST SKIN FOUNDATION -->
     <div class="product" data-price="200">
       <div class="product-gallery">
@@ -161,7 +168,7 @@
         </a>
       </div>
       <div class="product-name">CONCEALER PALETTE</div>
-      <div class="price">600</div>
+      <div class="price">R600</div>
       <div class="stars">⭐⭐⭐⭐</div>
       <label class="quantity-label" for="qty-concealer-palette">Quantity:</label>
       <input type="number" id="qty-concealer-palette" class="quantity-input" min="1" value="1" />
@@ -185,41 +192,38 @@
       <input type="number" id="qty-bronzer-palette" class="quantity-input" min="1" value="1" />
       <button class="add-to-cart" onclick="addToCart('Cream Blush Bronzer Palette', 'qty-bronzer-palette')">Add to Cart</button>
     </div>
+
     <!-- Lip Pallet -->
     <div class="product" data-price="600">
       <div class="product-gallery">
-        <a href="images/lippallet1.jpg" data-lightbox="bestskin" data-title="Lip Pallet - Front">
+        <a href="images/lippallet1.jpg" data-lightbox="lip" data-title="Lip Pallet - Front">
           <img src="images/lippallet1.jpg" alt="Lip Pallet 1">
         </a>
-        <a href="images/lippallet2.jpg" data-lightbox="bestskin" data-title="Lip Pallet- Swatch">
+        <a href="images/lippallet2.jpg" data-lightbox="lip" data-title="Lip Pallet - Swatch">
           <img src="images/lippallet2.jpg" alt="Lip Pallet 2">
         </a>
       </div>
       <div class="product-name">LIP PALLET</div>
       <div class="price">R600</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-best-skin">Quantity:</label>
+      <label class="quantity-label" for="qty-lip-pallet">Quantity:</label>
       <input type="number" id="qty-lip-pallet" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-lip-pallet')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Lip Pallet', 'qty-lip-pallet')">Add to Cart</button>
     </div>
-  
   </div>
-      <div class="pagination">
-  <a class="page-link" href="makeup-products-page2.html">Next ➡️</a>
-</div>
+
+  <div class="pagination">
+    <a class="page-link" href="makeup-products-page2.html">Next ➡️</a>
+  </div>
 </section>
 
-<!-- Lightbox Script -->
+<!-- Notification -->
+<div id="notification" class="notification"></div>
+
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
-<!-- WhatsApp Order Script -->
 <script>
-  function orderNow(productName) {
-    const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I saw a client glam I love! I'd like to order: ${productName}`);
-    window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
-  }
-  </script> 
-  <script>
   const cart = {};
 
   function addToCart(productName, qtyId) {
@@ -248,11 +252,9 @@
 
   function showNotification(message) {
     const notification = document.getElementById('notification');
-    if (notification) {
-      notification.textContent = message;
-      notification.style.display = 'block';
-      setTimeout(() => notification.style.display = 'none', 2500);
-    }
+    notification.textContent = message;
+    notification.classList.add('show');
+    setTimeout(() => notification.classList.remove('show'), 2500);
   }
 
   function checkoutCart() {
@@ -266,4 +268,3 @@
 </script>
 </body>
 </html>
-    
