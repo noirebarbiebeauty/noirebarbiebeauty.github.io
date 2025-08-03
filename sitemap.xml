@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- HOME PAGE -->
   <url><loc>https://noirebarbiebeauty.github.io/</loc></url>
+
+  <!-- SHOP WIG PAGES -->
   <url><loc>https://noirebarbiebeauty.github.io/shop-page1.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/shop-page2.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/shop-page3.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/shop-page4.html</loc></url>
+
+  <!-- MAKEUP PRODUCT PAGES -->
   <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page1.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page2.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page3.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page4.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page5.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page6.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page7.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/makeup-products-page8.html</loc></url>
+
+  <!-- WIG SERVICES -->
   <url><loc>https://noirebarbiebeauty.github.io/wigservices-page1.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/wigservices-page2.html</loc></url>
+  <url><loc>https://noirebarbiebeauty.github.io/wigservices-page3.html</loc></url>
+
+  <!-- CLIENT GALLERY -->
   <url><loc>https://noirebarbiebeauty.github.io/client-gallery-page1.html</loc></url>
-  <!-- Add all your other pages here -->
 </urlset>
