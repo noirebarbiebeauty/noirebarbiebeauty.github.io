@@ -3,150 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop Page 4 - Noire Barbie Beauty</title>
+  <title>Makeup Products Page 4 - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <style>
+    .makeup-heading {
+      text-align: center;
+      color: hotpink;
+      font-size: 1.8rem;
+      margin-top: 20px;
+    }
+    .makeup-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      border: 1px solid pink;
+      border-radius: 10px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      width: 270px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product-name {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .price {
+      color: deeppink;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid pink;
+      margin-right: 10px;
+    }
+    .add-to-cart {
+      background-color: hotpink;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .add-to-cart:hover {
+      background-color: deeppink;
+    }
+    .cart-icon {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: black;
+      color: white;
+      padding: 10px;
+      border-radius: 50px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+    .cart-counter {
+      background: red;
+      border-radius: 50%;
+      padding: 3px 7px;
+      font-size: 0.9rem;
+      margin-left: 5px;
+    }
+    .pagination {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .page-link {
+      margin: 0 5px;
+      text-decoration: none;
+      color: hotpink;
+      font-weight: bold;
+    }
+    .page-link.active {
+      color: white;
+      background: hotpink;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .notification {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      display: none;
+      z-index: 9999;
+    }
+    .notification.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
     <nav>
       <ul>
         <li><a href="index.html">HOME</a></li>
-        <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-        <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-        <li><a href="wigservices.html">WIG SERVICES</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
       </ul>
     </nav>
   </header>
 
-  <h2 class="shop-heading">✨ Barbie-Approved Hair Units – Page 4 ✨ 
-    <span id="cart-count" class="cart-counter" style="display: none;">0</span>
-  </h2>
+  <h2 class="makeup-heading">💄 Barbie-Approved Makeup – Page 4 💄</h2>
 
-  <section class="shop-gallery">
-
-    <!-- Product 1 -->
-    <div class="product" data-price="900">
-      <div class="product-gallery">
-        <a href="images/greyblack1.jpg" data-lightbox="greyblack" data-title="Grey Black Wig - Front">
-          <img src="images/greyblack1.jpg" alt="Grey Black Wig Front">
-        </a>
-        <a href="images/greyblack2.jpg" data-lightbox="greyblack" data-title="Grey Black Wig - Side">
-          <img src="images/greyblack2.jpg" alt="Grey Black Wig Side">
-        </a>
-      </div>
-      <div class="product-name">GREY BLACK 30"</div>
-      <div class="price">R900</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label for="qty-greyblack" class="quantity-label">Quantity:</label>
-      <input type="number" id="qty-greyblack" class="quantity-input" min="1" value="1">
-      <button class="add-to-cart" onclick="addToCart('Grey Black 30', 'qty-greyblack')">Add to Cart</button>
+  <section class="makeup-gallery">
+    <!-- Healthy Skin Foundation -->
+    <div class="product" data-price="180">
+      <a href="images/healthyskin1.jpg" data-lightbox="healthy" data-title="Healthy Skin Foundation">
+        <img src="images/healthyskin1.jpg" alt="Healthy Skin Foundation">
+      </a>
+      <div class="product-name">HEALTHY SKIN FOUNDATION</div>
+      <div class="price">R180</div>
+      <label for="qty-healthy">Qty:</label>
+      <input type="number" id="qty-healthy" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Healthy Skin Foundation', 'qty-healthy')">Add to Cart</button>
     </div>
 
-    <!-- Product 2 -->
-    <div class="product" data-price="800">
-      <div class="product-gallery">
-        <a href="images/loosewave1.jpg" data-lightbox="loosewave" data-title="Loose Wave Wig - Front">
-          <img src="images/loosewave1.jpg" alt="Loose Wave Wig Front">
-        </a>
-        <a href="images/loosewave2.jpg" data-lightbox="loosewave" data-title="Loose Wave Wig - Side">
-          <img src="images/loosewave2.jpg" alt="Loose Wave Wig Side">
-        </a>
-      </div>
-      <div class="product-name">LOOSE WAVE 24"</div>
-      <div class="price">R800</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label for="qty-loosewave" class="quantity-label">Quantity:</label>
-      <input type="number" id="qty-loosewave" class="quantity-input" min="1" value="1">
-      <button class="add-to-cart" onclick="addToCart('Loose Wave 24', 'qty-loosewave')">Add to Cart</button>
+    <!-- Mascara -->
+    <div class="product" data-price="120">
+      <a href="images/mascara.jpg" data-lightbox="mascara" data-title="Mascara">
+        <img src="images/mascara.jpg" alt="Mascara">
+      </a>
+      <div class="product-name">MASCARA</div>
+      <div class="price">R120</div>
+      <label for="qty-mascara">Qty:</label>
+      <input type="number" id="qty-mascara" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Mascara', 'qty-mascara')">Add to Cart</button>
     </div>
 
-    <!-- Product 3 -->
-    <div class="product" data-price="600">
-      <div class="product-gallery">
-        <a href="images/pixie1.jpg" data-lightbox="pixie" data-title="Pixie Wig - Front">
-          <img src="images/pixie1.jpg" alt="Pixie Wig Front">
-        </a>
-        <a href="images/pixie2.jpg" data-lightbox="pixie" data-title="Pixie Wig - Side">
-          <img src="images/pixie2.jpg" alt="Pixie Wig Side">
-        </a>
-      </div>
-      <div class="product-name">BUDGET PIXIE 12"</div>
-      <div class="price">R600</div>
-      <div class="stars">⭐⭐⭐</div>
-      <label for="qty-pixie" class="quantity-label">Quantity:</label>
-      <input type="number" id="qty-pixie" class="quantity-input" min="1" value="1">
-      <button class="add-to-cart" onclick="addToCart('Budget Pixie 12', 'qty-pixie')">Add to Cart</button>
+    <!-- Glasting Gloss -->
+    <div class="product" data-price="70">
+      <a href="images/glastinggloss1.jpg" data-lightbox="gloss" data-title="Glasting Gloss">
+        <img src="images/glastinggloss1.jpg" alt="Glasting Gloss">
+      </a>
+      <div class="product-name">GLASTING GLOSS</div>
+      <div class="price">R70</div>
+      <label for="qty-gloss">Qty:</label>
+      <input type="number" id="qty-gloss" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Glasting Gloss', 'qty-gloss')">Add to Cart</button>
     </div>
 
-    <!-- Product 4 -->
-    <div class="product" data-price="900">
-      <div class="product-gallery">
-        <a href="images/kiki1.jpg" data-lightbox="kiki" data-title="Kiki Bounce Wig - Front">
-          <img src="images/kiki1.jpg" alt="Kiki Bounce Wig Front">
-        </a>
-        <a href="images/kiki2.jpg" data-lightbox="kiki" data-title="Kiki Bounce Wig - Side">
-          <img src="images/kiki2.jpg" alt="Kiki Bounce Wig Side">
-        </a>
-      </div>
-      <div class="product-name">KIKI BOUNCE 30"</div>
-      <div class="price">R900</div>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <label for="qty-kiki" class="quantity-label">Quantity:</label>
-      <input type="number" id="qty-kiki" class="quantity-input" min="1" value="1">
-      <button class="add-to-cart" onclick="addToCart('Kiki Bounce 30', 'qty-kiki')">Add to Cart</button>
+    <!-- Dewy Fix -->
+    <div class="product" data-price="150">
+      <a href="images/dewyfix.jpg" data-lightbox="dewy" data-title="Dewy Fix">
+        <img src="images/dewyfix.jpg" alt="Dewy Fix">
+      </a>
+      <div class="product-name">DEWY FIX</div>
+      <div class="price">R150</div>
+      <label for="qty-dewy">Qty:</label>
+      <input type="number" id="qty-dewy" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Dewy Fix', 'qty-dewy')">Add to Cart</button>
     </div>
-
   </section>
 
-  <!-- PAGINATION -->
+  <!-- Pagination -->
   <div class="pagination">
-    <a href="shop-page3.html" class="page-link">Previous</a>
-    <a href="shop-page1.html" class="page-link">1</a>
-    <a href="shop-page2.html" class="page-link">2</a>
-    <a href="shop-page3.html" class="page-link">3</a>
-    <a href="#" class="page-link active">4</a>
+    <a href="makeup-products-page3.html" class="page-link">⬅️ Previous</a>
+    <a href="makeup-products-page1.html" class="page-link">1</a>
+    <a href="makeup-products-page2.html" class="page-link">2</a>
+    <a href="makeup-products-page3.html" class="page-link">3</a>
+    <a href="makeup-products-page4.html" class="page-link active">4</a>
+    <a href="makeup-products-page5.html" class="page-link">5 ➡️</a>
   </div>
-
-  <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
 
   <div id="notification" class="notification"></div>
 
-  <!-- Lightbox JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-
-  <!-- Cart Logic -->
   <script>
-    const cart = {};
+    let cart = JSON.parse(localStorage.getItem("nbbCart")) || {};
 
     function addToCart(productName, qtyId) {
       const qty = parseInt(document.getElementById(qtyId).value);
-      if (!cart[productName]) {
-        cart[productName] = { quantity: 0 };
+      if (!qty || qty < 1) return;
+
+      if (cart[productName]) {
+        cart[productName].quantity += qty;
+      } else {
+        cart[productName] = { quantity: qty };
       }
-      cart[productName].quantity += qty;
 
-      const cartCountEl = document.getElementById('cart-count');
+      localStorage.setItem("nbbCart", JSON.stringify(cart));
+      updateCartCount();
+      showNotification(`${qty} x ${productName} added to cart`);
+    }
+
+    function updateCartCount() {
       const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-      cartCountEl.textContent = totalItems;
-      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+      document.getElementById("cart-count").textContent = totalItems;
+      document.getElementById("cart-count").style.display = totalItems > 0 ? "inline-block" : "none";
+    }
 
-      const notification = document.getElementById('notification');
-      notification.textContent = `${qty} x ${productName} added to cart`;
-      notification.classList.add('show');
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 2500);
+    function showNotification(message) {
+      const note = document.getElementById("notification");
+      note.textContent = message;
+      note.classList.add("show");
+      setTimeout(() => note.classList.remove("show"), 2500);
     }
 
     function checkoutCart() {
-      const items = Object.entries(cart).map(([product, { quantity }]) =>
-        `${quantity} x ${product}`).join('\n');
-      const message = encodeURIComponent(`Hi Noire Barbie Beauty 💖 I'd like to order:\n${items}`);
-      window.open(`https://wa.me/27683032091?text=${message}`, "_blank");
+      if (Object.keys(cart).length === 0) return;
+      let message = "Hi Noire Barbie Beauty 💖 I’d like to order:\n";
+      for (let item in cart) {
+        message += `• ${item} x ${cart[item].quantity}\n`;
+      }
+      const url = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
     }
-  </script>
 
+    updateCartCount();
+  </script>
 </body>
 </html>
