@@ -7,6 +7,7 @@
   <meta name="description" content="Shop premium wig units from Noire Barbie Beauty. Explore our 100% human hair and blend options. Slay now, pay less!" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
   <style>
     .quantity-input {
       width: 60px;
@@ -62,8 +63,29 @@
       color: hotpink;
       text-decoration: none;
     }
+
+    .hair-blend-info {
+      background: linear-gradient(to right, #ffc0cb, #ffe4e1);
+      padding: 20px;
+      border-radius: 20px;
+      margin: 30px auto;
+      max-width: 90%;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    }
+
+    .hair-blend-info h3 {
+      color: #c71585;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .hair-blend-info p {
+      color: #333;
+      font-size: 16px;
+    }
   </style>
 </head>
+
 <body>
 <header>
   <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
@@ -78,14 +100,21 @@
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
     </ul>
   </nav>
-</header> 
+</header>
 
 <section class="shop-section">
   <h1>Shop Barbie Approved Units 💖</h1>
   <h2>Human Hair Blend (HHB)</h2>
+
+  <!-- Hair Blend 101 Info -->
+  <div class="hair-blend-info">
+    <h3>✨ What You Need to Know About Human Hair Blends</h3>
+    <p>Human Hair Blends (HHB) give you the luxurious look of real hair without the full price tag. These units combine real human hair with premium fibers to offer the perfect balance of beauty, bounce, and budget. They're heat-friendly, long-lasting with proper care, and a go-to for every Budget Baddie who wants to slay on a dime! 💅</p>
+  </div>
+
   <div class="wig-gallery" id="productGrid">
 
-    <!-- YAKI STRAIGHT -->
+    <!-- Yaki Straight -->
     <div class="wig-card">
       <a href="images/yakistraight30.png" data-lightbox="yakistraight30" data-title="Yaki Straight Front">
         <img src="images/yakistraight30.png" alt="Yaki Straight 30” Front View" class="main-wig-img" />
@@ -101,7 +130,7 @@
       <button class="add-to-cart" onclick="addToCart('Yaki Straight 30&quot;', 'qty-yaki')">Add to Cart</button>
     </div>
 
-    <!-- BLACKTOPGINGER -->
+    <!-- Black Top Ginger -->
     <div class="wig-card">
       <a href="images/blacktopginger30.png" data-lightbox="blacktopginger30" data-title="Black Top Ginger">
         <img src="images/blacktopginger30.png" alt="Black Top Ginger 30” Front View" class="main-wig-img" />
@@ -132,7 +161,6 @@
       <input type="number" id="qty-blonde" class="quantity-input" value="1" min="1">
       <button class="add-to-cart" onclick="addToCart('3 Tone Blonde 30&quot;', 'qty-blonde')">Add to Cart</button>
     </div> 
-
   </div>
 
   <div class="pagination">
@@ -145,9 +173,9 @@
 <!-- Lightbox JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
-<!-- Cart Script -->
+<!-- Cart Script using localStorage -->
 <script>
-  const cart = {};
+  let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
   function addToCart(productName, qtyId) {
     const qty = parseInt(document.getElementById(qtyId).value);
@@ -156,12 +184,10 @@
     if (cart[productName]) {
       cart[productName].quantity += qty;
     } else {
-      cart[productName] = {
-        name: productName,
-        quantity: qty
-      };
+      cart[productName] = { name: productName, quantity: qty };
     }
 
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     showNotification(`${qty} x ${productName} added to cart`);
   }
@@ -175,21 +201,29 @@
 
   function showNotification(message) {
     const notification = document.getElementById('notification');
-    if (notification) {
-      notification.textContent = message;
-      notification.style.display = 'block';
-      setTimeout(() => notification.style.display = 'none', 2500);
-    }
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(() => notification.style.display = 'none', 2500);
   }
 
   function checkoutCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
     let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
     for (const item in cart) {
       message += `• ${item} x ${cart[item].quantity}\n`;
     }
+
     const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
 </script>
+
 </body>
 </html>
