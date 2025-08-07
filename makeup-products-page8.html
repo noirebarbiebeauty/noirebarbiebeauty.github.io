@@ -1,3 +1,108 @@
-<p style="text-align: center; color: pink; font-weight: bold; margin-top: 50px;">
-  💖 More Barbie-approved makeup coming soon. Stay tuned! 💖
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Makeup Page 8 - Noire Barbie Beauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #000; 
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .makeup-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 10px;
+    }
+
+    .placeholder {
+      background-color: #1c1c1c;
+      border: 2px dashed hotpink;
+      color: hotpink;
+      width: 250px;
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .placeholder h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ff69b4;
+    }
+
+    .placeholder span {
+      font-size: 14px;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .pagination .page-link {
+      background: #ff69b4;
+      color: white;
+      padding: 10px 15px;
+      margin: 0 5px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .pagination .active {
+      background: deeppink;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="makeup-gallery">
+    <div class="placeholder">
+      <h3>💄 NEW BARBIE DROP</h3>
+      <span>Coming Soon...</span>
+    </div>
+    <div class="placeholder">
+      <h3>💋 HEGAI & ESTHER EXCLUSIVE</h3>
+      <span>Coming Soon...</span>
+    </div>
+    <div class="placeholder">
+      <h3>✨ GLAM IN PROGRESS</h3>
+      <span>Coming Soon...</span>
+    </div>
+    <div class="placeholder">
+      <h3>🎀 BEAUTY IN THE LAB</h3>
+      <span>Coming Soon...</span>
+    </div>
+  </section>
+
+  <div class="pagination">
+    <a class="page-link" href="makeup-products-page7.html">⬅️ Previous</a>
+    <a class="page-link" href="makeup-products-page9.html">Next ➡️</a>
+  </div>
+</body>
+</html>
