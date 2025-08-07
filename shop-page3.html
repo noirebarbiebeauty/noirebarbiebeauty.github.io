@@ -83,14 +83,14 @@
   <h1>Shop More Barbie Units 💖</h1>
   <div class="wig-gallery" id="productGrid">
 
-    <!-- White ff -->
+    <!-- White FF -->
     <div class="wig-card">
       <a href="images/whiteff30.png" data-lightbox="whiteff30" data-title="White FF">
         <img src="images/whiteff30.png" alt="White FF 30” Front" class="main-wig-img" />
       </a>
       <div class="angle-gallery">
         <a href="images/whiteffside.jpg" data-lightbox="whiteff30" data-title="Side View"><img src="images/whiteffside.jpg" alt="Side View" /></a>
-        <a href="images/whiteffback.jpg" data-lightbox="whiteff30" data-title="Back View"> <img src="images/whiteffback.jpg" alt="Back View" /></a>
+        <a href="images/whiteffback.jpg" data-lightbox="whiteff30" data-title="Back View"><img src="images/whiteffback.jpg" alt="Back View" /></a>
       </div>
       <h4>White FF 30" [HHB]</h4>
       <p class="price">R900</p>
@@ -99,7 +99,7 @@
       <button class="add-to-cart" onclick="addToCart('White FF 30', 'qty-whiteff')">Add to Cart</button>
     </div>
 
-    <!-- Selena bounce -->
+    <!-- Selena Bouncy -->
     <div class="wig-card">
       <a href="images/selenabouncycurl20.png" data-lightbox="selenabouncycurl20" data-title="Selena Bouncy">
         <img src="images/selenabouncycurl20.png" alt="Selena Bouncy Curl Front" class="main-wig-img" />
@@ -119,7 +119,7 @@
       <button class="add-to-cart" onclick="addToCart('Selena Bouncy Curl 5x5', 'qty-selena')">Add to Cart</button>
     </div>
 
-    <!-- Tip bouncy -->
+    <!-- Tip Bouncy -->
     <div class="wig-card">
       <a href="images/tipbouncy22.png" data-lightbox="tipbouncy22" data-title="Tip Bouncy">
         <img src="images/tipbouncy22.png" alt="Tip Bouncy 22 Front" class="main-wig-img" />
@@ -132,14 +132,14 @@
           <img src="images/tipbouncyback.jpg" alt="Back View" />
         </a>
       </div>
-      <h4>Tip Bouncy Closure 22"[HHB]</h4>
+      <h4>Tip Bouncy Closure 22" [HHB]</h4>
       <p class="price">R700</p>
       <label>Qty:</label>
       <input type="number" id="qty-tip" value="1" min="1" class="quantity-input" />
       <button class="add-to-cart" onclick="addToCart('Tip Bouncy Closure 22', 'qty-tip')">Add to Cart</button>
     </div>
 
-    <!-- Barbieblonde -->
+    <!-- Barbie Blonde -->
     <div class="wig-card">
       <a href="images/barbieblonde30.jpg" data-lightbox="barbieblonde30" data-title="Barbie Blonde">
         <img src="images/barbieblonde30.jpg" alt="Barbie Blonde 30” Front" class="main-wig-img" />
@@ -152,7 +152,7 @@
           <img src="images/barbieblondeback.jpg" alt="Back View" />
         </a>
       </div>
-      <h4>Barbie Blonde 30"[HHB]</h4>
+      <h4>Barbie Blonde 30" [HHB]</h4>
       <p class="price">R900</p>
       <label>Qty:</label>
       <input type="number" id="qty-barbie" value="1" min="1" class="quantity-input" />
@@ -161,17 +161,19 @@
 
   </div>
 
-<div class="pagination">
-  <a class="page-link" href="shop-page2.html">⬅️ Previous</a>
-  <a class="page-link" href="shop-page4.html">Next ➡️</a>
-</div>
+  <div class="pagination">
+    <a class="page-link" href="shop-page2.html">⬅️ Previous</a>
+    <a class="page-link" href="shop-page4.html">Next ➡️</a>
+  </div>
 </section>
-<!-- Notification Bubble -->
+
+<!-- Notification -->
 <div id="notification" class="notification"></div>
-  
+
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-<script>  
-  const cart = {};
+<script>
+  let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
   function addToCart(productName, qtyId) {
     const qty = parseInt(document.getElementById(qtyId).value);
@@ -186,6 +188,7 @@
       };
     }
 
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     showNotification(`${qty} x ${productName} added to cart`);
   }
@@ -207,13 +210,23 @@
   }
 
   function checkoutCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
     let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
     for (const item in cart) {
       message += `• ${item} x ${cart[item].quantity}\n`;
     }
+
     const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
 </script>
+
 </body>
 </html>
