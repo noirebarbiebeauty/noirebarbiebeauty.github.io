@@ -3,239 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop Makeup - Page 3 | Noire Barbie Beauty</title>
+  <title>Makeup Products Page 3 - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-  <style>
-    .cart-counter {
-      background-color: hotpink;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 14px;
-      margin-left: 10px;
-    }
-    .notification {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #f06292;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      z-index: 9999;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .notification.show {
-      display: block;
-    }
-    .checkout-btn {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: deeppink;
-      color: white;
-      border: none;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .product {
-      background-color: #1c1c1c;
-      color: white;
-      border: 1px solid #ff69b4;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px;
-      width: 250px;
-    }
-    .product-gallery img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 5px;
-    }
-    .makeup-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .add-to-cart {
-      background-color: hotpink;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .quantity-input {
-      width: 50px;
-      margin: 5px 0;
-    }
-    .product-name {
-      font-weight: bold;
-      margin: 8px 0 4px;
-    }
-    .price {
-      color: #ffb6c1;
-    }
-  </style>
 </head>
 <body>
-<header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="makeup-products-section">
-  <h2 class="makeup-heading">💄 Page 3 – More Barbie Approved Makeup Products 💄</h2>
+  <h2 class="makeup-heading">💄 Barbie-Approved Makeup – Page 3 💄</h2>
 
-  <div class="makeup-gallery">
+  <section class="makeup-gallery">
 
-    <!-- PRODUCT 1: Lip Pallet -->
-    <div class="product" data-price="250">
+    <!-- Eyeshadow Pallet -->
+    <div class="product" data-price="650">
       <div class="product-gallery">
-        <a href="images/lippallet1.jpg" data-lightbox="lippallet" data-title="Lip Pallet - Front">
-          <img src="images/lippallet1.jpg" alt="Lip Pallet Front">
+        <a href="images/eyeshadowpalletmain.jpg" data-lightbox="eyeshadow" data-title="Eyeshadow Pallet - Front">
+          <img src="images/eyeshadowpalletmain.jpg" alt="Eyeshadow Pallet Front">
         </a>
-        <a href="images/lippallet2.jpg" data-lightbox="lippallet" data-title="Lip Pallet - Inside">
-          <img src="images/lippallet2.jpg" alt="Lip Pallet Inside">
+        <a href="images/eyeshadowpallet1.jpg" data-lightbox="eyeshadow" data-title="Eyeshadow Pallet - Side">
+          <img src="images/eyeshadowpallet1.jpg" alt="Eyeshadow Pallet Side">
+        </a>
+        <a href="images/eyeshadowpallet2.jpg" data-lightbox="eyeshadow" data-title="Eyeshadow Pallet - Swatch">
+          <img src="images/eyeshadowpallet2.jpg" alt="Eyeshadow Pallet Swatch">
         </a>
       </div>
-      <div class="product-name">LIP PALLET 18-IN-1</div>
-      <div class="price">R250</div>
-      <label for="qty-lippallet">Quantity:</label>
-      <input type="number" id="qty-lippallet" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Lip Pallet 18-in-1', 'qty-lippallet')">Add to Cart</button>
+      <div class="product-name">EYESHADOW PALLET 3 IN 1</div>
+      <div class="price">R650</div>
+      <label for="qty-eyeshadow">Qty:</label>
+      <input type="number" id="qty-eyeshadow" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Eyeshadow Pallet 3 in 1', 'qty-eyeshadow')">Add to Cart</button>
     </div>
 
-    <!-- PRODUCT 2: Matte Primer -->
-    <div class="product" data-price="180">
+    <!-- Powder Pallet -->
+    <div class="product" data-price="600">
       <div class="product-gallery">
-        <a href="images/matteprimer1.jpg" data-lightbox="matteprimer" data-title="Matte Primer - Front">
-          <img src="images/matteprimer1.jpg" alt="Matte Primer Front">
+        <a href="images/powderpallet1.jpg" data-lightbox="powder" data-title="Powder Pallet - Front">
+          <img src="images/powderpallet1.jpg" alt="Powder Pallet Front">
+        </a>
+        <a href="images/powderpallet2.jpg" data-lightbox="powder" data-title="Powder Pallet - Side">
+          <img src="images/powderpallet2.jpg" alt="Powder Pallet Side">
+        </a>
+        <a href="images/powderpallet3.jpg" data-lightbox="powder" data-title="Powder Pallet - Swatch">
+          <img src="images/powderpallet3.jpg" alt="Powder Pallet Swatch">
         </a>
       </div>
-      <div class="product-name">MATTE PRIMER</div>
-      <div class="price">R180</div>
-      <label for="qty-matteprimer">Quantity:</label>
-      <input type="number" id="qty-matteprimer" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Matte Primer', 'qty-matteprimer')">Add to Cart</button>
+      <div class="product-name">POWDER PALLET 12 IN 1</div>
+      <div class="price">R600</div>
+      <label for="qty-powder">Qty:</label>
+      <input type="number" id="qty-powder" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Powder Pallet 12 in 1', 'qty-powder')">Add to Cart</button>
     </div>
 
-    <!-- PRODUCT 3: Mascara -->
-    <div class="product" data-price="130">
+    <!-- Smoothening Primer -->
+    <div class="product" data-price="150">
       <div class="product-gallery">
-        <a href="images/mascara1.jpg" data-lightbox="mascara" data-title="Mascara - Front">
-          <img src="images/mascara1.jpg" alt="Mascara Front">
+        <a href="images/smoothprimer1.jpg" data-lightbox="primer" data-title="Smoothening Primer - Front">
+          <img src="images/smoothprimer1.jpg" alt="Primer Front">
+        </a>
+        <a href="images/smoothprimer2.jpg" data-lightbox="primer" data-title="Smoothening Primer - Side">
+          <img src="images/smoothprimer2.jpg" alt="Primer Side">
         </a>
       </div>
-      <div class="product-name">MASCARA</div>
-      <div class="price">R130</div>
-      <label for="qty-mascara">Quantity:</label>
-      <input type="number" id="qty-mascara" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Mascara', 'qty-mascara')">Add to Cart</button>
+      <div class="product-name">SMOOTHENING PRIMER</div>
+      <div class="price">R150</div>
+      <label for="qty-primer">Qty:</label>
+      <input type="number" id="qty-primer" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Smoothening Primer', 'qty-primer')">Add to Cart</button>
     </div>
 
-    <!-- PRODUCT 4: Eyeliner Gel -->
-    <div class="product" data-price="100">
+    <!-- Lip Lock -->
+    <div class="product" data-price="60">
       <div class="product-gallery">
-        <a href="images/eyelinergel1.jpg" data-lightbox="eyeliner" data-title="Eyeliner Gel - Front">
-          <img src="images/eyelinergel1.jpg" alt="Eyeliner Gel Front">
+        <a href="images/liplock1.jpg" data-lightbox="liplock" data-title="Lip Lock - Front">
+          <img src="images/liplock1.jpg" alt="Lip Lock Front">
+        </a>
+        <a href="images/liplock2.jpg" data-lightbox="liplock" data-title="Lip Lock - Side">
+          <img src="images/liplock2.jpg" alt="Lip Lock Side">
+        </a>
+        <a href="images/liplock3.jpg" data-lightbox="liplock" data-title="Lip Lock - Swatch">
+          <img src="images/liplock3.jpg" alt="Lip Lock Swatch">
         </a>
       </div>
-      <div class="product-name">EYE LINER GEL</div>
-      <div class="price">R100</div>
-      <label for="qty-eyeliner">Quantity:</label>
-      <input type="number" id="qty-eyeliner" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Eyeliner Gel', 'qty-eyeliner')">Add to Cart</button>
+      <div class="product-name">LIP LOCK</div>
+      <div class="price">R60</div>
+      <label for="qty-liplock">Qty:</label>
+      <input type="number" id="qty-liplock" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Lip Lock', 'qty-liplock')">Add to Cart</button>
     </div>
 
-    <!-- PRODUCT 5: Setting Powder -->
-    <div class="product" data-price="220">
+    <!-- Moisturizer -->
+    <div class="product" data-price="200">
       <div class="product-gallery">
-        <a href="images/settingpowder1.jpg" data-lightbox="settingpowder" data-title="Setting Powder - Front">
-          <img src="images/settingpowder1.jpg" alt="Setting Powder">
+        <a href="images/moisture.jpg" data-lightbox="moist" data-title="Moisturizer - Front">
+          <img src="images/moisture.jpg" alt="Moisturizer Front">
         </a>
       </div>
-      <div class="product-name">SETTING POWDER</div>
-      <div class="price">R220</div>
-      <label for="qty-settingpowder">Quantity:</label>
-      <input type="number" id="qty-settingpowder" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Setting Powder', 'qty-settingpowder')">Add to Cart</button>
+      <div class="product-name">MOISTURIZER</div>
+      <div class="price">R200</div>
+      <label for="qty-moist">Qty:</label>
+      <input type="number" id="qty-moist" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Moisturizer', 'qty-moist')">Add to Cart</button>
     </div>
 
-  </div>
+  </section>
 
   <div class="pagination">
-    <a class="page-link" href="makeup-products-page2.html">⬅️ Previous</a>
-    <a class="page-link" href="makeup-products-page4.html">Next ➡️</a>
+    <a href="makeup-products-page2.html" class="page-link">⬅️ Previous</a>
+    <a href="makeup-products-page1.html" class="page-link">1</a>
+    <a href="makeup-products-page2.html" class="page-link">2</a>
+    <a href="makeup-products-page3.html" class="page-link active">3</a>
+    <a href="makeup-products-page4.html" class="page-link">4</a>
   </div>
 
-  <div style="text-align: center; margin-top: 30px;">
-    <button class="checkout-btn" onclick="checkoutCart()">Checkout on WhatsApp</button>
-    <span id="cart-count" class="cart-counter" style="display:none;">0</span>
-  </div>
-</section>
+  <div id="notification" class="notification"></div>
 
-<div id="notification" class="notification"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("nbbCart")) || {};
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    function addToCart(productName, qtyId) {
+      const qty = parseInt(document.getElementById(qtyId).value);
+      if (!qty || qty < 1) return;
 
-<script>
-  let cart = JSON.parse(localStorage.getItem('makeupCart')) || {};
+      if (cart[productName]) {
+        cart[productName].quantity += qty;
+      } else {
+        cart[productName] = { quantity: qty };
+      }
 
-  function addToCart(productName, qtyId) {
-    const qty = parseInt(document.getElementById(qtyId).value);
-    if (!qty || qty < 1) return;
-
-    if (cart[productName]) {
-      cart[productName].quantity += qty;
-    } else {
-      cart[productName] = { name: productName, quantity: qty };
+      localStorage.setItem("nbbCart", JSON.stringify(cart));
+      updateCartCount();
+      showNotification(`${qty} x ${productName} added to cart`);
     }
 
-    localStorage.setItem('makeupCart', JSON.stringify(cart));
+    function updateCartCount() {
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = totalItems;
+      document.getElementById("cart-count").style.display = totalItems > 0 ? "inline-block" : "none";
+    }
+
+    function showNotification(message) {
+      const note = document.getElementById("notification");
+      note.textContent = message;
+      note.classList.add("show");
+      setTimeout(() => note.classList.remove("show"), 2500);
+    }
+
+    function checkoutCart() {
+      if (Object.keys(cart).length === 0) return;
+      let message = "Hi Noire Barbie Beauty 💖 I’d like to order:\n";
+      for (let item in cart) {
+        message += `• ${item} x ${cart[item].quantity}\n`;
+      }
+      const url = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
     updateCartCount();
-    showNotification(`${qty} x ${productName} added to cart`);
-  }
-
-  function updateCartCount() {
-    const cartCountEl = document.getElementById('cart-count');
-    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    cartCountEl.textContent = totalItems;
-    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
-  }
-
-  function showNotification(message) {
-    const notification = document.getElementById('notification');
-    notification.textContent = message;
-    notification.classList.add('show');
-    setTimeout(() => notification.classList.remove('show'), 2500);
-  }
-
-  function checkoutCart() {
-    let message = "Hi Noire Barbie Beauty 💖 I’d like to order:\n";
-    for (const item in cart) {
-      message += `• ${item} x ${cart[item].quantity}\n`;
-    }
-    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  }
-
-  updateCartCount(); // Load cart count on page load
-</script>
+  </script>
 </body>
 </html>
