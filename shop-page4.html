@@ -101,7 +101,7 @@
       <p class="price">R900</p>
       <label for="qty-greyblack">Qty:</label>
       <input type="number" id="qty-greyblack" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('Grey Black 30\\"', 'qty-greyblack')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Grey Black 30', 'qty-greyblack')">Add to Cart</button>
     </div>
 
     <!-- LOOSE WAVE -->
@@ -121,7 +121,7 @@
       <p class="price">R800</p>
       <label for="qty-loosewave">Qty:</label>
       <input type="number" id="qty-loosewave" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('Loose Wave 24\\"', 'qty-loosewave')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Loose Wave 24', 'qty-loosewave')">Add to Cart</button>
     </div>
 
     <!-- PIXIE -->
@@ -141,7 +141,7 @@
       <p class="price">R600</p>
       <label for="qty-pixie">Qty:</label>
       <input type="number" id="qty-pixie" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('Budget Pixie 12\\"', 'qty-pixie')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Budget Pixie 12', 'qty-pixie')">Add to Cart</button>
     </div>
 
     <!-- KIKI -->
@@ -157,11 +157,11 @@
           <img src="images/kiki3.jpg" />
         </a>
       </div>
-      <h4>Kiki Bounce [HHB]</h4>
+      <h4>Kiki Bounce 30" [HHB]</h4>
       <p class="price">R900</p>
       <label for="qty-kiki">Qty:</label>
       <input type="number" id="qty-kiki" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('Kiki Bounce 30\\"', 'qty-kiki')">Add to Cart</button>
+      <button class="add-to-cart" onclick="addToCart('Kiki Bounce 30', 'qty-kiki')">Add to Cart</button>
     </div>
 
   </div>
@@ -177,7 +177,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 <script>
-  const cart = {};
+  let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
   function addToCart(productName, qtyId) {
     const qty = parseInt(document.getElementById(qtyId).value);
@@ -189,6 +189,7 @@
       cart[productName] = { name: productName, quantity: qty };
     }
 
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     showNotification(`${qty} x ${productName} added to cart`);
   }
@@ -196,8 +197,10 @@
   function updateCartCount() {
     const cartCountEl = document.getElementById('cart-count');
     const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    cartCountEl.textContent = totalItems;
-    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    if (cartCountEl) {
+      cartCountEl.textContent = totalItems;
+      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    }
   }
 
   function showNotification(message) {
@@ -208,13 +211,23 @@
   }
 
   function checkoutCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
     let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
     for (const item in cart) {
       message += `• ${item} x ${cart[item].quantity}\n`;
     }
+
     const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
 </script>
+
 </body>
 </html>
