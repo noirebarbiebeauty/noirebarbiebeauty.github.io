@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop Makeup - Noire Barbie Beauty</title>
-  <title>Makeup Products – Lipsticks, Primers, Foundations</title>
-  <meta name="description" content="Shop Barbie-approved makeup: primers, lipsticks, setting powders, and more. Featuring Nigerian beauty brands and full glam kits." />
+  <title>Makeup Products – Page 1 | Noire Barbie Beauty</title>
+  <meta name="description" content="Barbie-approved makeup from Nigerian brands. Shop primers, lippies, foundations, setting powders and more!" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
@@ -103,6 +102,20 @@
     .adventure-logo {
       width: 120px;
     }
+
+    .makeup-intro-box {
+      background: pink;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 20, 147, 0.2);
+      max-width: 800px;
+      text-align: center;
+    }
+    .makeup-intro-box h3 {
+      color: deeppink;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -127,6 +140,16 @@
 
 <section class="makeup-products-section">
   <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+
+  <div class="makeup-intro-box">
+    <h3>Hey Barbie! 💕</h3>
+    <p>
+      Welcome to our exclusive makeup collection – designed for bold beauties who slay effortlessly!  
+      We proudly stock <strong>premium Nigerian makeup brands</strong>, from full-coverage foundations to glowing highlighters,  
+      perfect brow gels, lippies and more. Whether you want soft glam or full glam, we’ve got your face beat covered!
+    </p>
+  </div>
+
   <h3 class="makeup-subheading">🛍️ ADVENTURE MAKEUP COLLECTION 🛍️</h3>
 
   <div class="adventure-logo-container">
@@ -134,83 +157,62 @@
   </div>
 
   <div class="makeup-gallery" id="product-container">
-
-    <!-- BEST SKIN FOUNDATION -->
+    <!-- Product 1 -->
     <div class="product" data-price="200">
       <div class="product-gallery">
-        <a href="images/bestskin1.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Front">
-          <img src="images/bestskin1.jpg" alt="Best Skin 1">
-        </a>
-        <a href="images/bestskin2.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Side">
-          <img src="images/bestskin2.jpg" alt="Best Skin 2">
-        </a>
-        <a href="images/bestskin3.jpg" data-lightbox="bestskin" data-title="Best Skin Foundation - Swatch">
-          <img src="images/bestskin3.jpg" alt="Best Skin 3">
-        </a>
+        <a href="images/bestskin1.jpg" data-lightbox="bestskin"><img src="images/bestskin1.jpg" alt="Best Skin 1"></a>
+        <a href="images/bestskin2.jpg" data-lightbox="bestskin"><img src="images/bestskin2.jpg" alt="Best Skin 2"></a>
+        <a href="images/bestskin3.jpg" data-lightbox="bestskin"><img src="images/bestskin3.jpg" alt="Best Skin 3"></a>
       </div>
       <div class="product-name">BEST SKIN FOUNDATION</div>
       <div class="price">R200</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-best-skin">Quantity:</label>
-      <input type="number" id="qty-best-skin" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty-best-skin')">Add to Cart</button>
+      <label for="qty1">Quantity:</label>
+      <input type="number" id="qty1" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Best Skin Foundation', 'qty1')">Add to Cart</button>
     </div>
 
-    <!-- CONCEALER PALETTE -->
+    <!-- Product 2 -->
     <div class="product" data-price="600">
       <div class="product-gallery">
-        <a href="images/concealerpallet1.jpg" data-lightbox="concealer" data-title="Concealer Palette - Front">
-          <img src="images/concealerpallet1.jpg" alt="Concealer Palette 1">
-        </a>
-        <a href="images/concealerpallet2.jpg" data-lightbox="concealer" data-title="Concealer Palette - Side">
-          <img src="images/concealerpallet2.jpg" alt="Concealer Palette 2">
-        </a>
-        <a href="images/concealerpallet3.jpg" data-lightbox="concealer" data-title="Concealer Palette - Swatch">
-          <img src="images/concealerpallet3.jpg" alt="Concealer Palette 3">
-        </a>
+        <a href="images/concealerpallet1.jpg" data-lightbox="concealer"><img src="images/concealerpallet1.jpg" alt="Concealer Palette 1"></a>
+        <a href="images/concealerpallet2.jpg" data-lightbox="concealer"><img src="images/concealerpallet2.jpg" alt="Concealer Palette 2"></a>
+        <a href="images/concealerpallet3.jpg" data-lightbox="concealer"><img src="images/concealerpallet3.jpg" alt="Concealer Palette 3"></a>
       </div>
       <div class="product-name">CONCEALER PALETTE</div>
       <div class="price">R600</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-concealer-palette">Quantity:</label>
-      <input type="number" id="qty-concealer-palette" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty-concealer-palette')">Add to Cart</button>
+      <label for="qty2">Quantity:</label>
+      <input type="number" id="qty2" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Concealer Palette', 'qty2')">Add to Cart</button>
     </div>
 
-    <!-- BLUSH BRONZER PALETTE -->
+    <!-- Product 3 -->
     <div class="product" data-price="650">
       <div class="product-gallery">
-        <a href="images/blushbronzerpallet1.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Front">
-          <img src="images/blushbronzerpallet1.jpg" alt="Blush Bronzer 1">
-        </a>
-        <a href="images/blushbronzerpallet2.jpg" data-lightbox="bronzer" data-title="Blush Bronzer Palette - Swatch">
-          <img src="images/blushbronzerpallet2.jpg" alt="Blush Bronzer 2">
-        </a>
+        <a href="images/blushbronzerpallet1.jpg" data-lightbox="bronzer"><img src="images/blushbronzerpallet1.jpg" alt="Bronzer 1"></a>
+        <a href="images/blushbronzerpallet2.jpg" data-lightbox="bronzer"><img src="images/blushbronzerpallet2.jpg" alt="Bronzer 2"></a>
       </div>
       <div class="product-name">CREAM BLUSH BRONZER PALETTE</div>
       <div class="price">R650</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-bronzer-palette">Quantity:</label>
-      <input type="number" id="qty-bronzer-palette" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Cream Blush Bronzer Palette', 'qty-bronzer-palette')">Add to Cart</button>
+      <label for="qty3">Quantity:</label>
+      <input type="number" id="qty3" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Cream Blush Bronzer Palette', 'qty3')">Add to Cart</button>
     </div>
 
-    <!-- Lip Pallet -->
+    <!-- Product 4 -->
     <div class="product" data-price="600">
       <div class="product-gallery">
-        <a href="images/lippallet1.jpg" data-lightbox="lip" data-title="Lip Pallet - Front">
-          <img src="images/lippallet1.jpg" alt="Lip Pallet 1">
-        </a>
-        <a href="images/lippallet2.jpg" data-lightbox="lip" data-title="Lip Pallet - Swatch">
-          <img src="images/lippallet2.jpg" alt="Lip Pallet 2">
-        </a>
+        <a href="images/lippallet1.jpg" data-lightbox="lip"><img src="images/lippallet1.jpg" alt="Lip Pallet 1"></a>
+        <a href="images/lippallet2.jpg" data-lightbox="lip"><img src="images/lippallet2.jpg" alt="Lip Pallet 2"></a>
       </div>
       <div class="product-name">LIP PALLET</div>
       <div class="price">R600</div>
       <div class="stars">⭐⭐⭐⭐</div>
-      <label class="quantity-label" for="qty-lip-pallet">Quantity:</label>
-      <input type="number" id="qty-lip-pallet" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Lip Pallet', 'qty-lip-pallet')">Add to Cart</button>
+      <label for="qty4">Quantity:</label>
+      <input type="number" id="qty4" class="quantity-input" value="1" min="1">
+      <button class="add-to-cart" onclick="addToCart('Lip Pallet', 'qty4')">Add to Cart</button>
     </div>
   </div>
 
@@ -219,14 +221,13 @@
   </div>
 </section>
 
-<!-- Notification -->
 <div id="notification" class="notification"></div>
 
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
 <script>
-  const cart = {};
+  let cart = JSON.parse(localStorage.getItem('makeupCart')) || {};
+  updateCartCount();
 
   function addToCart(productName, qtyId) {
     const qty = parseInt(document.getElementById(qtyId).value);
@@ -235,19 +236,17 @@
     if (cart[productName]) {
       cart[productName].quantity += qty;
     } else {
-      cart[productName] = {
-        name: productName,
-        quantity: qty
-      };
+      cart[productName] = { name: productName, quantity: qty };
     }
 
+    localStorage.setItem('makeupCart', JSON.stringify(cart));
     updateCartCount();
     showNotification(`${qty} x ${productName} added to cart`);
   }
 
   function updateCartCount() {
-    const cartCountEl = document.getElementById('cart-count');
     const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountEl = document.getElementById('cart-count');
     cartCountEl.textContent = totalItems;
     cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
   }
