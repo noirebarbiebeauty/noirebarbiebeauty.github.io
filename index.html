@@ -18,31 +18,32 @@
   <meta name="description" content="Welcome to Noire Barbie Beauty – your home for affordable glam! Explore our premium wigs, flawless installs, and Barbie-approved makeup services." />  <title>Noire Barbie Beauty</title>
   <style>
   .testimonial-ticker {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(to right, #ff69b4, #ffc0cb);
-    color: black;
-    font-weight: bold;
-    padding: 10px 0;
-    overflow: hidden;
-    z-index: 999;
-    box-shadow: 0 -2px 10px rgba(255, 105, 180, 0.4);
-    font-family: 'Arial', sans-serif;
-  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 182, 193, 0.3); /* light pink, transparent */
+  color: #fff;
+  font-weight: 500;
+  padding: 4px 0;
+  overflow: hidden;
+  z-index: 4; /* lower than footer shadow */
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  backdrop-filter: blur(3px);
+  text-shadow: 1px 1px 2px #00000060;
+}
 
-  .testimonial-ticker p {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll-left 60s linear infinite;
-    font-size: 14px;
-  }
+.testimonial-ticker p {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 55s linear infinite;
+}
 
-  @keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-  html, body {
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+    html, body {
       height: 100%;
       margin: 0;
       padding: 0;
@@ -223,17 +224,16 @@
   <footer class="site-footer">
     <p>© Noire Barbie Beauty 2025</p>
   </footer>
-  <!-- TESTIMONIAL TICKER -->
+<!-- TESTIMONIAL TICKER (REAL REVIEWS) -->
 <div class="testimonial-ticker">
   <p>
-    🌟 “The curls were curling! Love my Cinnamon Muse unit – B.D.” &nbsp;&nbsp;&nbsp;
-    🌟 “I got so many compliments at my birthday! – D.D.” &nbsp;&nbsp;&nbsp;
-    🌟 “Best foundation I’ve used in years – V.K.” &nbsp;&nbsp;&nbsp;
-    🌟 “Wig came ready to wear and styled to perfection – T.M.” &nbsp;&nbsp;&nbsp;
-    🌟 “Customer service on point 💖 – R.B.” &nbsp;&nbsp;&nbsp;
-    🌟 “That lip palette is a dream! My go-to now – J.L.” &nbsp;&nbsp;&nbsp;
-    🌟 “Edges laid, lace melted, makeup flawless – P.S.” &nbsp;&nbsp;&nbsp;
-    🌟 “Noire Barbie Beauty gave me main character energy! – M.K.”
+    💕 “I’m obsessed. I’ve never liked wigs but I LOVE this one!” – L.C. &nbsp;&nbsp;&nbsp;
+    💕 “Best makeup and hair ever. Everyone was asking me who did it.” – D.D. &nbsp;&nbsp;&nbsp;
+    💕 “I love my cinnamon curls, and the install was too clean!” – B.B. &nbsp;&nbsp;&nbsp;
+    💕 “That makeup soft glam? You snapped! Wig was laid too.” – J.M. &nbsp;&nbsp;&nbsp;
+    💕 “She ate my face and slayed my wig in one go. Iconic.” – T.T. &nbsp;&nbsp;&nbsp;
+    💕 “It’s giving Barbie, glam, everything! Loved my install – P.S.” &nbsp;&nbsp;&nbsp;
+    💕 “I came for makeup, left with confidence – you’re the best!” – V.V.
   </p>
 </div>
 </body>
