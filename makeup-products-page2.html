@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop Makeup - Noire Barbie Beauty</title>
+  <meta name="description" content="Barbie-approved makeup products including Nigerian brands, full-coverage foundations, setting powders, concealers, and more." />
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
@@ -88,8 +89,45 @@
     .price {
       color: #ffb6c1;
     }
+
+    .floating-welcome-box {
+      background-color: #ffb6c1;
+      color: black;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .floating-welcome-box h3 {
+      color: deeppink;
+      margin-bottom: 10px;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    .pagination a {
+      text-decoration: none;
+      background-color: pink;
+      color: black;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .pagination a:hover {
+      background-color: deeppink;
+      color: white;
+    }
   </style>
 </head>
+
 <body>
 <header>
   <div class="topbar">
@@ -102,7 +140,7 @@
     <ul>
       <li><a href="index.html">HOME</a></li>
       <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
+      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
       <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
       <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
       <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
@@ -112,9 +150,19 @@
 
 <section class="makeup-products-section">
   <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
+
+  <!-- Polished Intro -->
+  <div class="floating-welcome-box">
+    <h3>Hi Barbies 💖</h3>
+    <p>
+      Welcome to our glam-approved makeup collection!✨<br>
+      We're proudly stocking premium <strong>Nigerian makeup brands</strong> for our Noire Barbies – from full-coverage foundations to perfect brow gels, pencils, long-lasting lipsticks and more. Whether you're going soft glam or full Barbie beat, we’ve got you covered!
+    </p>
+  </div>
+
   <div class="makeup-gallery">
 
-    <!-- Setting Powder -->
+    <!-- PRODUCT 1 -->
     <div class="product" data-price="150">
       <div class="product-gallery">
         <a href="images/settingpowder1.jpg" data-lightbox="setting" data-title="Setting Powder - Front">
@@ -135,7 +183,7 @@
       <button class="add-to-cart" onclick="addToCart('Setting Powder', 'qty-setting-powder')">Add to Cart</button>
     </div>
 
-    <!-- Matte Primer -->
+    <!-- PRODUCT 2 -->
     <div class="product" data-price="170">
       <div class="product-gallery">
         <a href="images/matteprimer.jpg" data-lightbox="matte" data-title="Matte Primer">
@@ -150,7 +198,7 @@
       <button class="add-to-cart" onclick="addToCart('Matte Primer', 'qty-matte-primer')">Add to Cart</button>
     </div>
 
-    <!-- Pro Concealer Blend -->
+    <!-- PRODUCT 3 -->
     <div class="product" data-price="120">
       <div class="product-gallery">
         <a href="images/proconcealer1.jpg" data-lightbox="concealer" data-title="Pro Concealer - Front">
@@ -171,7 +219,7 @@
       <button class="add-to-cart" onclick="addToCart('Pro Concealer Blend', 'qty-pro-concealer')">Add to Cart</button>
     </div>
 
-    <!-- Eye Liner Gel -->
+    <!-- PRODUCT 4 -->
     <div class="product" data-price="100">
       <div class="product-gallery">
         <a href="images/eyelinergel.jpg" data-lightbox="eyeliner" data-title="Eye Liner - Front">
@@ -192,7 +240,7 @@
       <button class="add-to-cart" onclick="addToCart('Eye Liner Gel', 'qty-eye-liner')">Add to Cart</button>
     </div>
 
-    <!-- Super Stay Foundation -->
+    <!-- PRODUCT 5 -->
     <div class="product" data-price="200">
       <div class="product-gallery">
         <a href="images/stay1.jpg" data-lightbox="stay" data-title="Super Stay Foundation - Front">
@@ -215,27 +263,32 @@
 
   </div>
 
+  <!-- Pagination -->
   <div class="pagination">
     <a class="page-link" href="makeup-products-page1.html">⬅️ Previous</a>
     <a class="page-link" href="makeup-products-page3.html">Next ➡️</a>
   </div>
 </section>
 
-<!-- Scripts -->
+<!-- Notification -->
 <div id="notification" class="notification"></div>
 
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script>
-  const cart = {};
+  let cart = JSON.parse(localStorage.getItem('nbbMakeupCart')) || {};
 
   function addToCart(productName, qtyId) {
     const qty = parseInt(document.getElementById(qtyId).value);
     if (!qty || qty < 1) return;
+
     if (cart[productName]) {
       cart[productName].quantity += qty;
     } else {
       cart[productName] = { name: productName, quantity: qty };
     }
+
+    localStorage.setItem('nbbMakeupCart', JSON.stringify(cart));
     updateCartCount();
     showNotification(`${qty} x ${productName} added to cart`);
   }
@@ -262,6 +315,8 @@
     const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
+
+  updateCartCount();
 </script>
 </body>
 </html>
