@@ -3,180 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Makeup Products Page 2 - Noire Barbie Beauty</title>
+  <title>Makeup Page 2 - Noire Barbie Beauty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
-<header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
+    <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop-page1.html">HUMAN HAIR BLEND</a></li>
+        <li><a href="makeup-products-page1.html" class="active">MAKEUP PRODUCTS</a></li>
+        <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
+        <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
+        <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="makeup-products-section">
-  <h2 class="makeup-heading">💄🛒 SHOP OUR BARBIE APPROVED MAKEUP PRODUCTS 🛒💄</h2>
-  <div class="makeup-gallery">
+  <section class="makeup-products-section">
+    <h2 class="makeup-heading">💄 Shop More Barbie-Approved Makeup 💄</h2>
+    <div class="makeup-gallery">
 
-    <!-- PRODUCT: Setting Powder -->
-    <div class="product" data-price="100">
-      <div class="product-gallery">
-        <a href="images/settingpowder1.jpg" data-lightbox="settingpowder" data-title="Setting Powder - Front">
-          <img src="images/settingpowder1.jpg" alt="Setting Powder 1">
-        </a>
-        <a href="images/settingpowder2.jpg" data-lightbox="settingpowder" data-title="Setting Powder - Side">
-          <img src="images/settingpowder2.jpg" alt="Setting Powder 2">
-        </a>
+      <!-- PRODUCT 1 -->
+      <div class="product">
+        <div class="product-gallery">
+          <a href="images/settingpowder1.jpg" data-lightbox="settingpowder" data-title="Setting Powder - Front">
+            <img src="images/settingpowder1.jpg" alt="Setting Powder">
+          </a>
+          <a href="images/settingpowder2.jpg" data-lightbox="settingpowder" data-title="Setting Powder - Swatch">
+            <img src="images/settingpowder2.jpg" alt="Setting Powder Swatch">
+          </a>
+        </div>
+        <div class="product-name">SETTING POWDER</div>
+        <div class="price">R150</div>
+        <label for="qty-setting">Qty:</label>
+        <input type="number" id="qty-setting" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Setting Powder', 'qty-setting')">Add to Cart</button>
       </div>
-      <div class="product-name">SETTING POWDER</div>
-      <div class="price">R100</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label for="qty-setting-powder">Quantity:</label>
-      <input type="number" id="qty-setting-powder" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Setting Powder', 'qty-setting-powder')">Add to Cart</button>
+
+      <!-- PRODUCT 2 -->
+      <div class="product">
+        <div class="product-gallery">
+          <a href="images/matteprimer1.jpg" data-lightbox="matteprimer" data-title="Matte Primer - Front">
+            <img src="images/matteprimer1.jpg" alt="Matte Primer">
+          </a>
+          <a href="images/matteprimer2.jpg" data-lightbox="matteprimer" data-title="Matte Primer - Swatch">
+            <img src="images/matteprimer2.jpg" alt="Matte Primer Swatch">
+          </a>
+        </div>
+        <div class="product-name">MATTE PRIMER</div>
+        <div class="price">R160</div>
+        <label for="qty-matte">Qty:</label>
+        <input type="number" id="qty-matte" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Matte Primer', 'qty-matte')">Add to Cart</button>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product">
+        <div class="product-gallery">
+          <a href="images/proconceal1.jpg" data-lightbox="proconceal" data-title="Pro Concealer Blend - Front">
+            <img src="images/proconceal1.jpg" alt="Pro Concealer Blend">
+          </a>
+          <a href="images/proconceal2.jpg" data-lightbox="proconceal" data-title="Pro Concealer Blend - Swatch">
+            <img src="images/proconceal2.jpg" alt="Pro Concealer Blend Swatch">
+          </a>
+        </div>
+        <div class="product-name">PRO CONCEALER BLEND</div>
+        <div class="price">R180</div>
+        <label for="qty-proconceal">Qty:</label>
+        <input type="number" id="qty-proconceal" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Pro Concealer Blend', 'qty-proconceal')">Add to Cart</button>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product">
+        <div class="product-gallery">
+          <a href="images/eyeliner1.jpg" data-lightbox="eyeliner" data-title="Eye Liner Gel - Front">
+            <img src="images/eyeliner1.jpg" alt="Eye Liner Gel">
+          </a>
+          <a href="images/eyeliner2.jpg" data-lightbox="eyeliner" data-title="Eye Liner Gel - Swatch">
+            <img src="images/eyeliner2.jpg" alt="Eye Liner Gel Swatch">
+          </a>
+        </div>
+        <div class="product-name">EYE LINER GEL</div>
+        <div class="price">R90</div>
+        <label for="qty-eyeliner">Qty:</label>
+        <input type="number" id="qty-eyeliner" class="quantity-input" value="1" min="1">
+        <button class="add-to-cart" onclick="addToCart('Eye Liner Gel', 'qty-eyeliner')">Add to Cart</button>
+      </div>
+
     </div>
 
-    <!-- PRODUCT: Matte Primer -->
-    <div class="product" data-price="120">
-      <div class="product-gallery">
-        <a href="images/matteprimer1.jpg" data-lightbox="matteprimer" data-title="Matte Primer - Front">
-          <img src="images/matteprimer1.jpg" alt="Matte Primer 1">
-        </a>
-        <a href="images/matteprimer2.jpg" data-lightbox="matteprimer" data-title="Matte Primer - Side">
-          <img src="images/matteprimer2.jpg" alt="Matte Primer 2">
-        </a>
-      </div>
-      <div class="product-name">MATTE PRIMER</div>
-      <div class="price">R120</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label for="qty-matte-primer">Quantity:</label>
-      <input type="number" id="qty-matte-primer" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Matte Primer', 'qty-matte-primer')">Add to Cart</button>
+    <div class="pagination">
+      <a class="page-link" href="makeup-products-page1.html">⬅️ Previous</a>
+      <a class="page-link" href="makeup-products-page3.html">Next ➡️</a>
     </div>
 
-    <!-- PRODUCT: Pro Concealer Blend -->
-    <div class="product" data-price="180">
-      <div class="product-gallery">
-        <a href="images/proconcealer1.jpg" data-lightbox="proconcealer" data-title="Pro Concealer - Front">
-          <img src="images/proconcealer1.jpg" alt="Pro Concealer 1">
-        </a>
-        <a href="images/proconcealer2.jpg" data-lightbox="proconcealer" data-title="Pro Concealer - Side">
-          <img src="images/proconcealer2.jpg" alt="Pro Concealer 2">
-        </a>
-      </div>
-      <div class="product-name">PRO CONCEALER BLEND</div>
-      <div class="price">R180</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label for="qty-pro-concealer">Quantity:</label>
-      <input type="number" id="qty-pro-concealer" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Pro Concealer Blend', 'qty-pro-concealer')">Add to Cart</button>
-    </div>
+    <button onclick="checkoutCart()" class="checkout-btn">Checkout on WhatsApp</button>
+  </section>
 
-    <!-- PRODUCT: Eye Liner Gel -->
-    <div class="product" data-price="90">
-      <div class="product-gallery">
-        <a href="images/eyeliner1.jpg" data-lightbox="eyeliner" data-title="Eye Liner - Front">
-          <img src="images/eyeliner1.jpg" alt="Eye Liner 1">
-        </a>
-        <a href="images/eyeliner2.jpg" data-lightbox="eyeliner" data-title="Eye Liner - Side">
-          <img src="images/eyeliner2.jpg" alt="Eye Liner 2">
-        </a>
-      </div>
-      <div class="product-name">EYE LINER GEL</div>
-      <div class="price">R90</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <label for="qty-eye-liner">Quantity:</label>
-      <input type="number" id="qty-eye-liner" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Eye Liner Gel', 'qty-eye-liner')">Add to Cart</button>
-    </div>
+  <div id="notification" class="notification"></div>
 
-    <!-- PRODUCT: Super Stay Foundation -->
-    <div class="product" data-price="280">
-      <div class="product-gallery">
-        <a href="images/superstay1.jpg" data-lightbox="superstay" data-title="Super Stay Foundation - Front">
-          <img src="images/superstay1.jpg" alt="Super Stay Foundation 1">
-        </a>
-        <a href="images/superstay2.jpg" data-lightbox="superstay" data-title="Super Stay Foundation - Side">
-          <img src="images/superstay2.jpg" alt="Super Stay Foundation 2">
-        </a>
-      </div>
-      <div class="product-name">SUPER STAY FOUNDATION</div>
-      <div class="price">R280</div>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <label for="qty-super-stay">Quantity:</label>
-      <input type="number" id="qty-super-stay" class="quantity-input" min="1" value="1" />
-      <button class="add-to-cart" onclick="addToCart('Super Stay Foundation', 'qty-super-stay')">Add to Cart</button>
-    </div>
-  </div>
+  <!-- Lightbox Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
-  <div class="pagination">
-    <a class="page-link" href="makeup-products-page1.html">⬅️ Previous</a>
-    <a class="page-link" href="makeup-products-page3.html">Next ➡️</a>
-  </div>
-</section>
+  <!-- Cart Script -->
+  <script>
+    // Use localStorage cart
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
 
-<div id="notification" class="notification"></div>
+    function addToCart(productName, qtyId) {
+      const qty = parseInt(document.getElementById(qtyId).value);
+      if (!qty || qty < 1) return;
 
-<!-- Lightbox Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-
-<!-- Cart System with localStorage -->
-<script>
-  const cart = JSON.parse(localStorage.getItem('nbbCart')) || {};
-
-  function addToCart(productName, qtyId) {
-    const qty = parseInt(document.getElementById(qtyId).value);
-    if (!qty || qty < 1) return;
-
-    if (cart[productName]) {
+      if (!cart[productName]) {
+        cart[productName] = { quantity: 0 };
+      }
       cart[productName].quantity += qty;
-    } else {
-      cart[productName] = { name: productName, quantity: qty };
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      showNotification(`${qty} x ${productName} added to cart`);
     }
 
-    localStorage.setItem('nbbCart', JSON.stringify(cart));
-    showNotification(`${qty} x ${productName} added to cart`);
+    function updateCartCount() {
+      const countEl = document.getElementById('cart-count');
+      const total = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      countEl.textContent = total;
+      countEl.style.display = total > 0 ? 'inline-block' : 'none';
+    }
+
+    function showNotification(message) {
+      const note = document.getElementById('notification');
+      note.textContent = message;
+      note.classList.add('show');
+      setTimeout(() => note.classList.remove('show'), 2500);
+    }
+
+    function checkoutCart() {
+      let msg = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
+      for (const item in cart) {
+        msg += `• ${item} x ${cart[item].quantity}\n`;
+      }
+      const url = `https://wa.me/27683032091?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
+
+    // Load cart count on page load
     updateCartCount();
-  }
-
-  function updateCartCount() {
-    const cartCountEl = document.getElementById('cart-count');
-    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    if (cartCountEl) {
-      cartCountEl.textContent = totalItems;
-      cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
-    }
-  }
-
-  function showNotification(message) {
-    const notification = document.getElementById('notification');
-    if (notification) {
-      notification.textContent = message;
-      notification.classList.add('show');
-      setTimeout(() => notification.classList.remove('show'), 2500);
-    }
-  }
-
-  function checkoutCart() {
-    const savedCart = JSON.parse(localStorage.getItem('nbbCart')) || {};
-    let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
-    for (const item in savedCart) {
-      message += `• ${item} x ${savedCart[item].quantity}\n`;
-    }
-    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  }
-
-  updateCartCount(); // update on load
-</script>
-
+  </script>
 </body>
 </html>
