@@ -245,5 +245,18 @@
     🌟 “I’m happyyy, thank you 🥰” – N.C.
   </p>
 </div>
+  <script>
+function orderNow(wigName, price) {
+  alert(
+    "Pay to:\nFNB\nAccount Name: MOLUCHI FASHION\nAccount Number: 63055295711\n\nReference: " + wigName
+  );
+
+  let message = `Hi, I’ve paid for ${wigName} - R{price}. Here is my POP.`;
+  let phone = "27683032091";
+
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+}
+</script>
+
 </body>
 </html>
