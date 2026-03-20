@@ -245,34 +245,6 @@
     🌟 “I’m happyyy, thank you 🥰” – N.C.
   </p>
 </div>
-  <script>
-  !-- Example wig buttons -->
-<button class="buy-btn" data-name="Yaki Straight 30\"" data-price="900">
-  Buy Yaki Straight 30"
-</button>
-
-<button class="buy-btn" data-name="3tone blonde 30\"" data-price="900">
-  Buy 3 Tone Blonde 30"
-</button>
-
-<script>
-  // Dynamic order function for all wig buttons
-  const phone = "27XXXXXXXXX"; // Replace with your WhatsApp number
-
-  document.querySelectorAll('.buy-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const wigName = button.getAttribute('data-name');
-      const price = button.getAttribute('data-price');
-
-      // Show payment info
-      alert(
-        `Pay to:\nFNB\nAccount Name: YOUR NAME\nAccount Number: XXXXXXXX\n\nReference: ${wigName}`
-      );
-
-      // Open WhatsApp with pre-filled message
-      const message = `Hi, I’ve paid for ${wigName} - R${price}. Here is my POP.`;
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
-    });
-</script>
+ </script>
 </body>
 </html>
