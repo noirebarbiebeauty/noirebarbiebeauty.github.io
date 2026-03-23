@@ -1,286 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PX5DC0BS3K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PX5DC0BS3K');
-</script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop - Noire Barbie Beauty</title>
-  <meta name="description" content="Shop premium wig units from Noire Barbie Beauty. Explore our 100% human hair and blend options. Slay now, pay less!" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+<!-- ================= WIG GALLERY (CLEAN VERSION) ================= -->
 
-  <style>
-    .quantity-input {
-      width: 60px;
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid pink;
-      margin-right: 10px;
-    }
+<style>
+.wig-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
 
-    .add-to-cart {
-      background-color: hotpink;
-      color: white;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 5px;
-    }
+.wig-card {
+  background: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
 
-    .add-to-cart:hover {
-      background-color: deeppink;
-    }
+.wig-card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-    .notification {
-      position: fixed;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #ff69b4;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      z-index: 999;
-      display: none;
-    }
+/* SOLD OUT BADGE */
+.sold-out {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  z-index: 2;
+}
 
-    .cart-counter {
-      background-color: hotpink;
-      color: white;
-      font-weight: bold;
-      padding: 2px 8px;
-      border-radius: 50%;
-      margin-left: 5px;
-    }
+/* SOLD OUT EFFECT */
+.sold .main-wig-img {
+  opacity: 0.5;
+}
 
-    .cart-icon {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 20px;
-      color: hotpink;
-      text-decoration: none;
-    }
+.sold input,
+.sold button {
+  background: grey !important;
+  cursor: not-allowed;
+}
+</style>
 
-    .hair-blend-info {
-      background: linear-gradient(to right, #ffc0cb, #ffe4e1);
-      padding: 20px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 90%;
-      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
-    }
+<div class="wig-gallery" id="productGrid">
 
-    .hair-blend-info h3 {
-      color: #c71585;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+  <!-- Yaki Straight -->
+  <div class="wig-card sold">
+    <span class="sold-out">SOLD OUT</span>
 
-    .hair-blend-info p {
-      color: #333;
-      font-size: 16px;
-    }
-  </style>
-</head>
+    <a href="images/yakistraight30.png" data-lightbox="yakistraight30">
+      <img src="images/yakistraight30.png" class="main-wig-img" />
+    </a>
 
-<body>
-<header>
-  <img src="images/logo.png" alt="Noire Barbie Beauty Logo" class="main-logo">
-  <a href="#" onclick="checkoutCart()" class="cart-icon">🛒 <span id="cart-count" class="cart-counter">0</span></a>
-  <nav>
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shop-page1.html" class="active">HUMAN HAIR BLEND</a></li>
-      <li><a href="makeup-products-page1.html">MAKEUP PRODUCTS</a></li>
-      <li><a href="wigservices-page1.html">WIG SERVICES</a></li>
-      <li><a href="client-gallery-page1.html">CLIENT GLAM GALLERY</a></li>
-      <li><a href="shop-pagehh1.html">HUMAN HAIR WIGS</a></li>
-      <li><a href="testimonials.html">REVIEWS</a></li>      
-    </ul>
-  </nav>
-</header>
+    <a href="images/yakiside.jpg" data-lightbox="yakistraight30"></a>
+    <a href="images/yakiback.jpg" data-lightbox="yakistraight30"></a>
 
-<section class="shop-section">
-  <h1>Shop Barbie Approved Units 💖</h1>
-  <h2>Human Hair Blend (HHB)</h2>
+    <h4>Yaki Straight 30"🔥🔥 [HHB]</h4>
+    <p class="price">R900</p>
 
-  <!-- Hair Blend 101 Info -->
-  <div class="hair-blend-info">
-    <h3>✨ HUMAN HAIR BLEND(HHB)101</h3>
-    <p>Human Hair Blends (HHB) give you the luxurious look of real hair without the full price tag. These units combine real human hair with premium fibers to offer the perfect balance of beauty, bounce, and budget. They're heat-friendly, long-lasting with proper care, and a go-to for every Budget Baddie who wants to slay on a dime! 💅</p>
+    <label>Qty:</label>
+    <input type="number" value="1" min="1" disabled>
+
+    <button disabled>Add to Cart</button>
+    <button disabled>Buy Now</button>
   </div>
 
-  <div class="wig-gallery" id="productGrid">
+  <!-- Black Top Ginger -->
+  <div class="wig-card sold">
+    <span class="sold-out">SOLD OUT</span>
 
-    <!-- Yaki Straight -->
-    <div class="wig-card">
-      <a href="images/yakistraight30.png" data-lightbox="yakistraight30" data-title="Yaki Straight Front">
-        <img src="images/yakistraight30.png" alt="Yaki Straight 30” Front View" class="main-wig-img" />
-        <div style="position: relative; display: inline-block;">
-  <img src="images/yakistraight30.png" style="width:100%; opacity:0.6;">
-  
-  <div style="
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    color: white;
-    padding: 6px 12px;
-    font-weight: bold;
-  ">
-    SOLD OUT
+    <a href="images/blacktopginger30.png" data-lightbox="blacktopginger30">
+      <img src="images/blacktopginger30.png" class="main-wig-img" />
+    </a>
+
+    <a href="images/blacktopgingerside.jpg" data-lightbox="blacktopginger30"></a>
+    <a href="images/blacktopgingerback.jpg" data-lightbox="blacktopginger30"></a>
+
+    <h4>Black Top Ginger 30" [HHB]</h4>
+    <p class="price">R900</p>
+
+    <label>Qty:</label>
+    <input type="number" value="1" min="1" disabled>
+
+    <button disabled>Add to Cart</button>
+    <button disabled>Buy Now</button>
   </div>
+
+  <!-- 3 Tone Blonde -->
+  <div class="wig-card sold">
+    <span class="sold-out">SOLD OUT</span>
+
+    <a href="images/3toneblonde30.png" data-lightbox="3toneblonde30">
+      <img src="images/3toneblonde30.png" class="main-wig-img" />
+    </a>
+
+    <a href="images/3toneblondeside.jpg" data-lightbox="3toneblonde30"></a>
+    <a href="images/3toneblondeback.jpg" data-lightbox="3toneblonde30"></a>
+
+    <h4>3 Tone Blonde 30"🔥🔥 [HHB]</h4>
+    <p class="price">R900</p>
+
+    <label>Qty:</label>
+    <input type="number" value="1" min="1" disabled>
+
+    <button disabled>Add to Cart</button>
+    <button disabled>Buy Now</button>
+  </div>
+
 </div>
-      </a>
-      <div class="angle-gallery">
-        <a href="images/yakiside.jpg" data-lightbox="yakistraight30" data-title="Side View"><img src="images/yakiside.jpg" /></a>
-        <a href="images/yakiback.jpg" data-lightbox="yakistraight30" data-title="Back View"><img src="images/yakiback.jpg" /></a>
-      </div>
-      <h4>Yaki Straight 30"🔥🔥 [HHB]</h4>
-      <p class="price">R900</p>
-      <label for="qty-yaki">Qty:</label>
-      <input type="number" id="qty-yaki" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('Yaki Straight 30&quot;', 'qty-yaki')">Add to Cart</button>
-      <button onclick="orderNow( 'yakistraight30', '900')">
-        Buy Now
-      </button>
-    </div>
-
-    <!-- Black Top Ginger -->
-    <div class="wig-card">
-      <a href="images/blacktopginger30.png" data-lightbox="blacktopginger30" data-title="Black Top Ginger">
-        <img src="images/blacktopginger30.png" alt="Black Top Ginger 30” Front View" class="main-wig-img" />
-        <div style="position: relative; display: inline-block;">
-  <img src="images/blacktopginger30.png" style="width:100%; opacity:0.6;">
-  
-  <div style="
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    color: white;
-    padding: 6px 12px;
-    font-weight: bold;
-  ">
-    SOLD OUT
-  </div>
-</div>
-      </a>
-      <div class="angle-gallery">
-        <a href="images/blacktopgingerside.jpg" data-lightbox="blacktopginger30" data-title="Side View"><img src="images/blacktopgingerside.jpg" /></a>
-        <img src="images/blacktopginger30.png" style="width:100%; opacity:0.6;"
-        <a href="images/blacktopgingerback.jpg" data-lightbox="blacktopginger30" data-title="Back View"><img src="images/blacktopgingerback.jpg" /></a>
-        <img src="images/blacktopginger30.png" style="width:100%; opacity:0.6;">
-      </div>
-      <h4>Black Top Ginger 30" [HHB]</h4>
-      <p class="price">R900</p>
-      <label for="qty-ginger">Qty:</label>
-      <input type="number" id="qty-ginger" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('Black Top Ginger 30&quot;', 'qty-ginger')">Add to Cart</button>
-    </div>
-    
-    <!-- 3 Tone Blonde -->
-    <div class="wig-card">
-      <a href="images/3toneblonde30.png" data-lightbox="3toneblonde30" data-title="3 Tone Blonde">
-        <img src="images/3toneblonde30.png" alt="3 Tone Blonde 30” Front View" class="main-wig-img" />
-        <img src="images/3toneblonde30.png" style="width:100%; opacity:0.6;">
-    <div style="
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    color: white;
-    padding: 6px 12px;
-    font-weight: bold;
-  ">
-    SOLD OUT
-  </div>
-      </a>
-      <div class="angle-gallery">
-        <a href="images/3toneblondeside.jpg" data-lightbox="3toneblonde30" data-title="Side View"><img src="images/3toneblondeside.jpg" /></a>
-        <a href="images/3toneblondeback.jpg" data-lightbox="3toneblonde30" data-title="Back View"><img src="images/3toneblondeback.jpg" /></a>   
-      </div>
-      <h4>3 Tone Blonde 30"🔥🔥 [HHB]</h4>
-      <p class="price">R900</p>
-      <label for="qty-blonde">Qty:</label>
-      <input type="number" id="qty-blonde" class="quantity-input" value="1" min="1">
-      <button class="add-to-cart" onclick="addToCart('3 Tone Blonde 30&quot;', 'qty-blonde')">Add to Cart</button>
-    </div> 
-  </div>
-
-  <div class="pagination">
-    <a class="page-link" href="shop-page2.html">Next ➡️</a>
-  </div>
-</section>
-
-<div id="notification" class="notification"></div>
-
-<!-- Lightbox JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
-<!-- Cart Script using localStorage -->
-<script>
-  let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-  function addToCart(productName, qtyId) {
-    const qty = parseInt(document.getElementById(qtyId).value);
-    if (!qty || qty < 1) return;
-
-    if (cart[productName]) {
-      cart[productName].quantity += qty;
-    } else {
-      cart[productName] = { name: productName, quantity: qty };
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    showNotification(`${qty} x ${productName} added to cart`);
-  }
-
-  function updateCartCount() {
-    const cartCountEl = document.getElementById('cart-count');
-    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    cartCountEl.textContent = totalItems;
-    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
-  }
-
-  function showNotification(message) {
-    const notification = document.getElementById('notification');
-    notification.textContent = message;
-    notification.style.display = 'block';
-    setTimeout(() => notification.style.display = 'none', 2500);
-  }
-
-  function checkoutCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || {};
-    if (Object.keys(cart).length === 0) {
-      alert("Your cart is empty!");
-      return;
-    }
-
-    let message = `Hi Noire Barbie Beauty 💖 I’d like to order:\n`;
-    for (const item in cart) {
-      message += `• ${item} x ${cart[item].quantity}\n`;
-    }
-
-    const whatsappUrl = `https://wa.me/27683032091?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  }
-
-  document.addEventListener('DOMContentLoaded', updateCartCount);
-</script>
-
-</body>
-</html>
