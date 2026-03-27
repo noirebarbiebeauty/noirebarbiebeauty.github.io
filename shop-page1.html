@@ -238,8 +238,8 @@
     </div>
     <h4>Electric Ice❄️</h4>
     <p class="price">R1000</p>
-    <input type="number" id="qty1" min="1" value="1">
-    <a href="#" id="whatsappBtn1" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+    <input type="number" id="qty6" min="1" value="1">
+    <a href="#" id="whatsappBtn6" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
 
   <!-- ===== WIG 7-- Sage Glow" (In Stock) ===== -->
@@ -257,8 +257,8 @@
     </div>
     <h4>Sage Glow 🫒</h4>
     <p class="price">R900</p>
-    <input type="number" id="qty1" min="1" value="1">
-    <a href="#" id="whatsappBtn1" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+    <input type="number" id="qty7" min="1" value="1">
+    <a href="#" id="whatsappBtn7" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
   
   <!-- Continue in this format for wigs 6 → 20, alternating sold/in-stock, each with lightbox thumbnails and WhatsApp buttons for in-stock -->
@@ -284,14 +284,14 @@ document.getElementById("whatsappBtn5").onclick = function() {
 
 // Electric Ice
 document.getElementById("whatsappBtn6").onclick = function() {
-    const qty = document.getElementById("qty6").value; ✅ FIXED
+    const qty = document.getElementById("qty6").value; 
     const message = `Hello! I want to order ${qty} x Electric Ice for R1000 each.`;
     window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
 };
 
 // Sage Glow
 document.getElementById("whatsappBtn7").onclick = function() {
-    const qty = document.getElementById("qty7").value; ✅ FIXED
+    const qty = document.getElementById("qty7").value; 
     const message = `Hello! I want to order ${qty} x Sage Glow for R900 each.`;
     window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
 };
