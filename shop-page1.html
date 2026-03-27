@@ -262,7 +262,14 @@ document.getElementById("whatsappBtn5").onclick = function() {
     const message = `Hello! I want to order ${qty} x Buttercup Peachh Pink Blonde Bounce for R1000 each.`;
     window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
 };
-
+  
+// Example for Electric Ice
+document.getElementById("whatsappBtn5").onclick = function() {
+    const qty = document.getElementById("qty5").value;
+    const message = `Hello! I want to order ${qty} x Electric Ice for R1000 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+  
 // Repeat same script for all in-stock wigs
 </script>
 
