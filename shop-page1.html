@@ -261,7 +261,7 @@
     <a href="#" id="whatsappBtn7" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
   
-  <!-- ===== WIG 8-- Electric Ice 40" (In Stock) ===== -->
+  <!-- ===== WIG 8-- Maroon Muse" (In Stock) ===== -->
   <div class="wig-card">
     <a href="images/maroonmuse.jpg" data-lightbox="wig1" data-title="maroon muse Front">
       <img src="images/maroonmuse.jpg" class="main-wig-img" alt="maroon muse Front">
@@ -280,8 +280,64 @@
     <a href="#" id="whatsappBtn6" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
   
+<!-- ===== WIG 9--Pink Frost (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/pinkfrost.jpg" data-lightbox="wig1" data-title="pink frost Front">
+      <img src="images/pinkfrost.jpg" class="main-wig-img" alt="pink frostFront">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/pinkfrostside.jpg" data-lightbox="wig1" data-title="pink frost Side">
+        <img src="images/pinkfrostside.jpg" alt="pink frost Side">
+      </a>
+      <a href="images/pinkfrostback.jpg" data-lightbox="wig1" data-title="pink frost Back">
+        <img src="images/pinkfrostback.jpg" alt="pink frost Back">
+      </a>
+    </div>
+    <h4>Pink Frost💕❄️</h4>
+    <p class="price">R900</p>
+    <input type="number" id="qty9" min="1" value="1">
+    <a href="#" id="whatsappBtn9" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+  </div>
 
-  <!-- Continue in this format for wigs 6 → 20, alternating sold/in-stock, each with lightbox thumbnails and WhatsApp buttons for in-stock -->
+  <!-- ===== WIG 10--Caramel Cream Split (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/caramelcreamsplit.jpg" data-lightbox="wig1" data-title="caramel cream split Front">
+      <img src="images/caramelcreamsplit.jpg" class="main-wig-img" alt="caramel cream split Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/caramelcreamsplitside.jpg" data-lightbox="wig1" data-title="caramel cream split Side">
+        <img src="images/caramelcreamsplitside.jpg" alt="caramel cream split Side">
+      </a>
+      <a href="images/caramelcreamsplitback.jpg" data-lightbox="wig1" data-title="caramel cream split Back">
+        <img src="images/caramelcreamsplitback.jpg" alt="caramel cream split Back">
+      </a>
+    </div>
+    <h4>Caramel Cream Split 🍨🤎</h4>
+    <p class="price">R900</p>
+    <input type="number" id="qty10" min="1" value="1">
+    <a href="#" id="whatsappBtn10" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+  </div>
+
+  <!-- ===== WIG 11--Purple Ice (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/purpleice.jpg" data-lightbox="wig1" data-title="purple ice Front">
+      <img src="images/purpleice.jpg" class="main-wig-img" alt="purple ice Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/purpleiceside.jpg" data-lightbox="wig1" data-title="purple ice Side">
+        <img src="images/purpleiceside.jpg" alt="purple ice Side">
+      </a>
+      <a href="images/purpleiceback.jpg" data-lightbox="wig1" data-title="purple ice Back">
+        <img src="images/purpleiceback.jpg" alt="purple ice Back">
+      </a>
+    </div>
+    <h4>Purple Ice💜❄️</h4>
+    <p class="price">R900</p>
+    <input type="number" id="qty11" min="1" value="1">
+    <a href="#" id="whatsappBtn11" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+  </div>
+  
+    <!-- Continue in this format for wigs 6 → 20, alternating sold/in-stock, each with lightbox thumbnails and WhatsApp buttons for in-stock -->
 
 </div>
 
@@ -315,13 +371,35 @@ document.getElementById("whatsappBtn7").onclick = function() {
     const message = `Hello! I want to order ${qty} x Sage Glow for R900 each.`;
     window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
 };
+  
 // Maroon Muse
 document.getElementById("whatsappBtn8").onclick = function() {
     const qty = document.getElementById("qty8").value; 
     const message = `Hello! I want to order ${qty} x Maroon Muse for R1000 each.`;
-    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank"); 
 
+};
   
+// Pink Frost
+document.getElementById("whatsappBtn9").onclick = function() {
+    const qty = document.getElementById("qty9").value; 
+    const message = `Hello! I want to order ${qty} x Pink Frost for R900 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+
+// Caramel Cream Split
+document.getElementById("whatsappBtn10").onclick = function() {
+    const qty = document.getElementById("qty10").value; 
+    const message = `Hello! I want to order ${qty} x Caramel Cream Split for R900 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+
+// Purple Ice
+document.getElementById("whatsappBtn11").onclick = function() {
+    const qty = document.getElementById("qty11").value; 
+    const message = `Hello! I want to order ${qty} x Purple Ice for R900 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};  
 // Repeat same script for all in-stock wigs
 </script>
 
