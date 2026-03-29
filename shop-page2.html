@@ -7,7 +7,7 @@
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 15px;
   padding: 15px;
-  background: rgba(0,0,0,0.7); /* dark background */
+  background: rgba(0,0,0,0.7);
   border-radius: 12px;
 }
 
@@ -26,7 +26,6 @@
   transform: scale(1.03);
 }
 
-/* WIG IMAGE */
 .wig-card img {
   width: 100%;
   border-radius: 10px;
@@ -47,18 +46,17 @@
   z-index: 2;
 }
 
-/* SOLD OUT EFFECT */
 .sold .main-wig-img {
   opacity: 0.5;
 }
 
 .sold input,
-.sold button {
+.sold button,
+.sold .whatsapp-btn {
   background: grey !important;
   cursor: not-allowed;
 }
 
-/* WIG TITLE AND PRICE */
 .wig-card h4 {
   margin-top: 10px;
   font-size: 1.1rem;
@@ -71,7 +69,6 @@
   margin: 5px 0;
 }
 
-/* INPUT & BUTTON */
 .wig-card input[type="number"] {
   width: 60px;
   padding: 4px 6px;
@@ -80,7 +77,7 @@
   margin-top: 5px;
 }
 
-.wig-card button {
+.wig-card button, .wig-card a.whatsapp-btn {
   margin-top: 8px;
   padding: 6px 12px;
   border-radius: 20px;
@@ -90,9 +87,11 @@
   background: #ff66b2;
   cursor: pointer;
   transition: 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.wig-card button:hover {
+.wig-card button:hover, .wig-card a.whatsapp-btn:hover {
   background: #e60073;
 }
 
@@ -121,295 +120,187 @@
 }
 </style>
 
-<div class="wig-gallery" id="productGrid">
+<div class="wig-gallery">
 
-  <!-- Piano Brown 30" (Sold Out) -->
-  <div class="wig-card sold">
-    <span class="sold-out">SOLD OUT</span>
-    <a href="images/pianobrown30.png" data-lightbox="wig 1 data-title="Piano Brown Front">
-      <img src="images/pianobrown30.png" class="main-wig-img" alt="Piano Brown Front">
+  <!-- ===== WIG 1 - Caramel Swirl (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/caramelswirl.jpg" data-lightbox="wig1" data-title="Caramel Swirl Front">
+      <img src="images/caramelswirl.jpg" class="main-wig-img" alt="Caramel Swirl Front">
     </a>
-    <div class="thumb gallery">
-    <a href="images/pianobrownside.jpg" data-lightbox="wig1" data-title="Piano Brown Side">
-      <img src"images/pianobrownside.jpg" alt="Piano Brown Side">
-    </a>
-    <a href="images/pianobrownback.jpg" data-lightbox="wig1" data-title="Piano Brown Back">
-      <img srd"images/pianobrownback.jpg" alt="Piano Brown Back">
-    </a>
+    <div class="thumb-gallery">
+      <a href="images/caramelswirlsside.jpg" data-lightbox="wig1" data-title="Caramel Swirl Side">
+        <img src="images/caramelswirlside.jpg" alt="Caramel Swirl Side">
+      </a>
+      <a href="images/caramelswirlback.jpg" data-lightbox="wig1" data-title="Caramel Swirl Back">
+        <img src="images/caramelswirlback.jpg" alt="Caramel Swirl Back">
+      </a>
     </div>
-    <h4>Piano brown 30" 🔥🔥 [HHB]</h4>
-    <p class="price">R900</p>
-    <input type="number" value="1" min="1" disabled>
-    <button disabled>Add to Cart</button>
-    <button disabled>Buy Now</button>
-  </div>
-
-  <!-- Caramel Brown 30" (Sold Out) -->
-  <div class="wig-card sold">
-    <span class="sold-out">SOLD OUT</span>
-    <a href="images/caramelbrown30.png" data-lightbox="caramelbrown30">
-      <img src="images/caramelbrown30.png" class="main-wig-img">
-    </a>
-    <a href="images/caramelbrownside.jpg" data-lightbox="caramelbrown30"></a>
-    <a href="images/caramelbrownback.jpg" data-lightbox="caramelbrown30"></a>
-    <h4>Caramel Brown 30" [HHB]</h4>
-    <p class="price">R900</p>
-    <input type="number" value="1" min="1" disabled>
-    <button disabled>Add to Cart</button>
-    <button disabled>Buy Now</button>
-  </div>
-
-  <!-- Red Ginger" (Sold Out) -->
-  <div class="wig-card sold">
-    <span class="sold-out">SOLD OUT</span>
-    <a href="images/redginger30.png" data-lightbox="redginger30">
-      <img src="images/redginger30.png" class="main-wig-img">
-    </a>
-    <a href="images/redgingerside.jpg" data-lightbox="redginger30"></a>
-    <a href="images/redgingerback.jpg" data-lightbox="redginger30"></a>
-    <h4>Red Ginger 30" 🔥🔥 [HHB]</h4>
-    <p class="price">R900</p>
-    <input type="number" value="1" min="1" disabled>
-    <button disabled>Add to Cart</button>
-    <button disabled>Buy Now</button>
-  </div>
-
-  <!-- Wig 1 - Black Top Ginger (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig1-front.jpg" alt="Wig 1 Front">
-    <img src="images/wig1-side.jpg" alt="Wig 1 Side">
-    <img src="images/wig1-back.jpg" alt="Wig 1 Back">
-    <h4>Black Top Ginger</h4>
-    <p class="price">R1200</p>
+    <h4>Caramel Swirl 🍮</h4>
+    <p class="price">900</p>
     <input type="number" id="qty1" min="1" value="1">
-    <button onclick="addToCart('Black Top Ginger', 1200, 'qty1')">Add to Cart</button>
+    <a href="#" id="whatsappBtn1" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
 
-  <!-- Wig 2 - 3 Tone Blonde (Sold Out) -->
+  <!-- ===== WIG 2 - Yaki Straight 30" (Sold Out) ===== -->
   <div class="wig-card sold">
-    <img src="images/wig2-front.jpg" alt="Wig 2 Front">
-    <img src="images/wig2-side.jpg" alt="Wig 2 Side">
-    <img src="images/wig2-back.jpg" alt="Wig 2 Back">
-    <h4>3-Tone Blonde</h4>
-    <p class="price">R1500</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 3 - Caramel Swirl (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig3-front.jpg" alt="Wig 3 Front">
-    <img src="images/wig3-side.jpg" alt="Wig 3 Side">
-    <img src="images/wig3-back.jpg" alt="Wig 3 Back">
-    <h4>Caramel Swirl</h4>
+    <span class="sold-out">SOLD OUT</span>
+    <a href="images/yakistraight30.png" data-lightbox="wig2" data-title="Yaki Straight Front">
+      <img src="images/yakistraight30.png" class="main-wig-img" alt="Yaki Straight Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/yakiside.jpg" data-lightbox="wig2" data-title="Yaki Straight Side">
+        <img src="images/yakiside.jpg" alt="Yaki Straight Side">
+      </a>
+      <a href="images/yakiback.jpg" data-lightbox="wig2" data-title="Yaki Straight Back">
+        <img src="images/yakiback.jpg" alt="Yaki Straight Back">
+      </a>
+    </div>
+    <h4>Yaki Straight 30"</h4>
     <p class="price">R900</p>
-    <input type="number" id="qty3" min="1" value="1">
-    <button onclick="addToCart('Caramel Swirl', 900, 'qty3')">Add to Cart</button>
+    <input type="number" value="1" disabled>
+    <button disabled>Add to Cart</button>
+    <button disabled>Order via WhatsApp</button>
   </div>
 
-  <!-- Wig 4 - Golden Latte (Sold Out) -->
+  <!-- ===== WIG 3 - Black Top Ginger 30" (Sold Out) ===== -->
   <div class="wig-card sold">
-    <img src="images/wig4-front.jpg" alt="Wig 4 Front">
-    <img src="images/wig4-side.jpg" alt="Wig 4 Side">
-    <img src="images/wig4-back.jpg" alt="Wig 4 Back">
-    <h4>Golden Latte</h4>
-    <p class="price">R1000</p>
-    <span class="sold-text">Sold Out</span>
+    <span class="sold-out">SOLD OUT</span>
+    <a href="images/blacktopginger30.png" data-lightbox="wig3" data-title="Black Top Ginger Front">
+      <img src="images/blacktopginger30.png" class="main-wig-img" alt="Black Top Ginger Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/blacktopgingerside.jpg" data-lightbox="wig3" data-title="Black Top Ginger Side">
+        <img src="images/blacktopgingerside.jpg" alt="Black Top Ginger Side">
+      </a>
+      <a href="images/blacktopgingerback.jpg" data-lightbox="wig3" data-title="Black Top Ginger Back">
+        <img src="images/blacktopgingerback.jpg" alt="Black Top Ginger Back">
+      </a>
+    </div>
+    <h4>Black Top Ginger 30"</h4>
+    <p class="price">R900</p>
+    <input type="number" value="1" disabled>
+    <button disabled>Add to Cart</button>
+    <button disabled>Order via WhatsApp</button>
   </div>
 
-  <!-- Wig 5 - Butter Bliss (In Stock) -->
+  <!-- ===== WIG 4 - 3 Tone Blonde 30" (Sold Out) ===== -->
+  <div class="wig-card sold">
+    <span class="sold-out">SOLD OUT</span>
+    <a href="images/3toneblonde30.png" data-lightbox="wig4" data-title="3 Tone Blonde Front">
+      <img src="images/3toneblonde30.png" class="main-wig-img" alt="3 Tone Blonde Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/3toneblondeside.jpg" data-lightbox="wig4" data-title="3 Tone Blonde Side">
+        <img src="images/3toneblondeside.jpg" alt="3 Tone Blonde Side">
+      </a>
+      <a href="images/3toneblondeback.jpg" data-lightbox="wig4" data-title="3 Tone Blonde Back">
+        <img src="images/3toneblondeback.jpg" alt="3 Tone Blonde Back">
+      </a>
+    </div>
+    <h4>3 Tone Blonde 30"</h4>
+    <p class="price">R900</p>
+    <input type="number" value="1" disabled>
+    <button disabled>Add to Cart</button>
+    <button disabled>Order via WhatsApp</button>
+  </div>
+
+  <!-- ===== WIG 5 - Buttercup Peach Pink Blonde Bounce(In Stock) ===== -->
   <div class="wig-card">
-    <img src="images/wig5-front.jpg" alt="Wig 5 Front">
-    <img src="images/wig5-side.jpg" alt="Wig 5 Side">
-    <img src="images/wig5-back.jpg" alt="Wig 5 Back">
-    <h4>Butter Bliss</h4>
+    <a href="images/bppbb1.jpg" data-lightbox="wig5" data-title="Buttercup Front">
+      <img src="images/bppbb1.jpg" class="main-wig-img" alt="Buttercup Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/bppbbside.jpg" data-lightbox="wig5" data-title="Buttercup Side">
+        <img src="images/bppbbside.jpg" alt="Buttercup Side">
+      </a>
+      <a href="images/bppbbback.jpg" data-lightbox="wig5" data-title="Buttercup Back">
+        <img src="images/bppbbback.jpg" alt="Buttercup Back">
+      </a>
+    </div>
+    <h4>Buttercup Peach Pink Blonde Bounce🍑💕</h4>
     <p class="price">R1000</p>
     <input type="number" id="qty5" min="1" value="1">
-    <button onclick="addToCart('Butter Bliss', 1000, 'qty5')">Add to Cart</button>
+    <a href="#" id="whatsappBtn5" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
 
-  <!-- Wig 6 - Midnight Remy Luxe (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig6-front.jpg" alt="Wig 6 Front">
-    <img src="images/wig6-side.jpg" alt="Wig 6 Side">
-    <img src="images/wig6-back.jpg" alt="Wig 6 Back">
-    <h4>Midnight Remy Luxe</h4>
-    <p class="price">R900</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 7 - Onyx Jet Black (In Stock) -->
+  <!-- ===== WIG 6-- Electric Ice 40" (In Stock) ===== -->
   <div class="wig-card">
-    <img src="images/wig7-front.jpg" alt="Wig 7 Front">
-    <img src="images/wig7-side.jpg" alt="Wig 7 Side">
-    <img src="images/wig7-back.jpg" alt="Wig 7 Back">
-    <h4>Onyx Jet Black</h4>
-    <p class="price">R1500</p>
+    <a href="images/electricice1.PNG" data-lightbox="wig1" data-title="Electric Ice Front">
+      <img src="images/electricice1.PNG" class="main-wig-img" alt="Electric Ice Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/electriciceside.PNG" data-lightbox="wig1" data-title="electric ice Side">
+        <img src="images/electriciceside.PNG" alt="electric ice Side">
+      </a>
+      <a href="images/electriciceback.PNG" data-lightbox="wig1" data-title="electric ice Back">
+        <img src="images/electriciceback.PNG" alt="electric ice Back">
+      </a>
+    </div>
+    <h4>Electric Ice❄️</h4>
+    <p class="price">R1000</p>
+    <input type="number" id="qty6" min="1" value="1">
+    <a href="#" id="whatsappBtn6" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+  </div>
+
+  <!-- ===== WIG 7-- Sage Glow" (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/sageglow1.PNG" data-lightbox="wig1" data-title="sage glow Front">
+      <img src="images/sageglow1.PNG" class="main-wig-img" alt="sage glow Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/sageglowside.PNG" data-lightbox="wig1" data-title="sage glow Side">
+        <img src="images/sageglowside.PNG" alt="sage glow Side">
+      </a>
+      <a href="images/sageglowback.PNG" data-lightbox="wig1" data-title="sage glow Back">
+        <img src="images/sageglowback.PNG" alt="sage glow Back">
+      </a>
+    </div>
+    <h4>Sage Glow 🫒</h4>
+    <p class="price">R900</p>
     <input type="number" id="qty7" min="1" value="1">
-    <button onclick="addToCart('Onyx Jet Black', 1500, 'qty7')">Add to Cart</button>
+    <a href="#" id="whatsappBtn7" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
-
-  <!-- Wig 8 - Bubble Rebel (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig8-front.jpg" alt="Wig 8 Front">
-    <img src="images/wig8-side.jpg" alt="Wig 8 Side">
-    <img src="images/wig8-back.jpg" alt="Wig 8 Back">
-    <h4>Bubble Rebel</h4>
-    <p class="price">R900</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 9 - Pink Frost (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig9-front.jpg" alt="Wig 9 Front">
-    <img src="images/wig9-side.jpg" alt="Wig 9 Side">
-    <img src="images/wig9-back.jpg" alt="Wig 9 Back">
-    <h4>Pink Frost</h4>
-    <p class="price">R1200</p>
-    <input type="number" id="qty9" min="1" value="1">
-    <button onclick="addToCart('Pink Frost', 1200, 'qty9')">Add to Cart</button>
-  </div>
-
-  <!-- Wig 10 - Mocha Melt (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig10-front.jpg" alt="Wig 10 Front">
-    <img src="images/wig10-side.jpg" alt="Wig 10 Side">
-    <img src="images/wig10-back.jpg" alt="Wig 10 Back">
-    <h4>Mocha Melt</h4>
-    <p class="price">R1000</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 11 - Golden Merlot (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig11-front.jpg" alt="Wig 11 Front">
-    <img src="images/wig11-side.jpg" alt="Wig 11 Side">
-    <img src="images/wig11-back.jpg" alt="Wig 11 Back">
-    <h4>Golden Merlot</h4>
-    <p class="price">R800</p>
-    <input type="number" id="qty11" min="1" value="1">
-    <button onclick="addToCart('Golden Merlot', 800, 'qty11')">Add to Cart</button>
-  </div>
-
-  <!-- Wig 12 - Bonus Beauty (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig12-front.jpg" alt="Wig 12 Front">
-    <img src="images/wig12-side.jpg" alt="Wig 12 Side">
-    <img src="images/wig12-back.jpg" alt="Wig 12 Back">
-    <h4>Bonus Beauty</h4>
-    <p class="price">R900</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 13 - Cajun Storm Crimper (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig13-front.jpg" alt="Wig 13 Front">
-    <img src="images/wig13-side.jpg" alt="Wig 13 Side">
-    <img src="images/wig13-back.jpg" alt="Wig 13 Back">
-    <h4>Cajun Storm Crimper</h4>
-    <p class="price">R1500</p>
-    <input type="number" id="qty13" min="1" value="1">
-    <button onclick="addToCart('Cajun Storm Crimper', 1500, 'qty13')">Add to Cart</button>
-  </div>
-
-  <!-- Wig 14 - Gold Highlight Cloud (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig14-front.jpg" alt="Wig 14 Front">
-    <img src="images/wig14-side.jpg" alt="Wig 14 Side">
-    <img src="images/wig14-back.jpg" alt="Wig 14 Back">
-    <h4>Gold Highlight Cloud</h4>
-    <p class="price">R1500</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 15 - Midnight Black Empress (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig15-front.jpg" alt="Wig 15 Front">
-    <img src="images/wig15-side.jpg" alt="Wig 15 Side">
-    <img src="images/wig15-back.jpg" alt="Wig 15 Back">
-    <h4>Midnight Black Empress</h4>
-    <p class="price">R1200</p>
-    <input type="number" id="qty15" min="1" value="1">
-    <button onclick="addToCart('Midnight Black Empress', 1200, 'qty15')">Add to Cart</button>
-  </div>
-
-  <!-- Wig 16 - Bonus Blonde (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig16-front.jpg" alt="Wig 16 Front">
-    <img src="images/wig16-side.jpg" alt="Wig 16 Side">
-    <img src="images/wig16-back.jpg" alt="Wig 16 Back">
-    <h4>Bonus Blonde</h4>
-    <p class="price">R900</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 17 - Sunset Ombre (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig17-front.jpg" alt="Wig 17 Front">
-    <img src="images/wig17-side.jpg" alt="Wig 17 Side">
-    <img src="images/wig17-back.jpg" alt="Wig 17 Back">
-    <h4>Sunset Ombre</h4>
-    <p class="price">R1100</p>
-    <input type="number" id="qty17" min="1" value="1">
-    <button onclick="addToCart('Sunset Ombre', 1100, 'qty17')">Add to Cart</button>
-  </div>
-
-  <!-- Wig 18 - Chocolate Swirl (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig18-front.jpg" alt="Wig 18 Front">
-    <img src="images/wig18-side.jpg" alt="Wig 18 Side">
-    <img src="images/wig18-back.jpg" alt="Wig 18 Back">
-    <h4>Chocolate Swirl</h4>
-    <p class="price">R950</p>
-    <span class="sold-text">Sold Out</span>
-  </div>
-
-  <!-- Wig 19 - Caramel Dream (In Stock) -->
-  <div class="wig-card">
-    <img src="images/wig19-front.jpg" alt="Wig 19 Front">
-    <img src="images/wig19-side.jpg" alt="Wig 19 Side">
-    <img src="images/wig19-back.jpg" alt="Wig 19 Back">
-    <h4>Caramel Dream</h4>
-    <p class="price">R1000</p>
-    <input type="number" id="qty19" min="1" value="1">
-    <button onclick="addToCart('Caramel Dream', 1000, 'qty19')">Add to Cart</button>
-  </div>
-
-  <!-- Wig 20 - Rose Gold Luxe (Sold Out) -->
-  <div class="wig-card sold">
-    <img src="images/wig20-front.jpg" alt="Wig 20 Front">
-  </div>
-
   
-</div>
+  <!-- Continue in this format for wigs 6 → 20, alternating sold/in-stock, each with lightbox thumbnails and WhatsApp buttons for in-stock -->
 
-
-  <div style="text-align:center; margin: 30px 0;">
-  <a href="shop-page1.html" 
-     style="padding: 12px 20px; background: black; color: white; text-decoration: none; border-radius: 6px;">
-     ← Previous
-  </a>
 </div>
-  
-  <div style="text-align:center; margin: 30px 0;">
-  <a href="shop-page3.html" 
-     style="padding: 12px 20px; background: black; color: white; text-decoration: none; border-radius: 6px;">
-     Next →</a>
-</div>
-
 
 <script>
 const myNumber = "27683032091";
-
-  // Piano Brown 30
-  document.getElementByid("whatsappBtn1").onclick = function() {
-      const qty = document.getElementByid("qty1").value;
-      const message = 'Hello! I want to order＄{qty} x Piano Brown for R900 each.';
-      window.open(,\'https://wa.me/＄{myNumber}?text=${encodeURIComponent(message)}`,"_blank");
-  };
-
-  //
-
-
-
   
+// Midnight Empress
+document.getElementById("whatsappBtn1").onclick = function() {
+    const qty = document.getElementById("qty1").value;
+    const message = `Hello! I want to order ${qty} x Midnight Empress 32" for R1200 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+
+// Buttercup Peach Pink Blonde Bounce
+document.getElementById("whatsappBtn5").onclick = function() {
+    const qty = document.getElementById("qty5").value;
+    const message = `Hello! I want to order ${qty} x Buttercup Peach Pink Blonde Bounce for R1000 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+
+// Electric Ice
+document.getElementById("whatsappBtn6").onclick = function() {
+    const qty = document.getElementById("qty6").value; 
+    const message = `Hello! I want to order ${qty} x Electric Ice for R1000 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+
+// Sage Glow
+document.getElementById("whatsappBtn7").onclick = function() {
+    const qty = document.getElementById("qty7").value; 
+    const message = `Hello! I want to order ${qty} x Sage Glow for R900 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};
+  
+// Repeat same script for all in-stock wigs
 </script>
+
+<div style="text-align:center; margin: 30px 0;">
+  <a href="shop-page2.html" 
+     style="padding: 12px 20px; background: black; color: white; text-decoration: none; border-radius: 6px;">
+     Next →</a>
+</div>
