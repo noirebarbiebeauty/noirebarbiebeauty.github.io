@@ -336,8 +336,47 @@
     <input type="number" id="qty11" min="1" value="1">
     <a href="#" id="whatsappBtn11" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
   </div>
+
+<!-- ===== WIG 12--Cajun Caramel Bounce (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/cajuncaramelbounce.jpg" data-lightbox="wig1" data-title="cajun caramel bounce Front">
+      <img src="images/cajuncaramelbounce.jpg" class="main-wig-img" alt="cajun caramel bounce Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/cajuncaramelbounceside.jpg" data-lightbox="wig1" data-title="cajun caramel bounce Side">
+        <img src="images/cajuncaramelbounceside.jpg" alt="cajun caramel bounce Side">
+      </a>
+      <a href="images/cajuncaramelbounceback.jpg" data-lightbox="wig1" data-title="cajun caramel bounce Back">
+        <img src="images/cajuncaramelbounceback.jpg" alt="cajun caramel bounce Back">
+      </a>
+    </div>
+    <h4>Cajun Caramel Bounce</h4>
+    <p class="price">R900</p>
+    <input type="number" id="qty12" min="1" value="1">
+    <a href="#" id="whatsappBtn12" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+  </div>
+
+  <!-- ===== WIG 13--Cajun Mocha Curls (In Stock) ===== -->
+  <div class="wig-card">
+    <a href="images/cajunmochacurls.jpg" data-lightbox="wig1" data-title="cajun mocha curls Front">
+      <img src="images/cajunmochacurls.jpg" class="main-wig-img" alt="cajun mocha curls Front">
+    </a>
+    <div class="thumb-gallery">
+      <a href="images/cajunmochacurlsside.jpg" data-lightbox="wig1" data-title="cajun mocha curls Side">
+        <img src="images/cajunmochacurlsside.jpg" alt="cajun mocha curls Side">
+      </a>
+      <a href="images/cajunmochacurlsback.jpg" data-lightbox="wig1" data-title="cajun mocha curls Back">
+        <img src="images/cajunmochacurlsback.jpg" alt="cajun mocha curls Back">
+      </a>
+    </div>
+    <h4>Cajun Mocha Curls 🏵️🟫🍅</h4>
+    <p class="price">R1300</p>
+    <input type="number" id="qty13" min="1" value="1">
+    <a href="#" id="whatsappBtn13" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+  </div>   
   
-    <!-- Continue in this format for wigs 6 → 20, alternating sold/in-stock, each with lightbox thumbnails and WhatsApp buttons for in-stock -->
+  
+  <!-- Continue in this format for wigs 6 → 20, alternating sold/in-stock, each with lightbox thumbnails and WhatsApp buttons for in-stock -->
 
 </div>
 
@@ -400,6 +439,22 @@ document.getElementById("whatsappBtn11").onclick = function() {
     const message = `Hello! I want to order ${qty} x Purple Ice for R900 each.`;
     window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
 };  
+
+// Cajun Caramel Bounce
+document.getElementById("whatsappBtn12").onclick = function() {
+    const qty = document.getElementById("qty12").value; 
+    const message = `Hello! I want to order ${qty} x Cajun Caramel Bounce for R900 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};  
+
+// Cajun Mocha Curls
+document.getElementById("whatsappBtn13").onclick = function() {
+    const qty = document.getElementById("qty13").value; 
+    const message = `Hello! I want to order ${qty} x Cajun Mocha Curls for R1300 each.`;
+    window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`, "_blank");
+};  
+
+  
 // Repeat same script for all in-stock wigs
 </script>
 
